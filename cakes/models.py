@@ -2,8 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-CAKE_SELECTIONS = (0, "white chocolate / chocolate cakes"), (1, "cream cakes / jam cakes")
-(2, "fruit & nut cakes"), (3, "sponges")
+CAKE_SELECTIONS = (0, "white chocolate / chocolate cakes"),
+(1, "fruit & nut cake"),
+(2, "cheese cakes"),
+(3, "sponges"),
 
 
 # cake item moduels
