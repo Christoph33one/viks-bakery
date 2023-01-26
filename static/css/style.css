@@ -1,0 +1,111 @@
+/* ---------BASE.HTML PAGE------------*/
+.title {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+}
+h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+.title-comma {
+    color: #D3D925;
+}
+h2 {
+    font-family: Fira Sans Condensed;
+}
+h3 {
+    font-family: Fira Sans Condensed;
+}
+h4 {
+    font-family: Fira Sans Condensed;
+
+}
+h5 {
+    font-family: Fira Sans Condensed;
+    color: #0D0D0D;
+}
+
+
+/* -----------------------------------------NAV BAR------------*/
+li, a {
+    font-family: Fira Sans Condensed;
+    opacity: 1;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav-colour {
+    color: gray;
+}
+.nav-colour:hover {
+    color: #0D0D0D;
+}
+.dropdown-toggle:hover {
+    color: #0D0D0D;
+}
+.dropdown-toggle:hover {
+    color: #0D0D0D;
+}
+button {
+    margin-left: 40px;
+}
+.login-signup, a:hover {
+    color: #0D0D0D;
+}
+
+
+/* -----------------------------------------Index.html------------*/
+.header-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    margin-top: 60px;
+}
+.header-text-bottom {
+    font-family: Montserrat;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 0;
+}
+.image-container {
+    width: 100%;
+    position: relative;
+}
+
+
+/* -----------------------------------------FOOTER------------*/
+.footer-container {
+    margin-top: 15px;
+    background-color: #BFBFBF;
+}
+.nav-link {
+    color: black;
+}
+.nav-link:hover {
+    color: #ffffff;
+}
+.media-item, i {
+    font-size: 30px;
+    padding: 2px;
+}
+
+
+/* -----------------------------------------LOGIN FORM------------*/
+.form-label {
+    font-family:  Montserrat;
+    color: #0D0D0D;
+}
+/* ----------------------------------------- REGISTER FORM------------*/
+.sign-up-header {
+    color: #0D0D0D;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.sign-up-header > button {
+    font-size: 0.8rem;
+}
+
+.sign-up-form > h4 {
+    font-weight: Montserrat;
+}

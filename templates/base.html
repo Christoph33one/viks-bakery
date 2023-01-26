@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:wght@200&display=swap"
+    rel="stylesheet">
+    <!--google fonts-->
+  <script src="https://kit.fontawesome.com/5605f6cfce.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--fontawsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <!--css-->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Bake-house</title>
+</head>
+
+<body>
+  <!--header title-->
+  <div class="title ">
+    <h1>V I K T O R I A<span class="title-comma">'</span>S</h1>
+    <h3>- B A K E - H O U S E -</h3>
+  </div>
+  <!-- Navigation  and drop down menu-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+        <div class="justify-content-center">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><span
+                  class="nav-colour">HOME</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="nav-colour">RESTAURANT</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">MENU</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">CHOCLATE CAKES</a></li>
+                <li><a class="dropdown-item" href="#">CREAM CAKES</a></li>
+                <li><a class="dropdown-item" href="#">CUP CAKES</a></li>
+                <li><a class="dropdown-item" href="#">CHEESE CAKES</a></li>
+              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="nav-colour">BOOK A TABLE</span></a>
+            </li>
+              {% if user.is_authenticated %}
+              <button type="button" class="btn btn-outline-success btn-sm">
+                <a class="nav-link" href="#"><span class="nav-colour">Logout</span></a>
+              </button>
+              {% else %}
+              <button type="button" class="btn btn-outline-success  btn-sm">
+                <a class="nav-link" href="#"><span class="nav-colour">Register</span></a>
+              </button>
+              <button type="button" class="btn btn-outline-success  btn-sm">
+                <a class="nav-link" href="#"><span class="nav-colour">Login</span></a>
+              </button>
+              {% endif %}
+          </ul>
+        </div>
+  </nav>
+
+
+  <main class="flex-shrink-0 main-bg">
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+  </main>
+  
+
+
+  <!-- Footer -->
+  <div class="row">
+    <div class="col-sm-6 col-md-12 col-lg-12">
+      <div class="footer-container">
+        <ul class="nav justify-content-center sticky-bottom">
+          <li>
+            <p>&copy; Copyright 2023 Bakery</p>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">RESTAURANT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MENU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">BOOK A TABLE</a>
+          </li>
+          <li class="media-item"><i class="fa-brands fa-facebook"></i></li>
+          <li class="media-item"><i class="fa-brands fa-instagram"></i></li>
+        </ul>
+      </div>
+    </div>
+
+</body>
+
+</html>
