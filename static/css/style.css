@@ -27,7 +27,7 @@ h5 {
     color: #0D0D0D;
 }
 
-
+/* -----------------------------------------BASE.HTML------------*/
 /* -----------------------------------------NAV BAR------------*/
 li, a {
     font-family: Fira Sans Condensed;
@@ -54,6 +54,23 @@ button {
     color: #0D0D0D;
 }
 
+/* -----------------------------------------FOOTER------------*/
+.footer-container {
+    margin-top: 15px;
+    background-color: #BFBFBF;
+}
+.nav-link {
+    color: black;
+}
+.nav-link:hover {
+    color: #ffffff;
+}
+.media-item, i {
+    font-size: 30px;
+    padding: 2px;
+}
+
+
 
 /* -----------------------------------------Index.html------------*/
 .header-title {
@@ -73,21 +90,16 @@ button {
 }
 
 
-/* -----------------------------------------FOOTER------------*/
-.footer-container {
-    margin-top: 15px;
-    background-color: #BFBFBF;
-}
-.nav-link {
-    color: black;
-}
-.nav-link:hover {
-    color: #ffffff;
-}
-.media-item, i {
-    font-size: 30px;
-    padding: 2px;
-}
+
+
+/* -----------------------------------------RESTAURANT.HTML------------*/
+
+
+
+
+
+
+
 
 
 /* -----------------------------------------LOGIN FORM------------*/
