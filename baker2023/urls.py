@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('menus.urls'), name="menus_urls"),
     path("restaurant/", include('menus.urls'), name="memus_urls"),
+    path('accounts/', include('allauth.urls')),
 
 ]

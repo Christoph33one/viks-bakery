@@ -62,14 +62,14 @@
             </li>
               {% if user.is_authenticated %}
               <button type="button" class="btn btn-outline-success btn-sm">
-                <a class="nav-link" href="#"><span class="nav-colour">Logout</span></a>
+                <a class="nav-link" href="{% url 'accouunt_logout'% }"><span class="nav-colour">Logout</span></a>
               </button>
               {% else %}
               <button type="button" class="btn btn-outline-success  btn-sm">
-                <a class="nav-link" href="#"><span class="nav-colour">Register</span></a>
+                <a class="nav-link" href="{% url 'account_signup' %}"><span class="nav-colour">Register</span></a>
               </button>
               <button type="button" class="btn btn-outline-success  btn-sm">
-                <a class="nav-link" href="#"><span class="nav-colour">Login</span></a>
+                <a class="nav-link" href="{% url 'account_login' %}"><span class="nav-colour">Login</span></a>
               </button>
               {% endif %}
           </ul>
