@@ -5,24 +5,27 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h3>{% trans "Sign Up" %}</h3>
 
-
-<h5 class="sign-up-header">{% blocktrans %}Welcome! I if have already created an account, please login
-  <button type="button" class="btn btn-outline-primary btn-sm"><a href="{{ login_url }}">here!</a>
-  </button>
-  {% endblocktrans %}
-</h5>
-
-<div class="form-container mt-3 offset-md-5">
-  <h4 class="sign-up-form">{% trans "Sign Up" %}</h4>
-  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button type="submit" class="btn btn-primary">{% trans "Sign Up" %} &raquo;</button>
-  </form>
+      <p>{% blocktrans %}Welcome back to the code|star blog. Do you already have an account? Then please <a class="link"
+          href="{{ login_url }}">sign in</a> instead.{% endblocktrans %}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+      </form>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

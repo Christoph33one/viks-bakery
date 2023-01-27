@@ -10,6 +10,7 @@ CAKE_SELECTIONS = (0, "white chocolate / chocolate cakes"),
 
 # cake item moduels
 class CakeItem(models.Model):
+    """model for admin cake list"""
     cake_id = models.AutoField(primary_key=True)
     cake_name = models.CharField(max_length=80, unique=True)
     description = models.CharField(max_length=200, unique=True)
@@ -25,3 +26,12 @@ class Meta:
 
     def __str__(self):
         return self.cake_name
+
+# check user login and details are in the admin panel
+
+
+# create a user module !!
+# look at user module templates on github!
+# ask if you should build a seperate module in a new app for the request form
+# look at modules for a drop down menu. (for nav bar / menu)
+# look at a module for a user views

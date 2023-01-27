@@ -53,10 +53,11 @@ INSTALLED_APPS = [
     'menus',
 ]
 SITE_ID = 1
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-LOGIN_REDIRECT = '/'
-LOGOUT_REDIRECT = '/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

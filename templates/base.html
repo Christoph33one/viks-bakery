@@ -22,7 +22,7 @@
   </script>
   <!--css-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <title>Bake-house</title>
+  <title> Bake-house - {% block title%}{% endblock%}</title>
 </head>
 
 <body>
@@ -57,21 +57,21 @@
                 <li><a class="dropdown-item" href="#">CUP CAKES</a></li>
                 <li><a class="dropdown-item" href="#">CHEESE CAKES</a></li>
               </ul>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><span class="nav-colour">BOOK A TABLE</span></a>
-            </li>
-              {% if user.is_authenticated %}
-              <button type="button" class="btn btn-outline-success btn-sm">
-                <a class="nav-link" href="{% url 'accouunt_logout'% }"><span class="nav-colour">Logout</span></a>
-              </button>
-              {% else %}
-              <button type="button" class="btn btn-outline-success  btn-sm">
-                <a class="nav-link" href="{% url 'account_signup' %}"><span class="nav-colour">Register</span></a>
-              </button>
-              <button type="button" class="btn btn-outline-success  btn-sm">
-                <a class="nav-link" href="{% url 'account_login' %}"><span class="nav-colour">Login</span></a>
-              </button>
-              {% endif %}
+              <li class="nav-item">
+                <a class="nav-link" href="#"><span class="nav-colour">BOOK A TABLE</span></a>
+              </li>
+                {% if user.is_authenticated %}
+                <button type="button" class="btn btn-outline-success btn-sm">
+                  <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a>
+                </button>
+                {% else %}
+                <button type="button" class="btn btn-outline-success  btn-sm">
+                  <a class="nav-link" href="{% url 'account_signup' %}"><span class="nav-colour">Register</span></a>
+                </button>
+                <button type="button" class="btn btn-outline-success  btn-sm">
+                  <a class="nav-link" href="{% url 'account_login' %}"><span class="nav-colour">Login</span></a>
+                </button>
+                {% endif %}
           </ul>
         </div>
   </nav>
