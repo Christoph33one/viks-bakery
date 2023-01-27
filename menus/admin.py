@@ -7,4 +7,4 @@ from .models import CakeItem
 class CakesAdmin(admin.ModelAdmin):
 
     list_filter = ('on_menu', 'updated_on')
-    list_display = ('cake_name', 'on_menu')
+    list_display = ('cake_name', 'cake_selections', 'on_menu')

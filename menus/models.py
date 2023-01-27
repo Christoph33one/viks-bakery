@@ -2,10 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-CAKE_SELECTIONS = (0, "white chocolate / chocolate cakes"),
-(1, "fruit & nut cake"),
-(2, "cheese cakes"),
-(3, "sponges"),
+# CAKE_SELECTIONS = (
+#     (0, "white"),
+#     (1, "fruit"),
+#     (2, "New item"),
+# )
+
+CAKE_SELECTIONS = ((0, "Chocolate Cakes"), (1, "Cream cakes"), (2, "New item"))
 
 
 # cake item moduels
@@ -16,6 +19,8 @@ class CakeItem(models.Model):
     description = models.CharField(max_length=200, unique=True)
     dietary = models.CharField(max_length=200)
     allergens = models.CharField(max_length=200, null=True)
+    cake_selections = models.IntegerField(
+        choices=CAKE_SELECTIONS, default=2)
     featured_image = CloudinaryField('image', default='placeholder')
     on_menu = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
