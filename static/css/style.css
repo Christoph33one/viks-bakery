@@ -1,16 +1,8 @@
-/* ---------BASE.HTML PAGE------------*/
-.title {
-    margin-top: 30px;
-    padding: 10px;
-    text-align: center;
-}
+/* -----------------------------------------TEXT------------*/
 h1 {
     font-family: Montserrat, sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
-}
-.title-comma {
-    color: #D3D925;
 }
 h2 {
     font-family: Fira Sans Condensed;
@@ -25,6 +17,17 @@ h4 {
 h5 {
     font-family: Fira Sans Condensed;
     color: #0D0D0D;
+}
+
+
+/* ---------BASE.HTML PAGE------------*/
+.title {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+}
+.title-comma {
+    color: #D3D925;
 }
 
 /* -----------------------------------------BASE.HTML------------*/

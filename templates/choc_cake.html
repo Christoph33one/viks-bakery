@@ -3,17 +3,10 @@
 {% block content %}
 
 
-<div class="container-fluid">
-    <div class="row d-flex justify-content-center">
-        <div class="col-sm-8">
-            <h2 class="text-center my-2">Chocolate cake <span class="brand-text">menu</span></h2>
-            <!-- Dietary key -->
-        </div>
-    </div>
     <div class="row m-2 row d-flex justify-content-center">
         <div class="col-sm-8">
             <!-- Breakfast & Brunch menu -->
-            <h3 class="mb-4 text-center">menu to be set below for white choclate cakes</h3>
+            <h3 class="mb-4 text-center">Welcome to our menu of the cakes</h3>
             <!-- Loop through list to display only breakfast/bruch items -->
 
             <!--MENU TO UPDATE FROM THE ADMIN DATABASE-->
@@ -22,7 +15,7 @@
 
             {% for cakeitem in cake_items.choclate_items %}
 
-            <h1> {{ cakeitem.cake_name}} </h1>
+            <h3> {{ cakeitem.cake_name}} </h3>
             <p>{{ cakeitem.description}} | <em>{{ cakeitem.dietary }}</em>
             <strong>{{ cakeitem.allergens}}</strong>
 
@@ -30,8 +23,25 @@
 
             {% else %}
             <p>Menu being updated. No items found</p>
+           
 
             {% endif %}
+            <hr>
+
+
+            {% if cake_items.cream_items %}
+
+            {% for cakeitem in cake_items.cream_items %}
+
+            <h3>{{ cakeitem.cake_name}}</h3>
+            <p>{{ cakeitem.description}} | <em>{{ cakeitem.dietary }}</em>
+                <strong>{{ cakeitem.allergens}}</strong>
+
+            {% endfor %}
+
+            {% endif %}
+
+
  
 
         </div>
