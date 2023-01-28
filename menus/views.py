@@ -34,9 +34,18 @@ class CakesMenu(generic.ListView):
     def get_queryset(self):
 
         queryset = {
-            'white_items': CakeItem.objects.all().filter(
+            'choclate_items': CakeItem.objects.all().filter(
                 on_menu=True, cake_selections=0),
-            'dark_items': CakeItem.objects.all().filter(
-                on_menu=True, cake_selections=1)
+            'cream_items': CakeItem.objects.all().filter(
+                on_menu=True, cake_selections=1
+            )
         }
         return queryset
+
+    # def get_queryset(self):
+
+    #     cakes = CakeItem.objects.all()
+
+    #     return cakes
+
+        # CakeItem.objects.all()

@@ -17,22 +17,27 @@
             <!-- Loop through list to display only breakfast/bruch items -->
 
             <!--MENU TO UPDATE FROM THE ADMIN DATABASE-->
-            {% if cake_items.cake_items %}
 
-            {% for cakeitem in cake_items.cakeitem %}
+            {% if cake_items.choclate_items %}
 
-            <h5> {{ cakeitem.cake_name }} </h5>
-            <!-- Display price with 2 decimal spaces -->
-            <p><em> {{ cakeitem.description }} </em>
-            <p> {{ cakeitem.dietary }} | Allergens: <strong>{{ cakeitem.allergens }}</strong></p>
+            {% for cakeitem in cake_items.choclate_items %}
 
-            {% endfor %}
+            <h1> {{ cakeitem.cake_name}} </h1>
+            <p>{{ cakeitem.description}} | <em>{{ cakeitem.dietary }}</em>
+            <strong>{{ cakeitem.allergens}}</strong>
 
-            {% else%}
-            <!-- If no items found display this placeholder -->
-            <p>Menu being updated - please come back soon!</p>
+            {% endfor%}
+
+            {% else %}
+            <p>Menu being updated. No items found</p>
 
             {% endif %}
+ 
+
+        </div>
+    </div>
+</div>
+
 
 
 {% endblock %}
