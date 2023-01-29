@@ -3,49 +3,66 @@
 {% block content %}
 
 
-    <div class="row m-2 row d-flex justify-content-center">
-        <div class="col-sm-8">
-            <!-- Breakfast & Brunch menu -->
-            <h3 class="mb-4 text-center">Welcome to our menu of the cakes</h3>
-            <!-- Loop through list to display only breakfast/bruch items -->
+<div class="row m-2 row d-flex justify-content-center">
+    <div class="col-sm-8">
+        <!-- choclate cake menu -->
+        <h4 class="mb-4 text-center">There’s nothing better than cake but more cake</h4>
+        <!-- Loop through list to display only chocolate cake items -->
 
-            <!--MENU TO UPDATE FROM THE ADMIN DATABASE-->
+        {% if cake_items.choclate_items %}
 
-            {% if cake_items.choclate_items %}
+        {% for cakeitems in cake_items.choclate_items %}
 
-            {% for cakeitem in cake_items.choclate_items %}
+        <h4>{{ cakeitems.cake_name}}</h4>
 
-            <h3> {{ cakeitem.cake_name}} </h3>
-            <p>{{ cakeitem.description}} | <em>{{ cakeitem.dietary }}</em>
-            <strong>{{ cakeitem.allergens}}</strong>
+        <p>{{ cakeitems.description }}</p>
 
-            {% endfor%}
+        <p>Dietary |<strong>{{ cakeitems.dietary }}</strong></p>
 
-            {% else %}
-            <p>Menu being updated. No items found</p>
-           
+        <p>Allergens | <strong>{{ cakeitems.allergens}}</strong></p>
+        <hr>
+        {% endfor%}
 
-            {% endif %}
-            <hr>
+        {% else %}
+        <p>Menu being updated. No items found</p>
 
+        {% endif %}
 
-            {% if cake_items.cream_items %}
-
-            {% for cakeitem in cake_items.cream_items %}
-
-            <h3>{{ cakeitem.cake_name}}</h3>
-            <p>{{ cakeitem.description}} | <em>{{ cakeitem.dietary }}</em>
-                <strong>{{ cakeitem.allergens}}</strong>
-
-            {% endfor %}
-
-            {% endif %}
-
-
- 
-
-        </div>
     </div>
+</div>
+<br>
+<br>
+
+
+<!-- Vegan choclate cake menu-->
+<div class="row m-2 row d-flex justify-content-center">
+    <div class="col-sm-8">
+        <h4 class="mb-4 text-center">Our vegan range is just as good!</h4>
+        {% if cake_items.vegan_items %}
+
+        {% for cakeitems in cake_items.vegan_items %}
+
+        <h3>{{ cakeitems.cake_name }}</h3>
+
+        <p>{{ cakeitems.description }}</p>
+
+        <p>Dietary |<strong>{{ cakeitems.dietary }}</strong></p>
+
+        <p>Allergens | <strong>{{ cakeitems.allergens}}</strong></p>
+        <hr>
+
+
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+
+
+
+
+</div>
+</div>
 </div>
 
 

@@ -8,8 +8,12 @@ from cloudinary.models import CloudinaryField
 #     (2, "New item"),
 # )
 
-CAKE_SELECTIONS = ((0, "Chocolate Cakes"), (1, "Cream Cakes"), (2, "New item"))
-CREAM_CAKE_SELECTIONS = ((0, "Cream Cakes"), (1, "New item"))
+CAKE_SELECTIONS = ((0, "Chocolate Cakes"), (1, "Vegan Cakes"), (2, "New item"))
+CREAM_CAKE_SELECTIONS = (
+    (0, "Cream Cakes"),
+    (1, "Vegan Cakes"),
+    (2, "New item")
+    )
 
 
 # choclate cake module
