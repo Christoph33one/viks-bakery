@@ -2,10 +2,11 @@
 
 {% block content %}
 
-<!-- choclate cake menu -->
+<!-- cream cake menu -->
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
-        <h4 class="mb-4 text-center">"I can’t eat another slice of cake, said no one ever"</h4>
+        <h4 class="mb-4 text-center cake-menu-header">"I can’t eat another slice of cake, said no one ever"</h4>
+        
         <!-- Loop through list to display cream cake items -->
 
         {% if cream_cakes.white_items %}
@@ -21,12 +22,14 @@
         <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
         <hr>
         {% endfor %}
-
         {% endif %}
-
     </div>
 </div>
 
+<br>
+<br>
+
+<!-- vegan cream cake menu -->
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center">"A new way to bake - vegan"</h4>
@@ -46,8 +49,8 @@
         <hr>
 
         {% endfor %}
-
         {% endif %}
     </div>
 </div>
+
 {% endblock %}

@@ -11,15 +11,16 @@ def index(request):
     return render(request, 'index.html')
 
 
-def cakes_menu(request):
-    """ Returs restaurant page """
-    return render(request, 'cake_menu.html')
-
-
 # Render restaurant.html
 def restaurant(request):
     """ Returs restaurant page """
     return render(request, 'restaurant.html')
+
+
+# Render cake_menu.html
+def cakes_menu(request):
+    """ Returs cake menu page """
+    return render(request, 'cake_menu.html')
 
 
 # Generic view for chocale cake menu
@@ -42,7 +43,7 @@ class CakesMenu(generic.ListView):
         return queryset
 
 
-# Generic view for cream cakes
+# Generic view for cream cakes menu
 class CreamMenu(generic.ListView):
     """
     To render cream cake menu from the database
