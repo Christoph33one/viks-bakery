@@ -2,16 +2,51 @@
 
 {% block content %}
 
+<!-- choclate cake menu -->
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
-        <!-- Chocolate cake menu -->
-        <h3 class="mb-4 text-center">Cream cakes</h3>
+        <h4 class="mb-4 text-center">"I can’t eat another slice of cake, said no one ever"</h4>
+        <!-- Loop through list to display cream cake items -->
+
         {% if cream_cakes.white_items %}
+
         {% for creamcakes in cream_cakes.white_items %}
 
         <h4>{{ creamcakes.cake_name }}</h4>
 
+        <p>{{ creamcakes.description }}</p>
+
+        <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
+
+        <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
+        <hr>
         {% endfor %}
+
+        {% endif %}
+
+    </div>
+</div>
+
+<div class="row m-2 row d-flex justify-content-center">
+    <div class="col-sm-8">
+        <h4 class="mb-4 text-center">"A new way to bake - vegan"</h4>
+        <!-- Loop through list to display vegan cream cake items -->
+
+        {% if cream_cakes.vegan_items %}
+
+        {% for creamcakes in cream_cakes.vegan_items %}
+
+        <h4>{{ creamcakes.cake_name}}</h4>
+
+        <p>{{ creamcakes.description }}</p>
+
+        <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
+
+        <p>Allergens | <strong> {{ creamcakes.allergens }}</strong></p>
+        <hr>
+
+        {% endfor %}
+
         {% endif %}
     </div>
 </div>

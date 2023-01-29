@@ -8,7 +8,10 @@ from cloudinary.models import CloudinaryField
 #     (2, "New item"),
 # )
 
+# list for chocolate cakes items in database
 CAKE_SELECTIONS = ((0, "Chocolate Cakes"), (1, "Vegan Cakes"), (2, "New item"))
+
+# list for cream cake items in database
 CREAM_CAKE_SELECTIONS = (
     (0, "Cream Cakes"),
     (1, "Vegan Cakes"),
