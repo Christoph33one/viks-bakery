@@ -69,16 +69,16 @@ class CheeseCakeMenu(generic.ListView):
     To render cream cake menu from the database
     """
     model = CheeseCakes
-    template_name = 'cream_cake.html'
+    template_name = 'cheese_cake.html'
     context_object_name = 'cheese_cakes'
 
     def get_queryset(self):
 
         queryset = {
-            'dairy_items': CheeseCakes.objects.all().filter(
-                on_menu=True, cheese_cake_selections=0),
+            'cheese_items': CheeseCakes.objects.all().filter(
+                on_menu=True, cake_selections=0),
             'vegan_items': CheeseCakes.objects.all().filter(
-                on_menu=True, cheese_cake_selections=1)
+                on_menu=True, cake_selections=1)
         }
         return queryset
 

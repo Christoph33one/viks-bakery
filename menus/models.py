@@ -2,14 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# CAKE_SELECTIONS = (
-#     (0, "white"),
-#     (1, "fruit"),
-#     (2, "New item"),
-# )
 
 # list for chocolate cakes items in database
-CAKE_SELECTIONS = ((0, "Chocolate Cakes"), (1, "Vegan Cakes"), (2, "New item"))
+CAKE_SELECTIONS = (
+    (0, "Chocolate Cakes"),
+    (1, "Vegan Cakes"),
+    (2, "New item"))
 
 # list for cream cake items in database
 CREAM_CAKE_SELECTIONS = (
@@ -21,7 +19,7 @@ CREAM_CAKE_SELECTIONS = (
 # list of cheese cake items in the database
 CHEESE_CAKE_SELECTIONS = {
     (0, "Cheese Cakes"),
-    (1, "Vgean Cakes"),
+    (1, "Vegan Cakes"),
     (2, "New item")
 }
 
@@ -90,6 +88,7 @@ class Meta:
 
     def __str__(self):
         return self.cake_name
+
 
 # check user login and details are in the admin panel
 # create a user module !!
