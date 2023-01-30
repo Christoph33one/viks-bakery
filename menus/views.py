@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import CakeItem, CreamCakes
+from .models import CakeItem, CreamCakes, CheeseCakes
 
 # Create your views here.
 
@@ -59,6 +59,26 @@ class CreamMenu(generic.ListView):
                 on_menu=True, cake_selections=0),
             'vegan_items': CreamCakes.objects.all().filter(
                 on_menu=True, cake_selections=1)
+        }
+        return queryset
+
+
+# Generic view for cheese cakes menu
+class CheeseCakeMenu(generic.ListView):
+    """
+    To render cream cake menu from the database
+    """
+    model = CheeseCakes
+    template_name = 'cream_cake.html'
+    context_object_name = 'cheese_cakes'
+
+    def get_queryset(self):
+
+        queryset = {
+            'dairy_items': CheeseCakes.objects.all().filter(
+                on_menu=True, cheese_cake_selections=0),
+            'vegan_items': CheeseCakes.objects.all().filter(
+                on_menu=True, cheese_cake_selections=1)
         }
         return queryset
 

@@ -18,6 +18,13 @@ CREAM_CAKE_SELECTIONS = (
     (2, "New item")
     )
 
+# list of cheese cake items in the database
+CHEESE_CAKE_SELECTIONS = {
+    (0, "Cheese Cakes"),
+    (1, "Vgean Cakes"),
+    (2, "New item")
+}
+
 
 # choclate cake module
 class CakeItem(models.Model):
@@ -51,6 +58,28 @@ class CreamCakes(models.Model):
     allergens = models.CharField(max_length=200, null=True)
     cake_selections = models.IntegerField(
         choices=CREAM_CAKE_SELECTIONS, default=3)
+    featured_image = CloudinaryField('image', default='placeholder')
+    on_menu = models.BooleanField(default=False)
+    updated_on = models.DateTimeField(auto_now=True)
+
+
+class Meta:
+    ordering = ['-on_menu']
+
+    def __str__(self):
+        return self.cake_name
+
+
+# cheese cakes module
+class CheeseCakes(models.Model):
+    """model for admin cake list"""
+    cake_id = models.AutoField(primary_key=True)
+    cake_name = models.CharField(max_length=80, unique=True)
+    description = models.CharField(max_length=200, unique=True)
+    dietary = models.CharField(max_length=200)
+    allergens = models.CharField(max_length=200, null=True)
+    cake_selections = models.IntegerField(
+        choices=CHEESE_CAKE_SELECTIONS, default=3)
     featured_image = CloudinaryField('image', default='placeholder')
     on_menu = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
