@@ -60,7 +60,7 @@ button {
 
 
 /* -----------------------------------------FOOTER------------*/
-.footer-container {
+/* .footer-container {
     margin-top: 15px;
     background-color: #BFBFBF;
 }
@@ -73,8 +73,15 @@ button {
 .media-item, i {
     font-size: 30px;
     padding: 2px;
-}
+} */
 
+.footer-container{
+    background-color: #ffff
+    ;
+}
+.footer-address{
+    color: #0D0D0D;
+}
 
 /* -----------------------------------------Index.html------------*/
 .header-title {
