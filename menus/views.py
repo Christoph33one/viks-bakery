@@ -17,12 +17,6 @@ def restaurant(request):
     return render(request, 'restaurant.html')
 
 
-# Render cake_menu.html
-def cakes_menu(request):
-    """ Returs cake menu page """
-    return render(request, 'cake_menu.html')
-
-
 # Generic view for chocale cake menu
 class CakesMenu(generic.ListView):
     """

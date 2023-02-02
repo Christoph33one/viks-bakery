@@ -9,12 +9,14 @@ class CakesAdmin(admin.ModelAdmin):
     list_filter = ('on_menu', 'updated_on')
     list_display = ('cake_name', 'cake_selections', 'on_menu')
 
+
 # view for cream cakes
 @admin.register(CreamCakes)
 class CreamAdmin(admin.ModelAdmin):
 
     list_filter = ('on_menu', 'updated_on')
     list_display = ('cake_name', 'cake_selections', 'on_menu')
+
 
 # view for cheese cakes
 @admin.register(CheeseCakes)
