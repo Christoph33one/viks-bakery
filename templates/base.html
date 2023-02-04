@@ -57,7 +57,7 @@
               </ul>
             <!--Contact form-->
             <li class="nav-item">
-              <a class="nav-link" href="#"><span class="nav-colour">CONTACT</span></a>
+              <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour">CONTACT</span></a>
             </li>
             <!--If user is authenicated. Return to home page-->
             {% if user.is_authenticated %}
