@@ -7,14 +7,8 @@ from .models import CakeItem, CreamCakes, CheeseCakes
 
 # Render index.html
 def index(request):
-    """ Return homepage """
+    """ Returns homepage """
     return render(request, 'index.html')
-
-
-# Render restaurant.html
-def restaurant(request):
-    """ Returs restaurant page """
-    return render(request, 'restaurant.html')
 
 
 # Generic view for chocale cake menu
