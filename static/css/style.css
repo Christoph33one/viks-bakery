@@ -112,6 +112,15 @@ button {
 }
 
 
+/* -----------------------------------------CAKE MENUS TEMPLATES------------*/
+.cake-menu-header {
+    margin-top: 20px;
+}
+
+.contact-container{
+    width: 70%;
+    margin-top: 50px;
+}
 /* ----------------------------------------- REGISTER FORM------------*/
 .sign-up-header {
     color: #0D0D0D;
@@ -127,15 +136,14 @@ button {
 }
 
 
-
-/* -----------------------------------------CAKE MENUS TEMPLATES------------*/
-.cake-menu-header {
-    margin-top: 20px;
-}
-
-
 /* -----------------------------------------LOGIN FORM------------*/
 .form-label {
     font-family:  Montserrat;
     color: #0D0D0D;
 }
+
+
+
+
+
+
