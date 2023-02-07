@@ -1,40 +1,31 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 
+{% load crispy_forms_tags %}
 
-contact form
-<div class="container contact-container ">
-  <!-- Content here -->
-  <form class="" method="post">
-    {% csrf_token %}
-    <div class="row">
-      <div class="col">
-        
-        <input name="name" type="text" class="form-control" placeholder="Full name">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-
-          <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-
-          <form class="was-validated">
-            <div class="mb-3">
-              <label for="validationTextarea">Textarea</label>
-              <textarea name="message" class="form-control is-invalid" id="validationTextarea"
-                placeholder="Comment here" required></textarea>
-              <div class="invalid-feedback">
-                Please enter a message in the textarea.
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-          </form>
+<!--Contact and booking form-->
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+            <h4 class="text-center mt-2 mb-3">Contact us</h4>
         </div>
-      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-sm-4 col-md-6">
+            <!-- Contact form -->
+            <form method="POST" class="contact-form full-form mb-5">
+
+                {% csrf_token %}
+                {{ form | crispy }}
+
+                <button type="submit" class="button mt-4 text-center submit-button">Send
+                    message</button>
+            </form>
+        </div>
     </div>
 </div>
-</div>
-</div>
 
-{%endblock%}
+{% endblock %}
