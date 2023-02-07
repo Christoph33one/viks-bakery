@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Customer
-# from django.http import HttpResponse
+from .models import Contact
+from django.http import HttpResponse
 
 
-def ContactFrom(request):
+def Contact_form_view(request):
     """
     Returns contact form
     """
