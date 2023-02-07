@@ -60,20 +60,6 @@ button {
 
 
 /* -----------------------------------------FOOTER------------*/
-/* .footer-container {
-    margin-top: 15px;
-    background-color: #BFBFBF;
-}
-.nav-link {
-    color: black;
-}
-.nav-link:hover {
-    color: #ffffff;
-}
-.media-item, i {
-    font-size: 30px;
-    padding: 2px;
-} */
 
 .footer-container{
     background-color: #ffff
@@ -100,10 +86,7 @@ button {
     position: relative;
 }
 /* -----------------------------------------RESTAURANT SECTION------------*/
-/* .card-container {
-    /* margin-left: 50px; */
 
-/* } */
 .card {
     display: inline-block;
 }
@@ -143,7 +126,17 @@ button {
 }
 
 
+/* -----------------------------------------404 ERROR PAGE------------*/
+
+.page-wrap-400 {
+    min-height: 100vh;
+    color: #BFBFBF;
+}
+/* -----------------------------------------500 ERROR PAGE------------*/
 
 
-
+.page-wrap-500 {
+    min-height: 100vh;
+    color: #D3D925;
+}
 
