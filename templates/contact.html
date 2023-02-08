@@ -9,6 +9,9 @@
     <div class="row d-flex justify-content-center">
         <div class="col-sm-8">
             <h4 class="text-center mt-2 mb-3">Send us a request</h4>
+            <p>Please fill in the contact form below to request a table
+                Our booking team will be in touch shortly with a conformation 
+            </p>
         </div>
     </div>
 
@@ -21,12 +24,13 @@
                 {% csrf_token %}
                 {{ form | crispy }}
 
-                <button type="submit" class="button mt-4 text-center submit-button">
+                <button type="submit" class="button mt-4 submit-button btn btn-success">
                     Send message</button>
             </form>
 
         </div>
     </div>
 </div>
+
 
 {% endblock %}

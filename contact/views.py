@@ -17,25 +17,3 @@ def Contact(request):
             "<H1><a href="">THANKS FOR CONTACTING US!</a></H1>")
 
     return render(request, 'contact.html', context)
-
-
-
-
-
-
-# def Contact_form_view(request):
-#     """
-#     Returns contact form
-#     """
-
-#     if request.method == "POST":
-#         contact = Contact()
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         message = request.POST.get('message')
-#         contact.name = name
-#         contact.email = email
-#         contact.message = message
-#         # contact.save()
-#
-#     return render(request, 'contact.html')

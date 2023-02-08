@@ -12,13 +12,15 @@ h3 {
 }
 h4 {
     font-family: Fira Sans Condensed;
-
 }
 h5 {
     font-family: Fira Sans Condensed;
     color: #0D0D0D;
 }
-
+h6 {
+    font-family: Fira Sans Condensed;
+    color: #BFBFBF;
+}
 
 /* -----------------------------------------BASE.HTML------------*/
 .title {
@@ -29,8 +31,6 @@ h5 {
 .title-comma {
     color: #D3D925;
 }
-
-
 
 /* -----------------------------------------NAV BAR------------*/
 li, a {
@@ -58,22 +58,12 @@ button {
     color: #0D0D0D;
 }
 
-
-/* -----------------------------------------FOOTER------------*/
-
-.footer-container{
-    background-color: #ffff
-    ;
-}
-.footer-address{
-    color: #0D0D0D;
-}
-
 /* -----------------------------------------Index.html------------*/
 .header-title {
     font-family: Montserrat;
     font-size: 20px;
     margin-top: 60px;
+
 }
 .header-text-bottom {
     font-family: Montserrat;
@@ -95,6 +85,16 @@ button {
 }
 
 
+/* -----------------------------------------FOOTER------------*/
+
+.footer-container{
+    background-color: #ffff;
+}
+.footer-address{
+    color: #0D0D0D;
+    margin-top: 40px;
+}
+
 /* -----------------------------------------CAKE MENUS TEMPLATES------------*/
 .cake-menu-header {
     margin-top: 20px;
@@ -104,6 +104,14 @@ button {
     width: 70%;
     margin-top: 50px;
 }
+
+
+/* ----------------------------------------- CONTACT FORM -----------*/
+.submit-button:hover {
+    color: #0D0D0D;
+}
+
+
 /* ----------------------------------------- REGISTER FORM------------*/
 .sign-up-header {
     color: #0D0D0D;
@@ -139,4 +147,3 @@ button {
     min-height: 100vh;
     color: #D3D925;
 }
-
