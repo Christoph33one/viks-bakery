@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .forms import ContactForm
 
 
-# Contact and booking form
+# Contact form
 def Contact(request):
     context = {'form': ContactForm()}
     if request.method == 'POST':

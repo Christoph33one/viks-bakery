@@ -75,6 +75,13 @@ button {
     width: 100%;
     position: relative;
 }
+.discount {
+    background-color: #BFBFBF;
+    width: 50%;
+    border-radius: 8px;
+    opacity: 0.5;
+
+}
 /* -----------------------------------------RESTAURANT SECTION------------*/
 
 .card {
@@ -110,6 +117,12 @@ button {
 .submit-button:hover {
     color: #0D0D0D;
 }
+.contact-form-header {
+    font-size: 1rem;
+    
+
+}
+
 
 
 /* ----------------------------------------- REGISTER FORM------------*/
