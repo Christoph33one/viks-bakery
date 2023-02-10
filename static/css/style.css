@@ -55,16 +55,13 @@ li, a {
 button {
     margin-left: 40px;
 }
-.login-signup, a:hover {
-    color: #0D0D0D;
-}
 
 
 /* -----------------------------------------Index.html------------*/
 .header-title {
     font-family: Montserrat;
     font-size: 20px;
-    margin-top: 80px;
+    margin-top: 40px;
 
 }
 .header-text-bottom {
@@ -77,21 +74,29 @@ button {
     width: 100%;
     position: relative;
 }
-.discount {
+.comp-container{
     background-color: #BFBFBF;
+    opacity: 0.6;
     width: 50%;
-    border-radius: 8px;
-    opacity: 0.5;
-
 }
 
-/* -----------------------------------------RESTAURANT SECTION------------*/
+/* -----------------------------------------COMPETITION SECTION------------*/
 
 .card {
     display: inline-block;
 }
 .col-sm-2 {
-    margin-top: 40px;
+    margin-top: 10px;
+}
+.comp-cards{
+
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.comp-cards:hover{
+
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
 }
 
 
@@ -125,7 +130,6 @@ button {
     
 
 }
-
 
 
 /* ----------------------------------------- REGISTER FORM------------*/

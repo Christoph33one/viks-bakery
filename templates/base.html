@@ -1,15 +1,22 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Viktoria's bake house website. Please view our restaurant and find our menu and bespoke cakes">
+
+  <!--Google fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:wght@200&display=swap"
     rel="stylesheet">
 
-  <!--google fonts-->
+  <!--Fonts awsome-->
   <script src="https://kit.fontawesome.com/5605f6cfce.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -26,13 +33,14 @@
   
   <!--css-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!--title-->
   <title> Bake-house - {% block title%}{% endblock%}</title>
 </head>
 
 <body>
   <!--navigation bar-->
   <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{% url 'index' %}">
       <h1>V I K T O R I A<span class="title-comma">'</span>S</h1>
       <h5>- B A K E - H O U S E -</h5>
     </a>
@@ -117,9 +125,9 @@
       <!--address section-->
       <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3 footer-address">
         <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
-        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p><i class="fas fa-home mr-3"></i> 149, London, SW3 5TX UK</p>
         <p><i class="fas fa-envelope mr-3"></i> viktoria's@gmail.com</p>
-        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p><i class="fas fa-phone mr-3"></i> 01793 555789</p>
       </div>
       <!--socail media links-->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">

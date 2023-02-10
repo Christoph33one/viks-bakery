@@ -3,6 +3,39 @@
 {% block content %}
 
 
+<!--Bespoke cake section -->
+<div class="header-title text-center container-sm ">
+    <h2 class=" justify-content-center">COMPETITION TIME</h2>
+    <p>
+        Think fantastic baking, cutting edge taste sensations and elegant time honoured classics. <br>
+        Join in and show your baking skills. 
+
+    </p>
+</div>
+
+<!-- cake post -->
+<div class="card comp-cards" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text">A winning birthday cake
+        </p>
+    {% for post in post_list %}
+    <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
+        class="card-img-top" alt="image of a birthday cake">
+    <div class="card-body">
+        <p class="author">Author: {{ post.author }}</p>
+        <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+            <h4 class="card-title">{{ post.title }}</h4>
+            <h5 class="card-text">{{ post.excerpt }}</h5>
+        </a>
+
+        <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+            {{ post.number_of_likes }}</p>
+
+    </div>
+
+    {% endfor %}
+    </div>
+</div>
 
 
 {%endblock%}
