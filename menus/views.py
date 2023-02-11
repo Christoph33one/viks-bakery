@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
 
-# Create your views here.
-
 
 # Render index.html
 def index(request):
@@ -11,7 +9,7 @@ def index(request):
     return render(request, 'index.html')
 
 
-# Generic view for chocale cake menu
+# Generic view to render chocolatecake.html
 class CakesMenu(generic.ListView):
     """
     To render the cake menus from the database
@@ -31,7 +29,7 @@ class CakesMenu(generic.ListView):
         return queryset
 
 
-# Generic view for cream cakes menu
+# Generic view to render creamcake.html
 class CreamMenu(generic.ListView):
     """
     To render cream cake menu from the database
@@ -51,7 +49,7 @@ class CreamMenu(generic.ListView):
         return queryset
 
 
-# Generic view for cheese cakes menu
+# Generic view to render cheesecake.html
 class CheeseCakeMenu(generic.ListView):
     """
     To render cream cake menu from the database
