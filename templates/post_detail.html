@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!--Bespoke cake section -->
+<div class="header-title text-center container-sm ">
+    <h2 class=" justify-content-center">COMPETITION TIME</h2>
+    <p>
+        POST DETAIL PAGE
+
+    </p>
+</div>
+
+<!-- cake post -->
+<div class="card comp-cards" style="width: 20rem;">
+    <div class="card-body">
+        <p class="card-text">
+        </p>
+    
+    <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
+        class="card-img-top" alt="image of a birthday cake">
+    <div class="card-body">
+        <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.excerpt }}</p>
+        </a>
+
+        <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+            {{ post.number_of_likes }}</p>
+
+    </div>
+
+    </div>
+</div>
+
+
+<div class="col-md-4 card mb-4  mt-3 ">
+    <div class="card-body">
+        <!-- For later -->
+        {% if commented %}
+        <div class="alert alert-success" role="alert">
+            Your comment is awaiting approval
+        </div>
+        {% else %}
+        {% if user.is_authenticated %}
+
+        <h3>Leave a comment:</h3>
+        <p>Posting as: {{ user.username }}</p>
+        <form method="post" style="margin-top: 1.3em;">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+{%endblock%}

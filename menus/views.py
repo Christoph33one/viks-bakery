@@ -1,12 +1,24 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
+from blog.models import Post
 
 
 # Render index.html
 def index(request):
     """ Returns homepage """
-    return render(request, 'index.html')
+
+    # post = post_list
+    post_list = Post.objects.all()
+
+    return render(
+        request,
+        "index.html",
+        {
+            "post_list": post_list,
+        }
+
+    )
 
 
 # Generic view to render chocolatecake.html
@@ -17,6 +29,7 @@ class CakesMenu(generic.ListView):
     model = CakeItem
     template_name = 'choc_cake.html'
     context_object_name = 'cake_items'
+
 
     def get_queryset(self):
 

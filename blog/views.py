@@ -6,7 +6,7 @@ from .models import Post
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "reviews.html"
+    template_name = "index.html"
     paginate_by = 3
 
 
@@ -20,12 +20,12 @@ class PostDetail(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        return render(
-            request,
-            "reviews.html",
-            {
-                "post": post,
-                "comments": comments,
-                "liked": liked
-            },
-        )
+        return render(request, "post_detail.html",)
+        #     {
+        #         "post": post,
+        #         "comments": comments,
+        #         "commented": False,
+        #         "liked": liked,
+        #         # "comment_form": comment_form()
+        #     },
+        # )
