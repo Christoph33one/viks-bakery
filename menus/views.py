@@ -8,7 +8,7 @@ from blog.models import Post
 def index(request):
     """ Returns homepage """
 
-    # post = post_list
+    # import post_list from blog app and to render objects from blog model
     post_list = Post.objects.all()
 
     return render(
@@ -16,6 +16,7 @@ def index(request):
         "index.html",
         {
             "post_list": post_list,
+
         }
 
     )
@@ -29,7 +30,6 @@ class CakesMenu(generic.ListView):
     model = CakeItem
     template_name = 'choc_cake.html'
     context_object_name = 'cake_items'
-
 
     def get_queryset(self):
 
@@ -80,11 +80,3 @@ class CheeseCakeMenu(generic.ListView):
                 on_menu=True, cake_selections=1)
         }
         return queryset
-
-    # def get_queryset(self):
-
-    #     cakes = CakeItem.objects.all()
-
-    #     return cakes
-
-        # CakeItem.objects.all()
