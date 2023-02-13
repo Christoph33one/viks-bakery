@@ -70,7 +70,21 @@ and what key featuers could I use to benift that audience.
 
 ### Wire frames
 
+# Home page
+![](assets/home%20page%20wireframe.png)
+
+
+# Blog page
+
+![](assets/reviews%20page.png)
+
+# Menu page
+![](assets/menu%20page.png)
+
 ---
+
+# Contact page
+![](assets/contact%20page.png)
 
 ### Data base
 
