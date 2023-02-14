@@ -9,21 +9,16 @@
         POST DETAIL PAGE
     </p>
     <!-- cake post -->
-<div class="container" style="width: 30rem;">
-    <div class="container-fluid>
-        <p class="card-text">
-        </p>
-    
+    <div class="container" style="width: 30rem;">
+        <div class="container-fluid">
+        <p class="card-text">{{ post.title }}</p>
     <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
         class="card-img-top" alt="image of a birthday cake">
     <div class="card-body">
-        
-            <h2 class="card-title">{{ post.title }}</h2>
-            <p class="card-text">{{ post.excerpt }}</p>
-        
+        <h2 class="card-title">{{ post.title }}</h2>
+        <p class="card-text">{{ post.excerpt }}</p>
         <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
             {{ post.number_of_likes }}</p>
-
     </div>
     </div>
 </div>
@@ -32,34 +27,60 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ post.content | safe }}
-                </p>
-                <div class="row">
+<div class="row">
+    <div class="col card mb-4  mt-3 left  top">
+        <div class="card-body">
+            <!-- The post content goes inside the card-text. -->
+            <!-- Use the | safe filter inside the template tags -->
+            <p class="card-text ">
+                {{ post.content | safe }}
+            </p>
+            <div class="row">
 
-                    <div class="col-1">
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
-                    </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
+                <div class="col-1">
+                    <!-- The number of likes goes before the closing strong tag -->
+                    <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                </div>
+                <div class="col-1">
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+                        <!-- Our total_comments variable goes before the closing strong tag -->
+                        {{ total_comments }}</strong>
+                    {% endwith %}
                 </div>
             </div>
         </div>
-    <!--add more with here!-->
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8 card mb-4  mt-3 ">
+        <h3>Comments:</h3>
+        <div class="card-body">
+            <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+            {% for comment in comments %}
+            <div class="comments" style="padding: 10px;">
+                <p class="font-weight-bold">
+                    <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+                    {{ comment.name }}
+                    <span class=" text-muted font-weight-normal">
+                        <!-- The comment's created date goes here -->
+                        {{ comment.created_on }}
+                    </span> wrote:
+                </p>
+                <!-- The body of the comment goes before the | -->
+                {{ comment.body | linebreaks }}
+            </div>
+            <!-- Our for loop ends here -->
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 <div class="col-md-4 card mb-4  mt-3 ">
     <div class="card-body">
-        <!-- For later -->
+        <!--if comment approved-->
         {% if commented %}
         <div class="alert alert-success" role="alert">
             Your comment is awaiting approval

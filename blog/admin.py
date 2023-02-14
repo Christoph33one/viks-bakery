@@ -13,6 +13,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
 
+# not showing users name in admin comments?
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'approved')
