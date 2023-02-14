@@ -8,7 +8,7 @@ from blog.models import Post
 def index(request):
     """ Returns homepage """
 
-    # import post_list from blog app and to render objects from blog model
+    # import post_list from blog views and model to render in index.html
     post_list = Post.objects.all()
 
     return render(

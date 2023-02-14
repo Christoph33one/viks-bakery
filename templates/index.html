@@ -13,7 +13,6 @@
             class="img-thumbnail" alt="...">
     </div>
 </div>
-<br>
 
 <br>
 
@@ -24,7 +23,6 @@
         in and enjoy a cake with  a fine dinning experience. <br>
         We use dairy and non products to create wonderful cakes <br>
         please take a look at our menu for more details.
-    
     </p>
 </div>
 
@@ -44,19 +42,17 @@
     <div class=" col-sm-8 col-md-12 col-lg-4  text-center ">
         <div class="card comp-cards" style="width: 22rem;">
             <p class="card-text">A winning birthday cake</p>
-           
-            <a class="nav-link" href="{% url 'post_detail' %}"><span class="nav-colour">
+            {% for post in post_list %}
+            <a class="nav-link" href="{% url 'post_detail' post.slug %}"><span class="nav-colour">
             <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
                 class="card-img-top" alt="inside the restaurant picture">
             </span></a>
-            {% for post in post_list %} <!--this for loop removes content?-->
             <p class="author">Author: {{ post.author }}</p>
             <h4 class="card-title">{{ post.title }}</h4>
             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                 {{ post.number_of_likes }}</p>
             {% endfor %} 
         </div>
-
     </div>
 </div>
 
