@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Contact
+from django.contrib import messages
 from django.http import HttpResponse
+from django.conf import settings
 from .forms import ContactForm
 
 
@@ -12,9 +14,11 @@ def Contact(request):
         if form.is_valid():
             # send form to admin user
             form.save()
-
-        return HttpResponse(
-            "<H1><a href="">THANKS FOR CONTACTING US!</a></H1>")
+            # send a reply message to the user
+            messages.add_message(
+                request, messages.SUCCESS,
+                "Thank you for contacting us, one of our staff will be in "
+                "touch with you")
 
     return render(request, 'contact.html', context)
 

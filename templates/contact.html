@@ -28,10 +28,18 @@
                 <button type="submit" class="button mt-4 submit-button btn btn-success">
                     Send message</button>
             </form>
-
         </div>
+        {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
     </div>
 </div>
 
+
+  
 
 {% endblock %}
