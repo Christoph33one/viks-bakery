@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+# from django.conf import settings
 from .models import Post
 from .forms import CommentForm
 
@@ -44,14 +46,19 @@ class PostDetail(View):
 
         comment_form = CommentForm(data=request.POST)
 
+# add a message that tells user when message is approved and posted
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                "Your message has been sent"
+                )
         else:
-            comment_form - CommentForm()
+            comment_form = CommentForm()
 
         return render(
             request,
@@ -62,6 +69,7 @@ class PostDetail(View):
                 "commented": True,
                 "liked": liked,
                 "comment_form": CommentForm()
+
             },
         )
 
@@ -76,11 +84,6 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-# class delete_comment(request, pk):
-
-#     comments = Comments.objects.filter(Post=pk)
 
 
 

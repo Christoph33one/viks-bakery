@@ -9,5 +9,5 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'email',
         'message', 'created_on',
-        'read','not_read'
+        'read', 'not_read'
         )

@@ -31,11 +31,12 @@
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            <!--user like a post authentication-->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
@@ -43,7 +44,7 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
+                        <!-- Number of likes -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
@@ -58,11 +59,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
+
+    
     <!-- Comments section -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
@@ -81,10 +79,10 @@
                 {% endfor %}
             </div>
         </div>
-
+        
+        <!-- user post approval -->
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
@@ -99,12 +97,20 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
+                {% else %}
+                <div class="alert alert-success" role="alert">
+                    Please Sign in or Register to leave a comment!
+                    <p>
+                        <a class="link" href="{% url 'account_login' %}">Sign in</a> | <a class="link"
+                        href="{% url 'account_signup' %}">Register</a></p>
+                </div>
                 {% endif %}
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
+
 
 
 {%endblock%}
