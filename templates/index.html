@@ -37,51 +37,39 @@
     </p>
 </div>
 
-<!-- Cake competition cards-->
-<div class=" row content-center mb-5 ">
-    <div class=" col-sm-2 col-md-12 col-lg-4  text-center ">
-
-        <div class="card comp-cards" style="width: 22rem;">
-            <p class="card-text">A winning birthday cake</p>
-            {% for post in post_list %}
-            <a class="nav-link" href="{% url 'post_detail' post.slug %}"><span class="nav-colour">
-            <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
-                class="card-img-top" alt="inside the restaurant picture">
-            </span></a>
-            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                {{ post.number_of_likes }}</p>
-            {% endfor %} 
+ <!-- competition posts -->
+ <div class="col-9 mt-3">
+    <div class="row">
+        {% for post in post_list %}
+        <div class="col-md-4">
+            <div class="card comp-cards mb-4 ">
+                <div class="card-body " style="padding: 30px;;">
+                    <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img class="card-img-top"
+                            src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                        {% else %}
+                        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                        {% endif %}
+                    </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h4 class="text-center">{{ post.title }}</h4>
+                    </a>
+                    <hr>
+                    <p class="card-text text-center">{{ post.created_on}}<i
+                            class="fas fa-heart"></i>
+                        {{ post.number_of_likes }}</p>
+                </div>
+            </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
     </div>
-    <div class="col-sm-2 col-md-12 col-lg-4 text-center">
+    <div class="row">
+        {% endif %}
+        {% endfor %}
 
-        <div class="card comp-cards" style="width: 22rem;">
-            <p class="card-text">A winning birthday cake</p>
-            {% for post in post_list %}
-            <a class="nav-link" href="{% url 'post_detail' post.slug %}"><span class="nav-colour">
-            <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
-                class="card-img-top" alt="inside the restaurant picture">
-            </span></a>
-            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                {{ post.number_of_likes }}</p>
-            {% endfor %} 
-        </div>
-    </div>
-    <div class="col-sm-2 col-md-12 col-lg-4 text-center ">
-
-        <div class="card comp-cards" style="width: 22rem;">
-            <p class="card-text">A winning birthday cake</p>
-            {% for post in post_list %}
-            <a class="nav-link" href="{% url 'post_detail' post.slug %}"><span class="nav-colour">
-            <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg"
-                class="card-img-top" alt="inside the restaurant picture">
-            </span></a>
-            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                {{ post.number_of_likes }}</p>
-            {% endfor %} 
-        </div>
     </div>
 </div>
-
+</div>
 
 {%endblock%}

@@ -7,7 +7,6 @@
     <div class="container" style="margin-top: 40px;">
         <div class="row g-0">
             <div class="d-none d-md-block col-md-6 col-lg-3 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
                 <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1676061800/p4%20images/pexels-vidal-balielo-jr-12689160_rj3ifn.jpg" width="100%">
             </div>
             <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
@@ -29,7 +28,46 @@
     </div>
 </div>
 
+<!--contains comment section-->
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                
+                <p class="card-text ">
+                    {{ post.content | safe }}
+                </p>
+                <div class="row">
 
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+              
+                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        </strong>
+                    </div>
+                    <div class="col-1">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+     
+                            {{ total_comments }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <div class="col-md-4 card mb-4  mt-3 ">
     <div class="card-body">

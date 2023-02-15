@@ -8,6 +8,7 @@ from .forms import CommentForm
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
+    post = Post.objects.filter(approved=True)
     template_name = "index.html"
     paginate_by = 3
 
@@ -66,7 +67,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -77,6 +78,9 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+# class delete_comment(request, pk):
+
+#     comments = Comments.objects.filter(Post=pk)
 
 
 

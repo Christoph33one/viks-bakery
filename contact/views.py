@@ -24,8 +24,6 @@ def Contact(request):
 
 
 # NOTES
-
 # user to update and delete their details. This updates the customer model
 # SEND AN EMAIL TO THE USER?
-# HAVE A MESSAGE THAT TELLS THE USER THAT THEIR MESSAGE HAS BEEN SENT. JAVASCRIPT???
 # ASK WHAT ELSE TO ADD FOR THE FORM? IMPORTANT!!!

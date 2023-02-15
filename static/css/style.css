@@ -79,7 +79,16 @@ button {
     opacity: 0.6;
     width: 50%;
 }
-
+.post-link, a{
+    color: inherit;
+    text-decoration: none;
+    
+}
+.post-link:hover{
+    cursor:pointer;
+    color: inherit;  
+    text-decoration:none; 
+}
 /* -----------------------------------------COMPETITION SECTION------------*/
 
 .card {
