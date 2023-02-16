@@ -76,16 +76,12 @@
                     <h3>{{ comment.body | linebreaks }}</h3>
                 </div>
 
-                <!-- User to delete a comment-->
+                <!-- Delete a comment-->
                 {% if user.username == comment.name %}
-                <a href="{% url 'delete_comment'  comment.pk  %}">Delete Comment</a>
-
-                <!-- <button class="btn btn-primary btn-lg " type="button" href="{% url 'delete_comment' comment.pk %}">
-                    <i class="fa-regular fa-pen-to-square"></i>
-                </button>
-                <div class="">
-                    <h6>delete a comment</h6>
-                </div> -->
+                <!-- <button  class="btn btn-primary btn-sm"> -->
+                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
+                
+              
                 
                 {% endif %}
             </div>

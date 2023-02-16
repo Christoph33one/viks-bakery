@@ -107,14 +107,16 @@ button {
     box-shadow: 5px 6px 6px 2px #e9ecef;
     transform: scale(1.1);
 }
+/* -----------------------------------------POST DETAIL PAGE------------*/
+.fa-trash{
+    color: #BFBFBF;
+}
+.fa-trash:hover{
+    color: #D3D925;
+}
 
 
 /* -----------------------------------------FOOTER------------*/
-.footer-container{
-    /* background-color: #BFBFBF; */
- 
-}
-
 /* for iphone screen size */
 @media screen and (max-width: 500px) {
 #footer-address{

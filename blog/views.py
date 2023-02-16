@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -77,7 +77,6 @@ class PostDetail(View):
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
-    print(comment)
     if (
         comment.name == request.user.username
     ):
@@ -86,6 +85,15 @@ def delete_comment(request, pk):
             request, messages.SUCCESS,
             "Your message has been deleted"
             )
+        return redirect('index')
+
+
+@login_required(login_url='/accounts/login/')
+def edit_post(request, post_id):
+    post = get_object_or_404(Comment, pk=post_id)
+    if (
+        comment.name == request.user.username
+    ):
         return redirect('index')
 
 
@@ -99,11 +107,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-
-
-# my_comment.post.title
-# my_comment.post.status
-# my_comment.user.username
-# my_comment.user.is_staff
