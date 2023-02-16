@@ -3,8 +3,7 @@
 {% block content %}
 
 <!--header image and content-->
-<div class="header-title text-center container-sm">
-
+<div class="header-image container-sm">
     <div class="image-container">
         <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1674401447/pexels-nestor-cortez-960540_y1ji9z.jpg"
             class="img-thumbnail" alt="...">
@@ -39,8 +38,8 @@
     <div class="row">
         {% for post in post_list %}
         <div class="col-md-4">
-            <div class="card comp-cards mb-4 ">
-                <div class="card-body " style="padding: 30px;;">
+            <div class="card comp-cards col-md-12 mb-4 ">
+                <div class="card-body " style="padding: 30px;">
                     <div class="image-container">
                         {% if "placeholder" in post.featured_image.url %}
                         <img class="card-img-top"

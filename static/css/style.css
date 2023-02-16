@@ -32,6 +32,7 @@ h6 {
     color: #D3D925;
 }
 
+
 /* -----------------------------------------NAV BAR------------*/
 li, a {
     font-family: Fira Sans Condensed;
@@ -58,11 +59,10 @@ button {
 
 
 /* -----------------------------------------Index.html------------*/
-.header-title {
+.header-title, .header-image {
     font-family: Montserrat;
     font-size: 20px;
-    margin-top: 40px;
-
+    margin-top: 30px;
 }
 .header-text-bottom {
     font-family: Montserrat;
@@ -110,14 +110,23 @@ button {
 
 
 /* -----------------------------------------FOOTER------------*/
-
 .footer-container{
-    background-color: #ffff;
+    /* background-color: #BFBFBF; */
+ 
 }
-.footer-address{
-    color: #0D0D0D;
-    margin-top: 40px;
+
+/* for iphone screen size */
+@media screen and (max-width: 500px) {
+#footer-address{
+    display: none;
+    
+} 
 }
+/* @media screen and (max-width: 670px) {
+    #footer-image{
+        width: 50px;
+    }
+} */
 
 /* -----------------------------------------CAKE MENUS TEMPLATES------------*/
 .cake-menu-header {

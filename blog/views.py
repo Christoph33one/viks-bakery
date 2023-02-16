@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-# from django.conf import settings
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
 
 class PostList(generic.ListView):
@@ -46,7 +46,6 @@ class PostDetail(View):
 
         comment_form = CommentForm(data=request.POST)
 
-# add a message that tells user when message is approved and posted
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -72,6 +71,22 @@ class PostDetail(View):
 
             },
         )
+
+
+# pk to represent post ForeignKey in the comment model
+@login_required(login_url='/accounts/login/')
+def delete_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    print(comment)
+    if (
+        comment.name == request.user.username
+    ):
+        comment.delete()
+        messages.add_message(
+            request, messages.SUCCESS,
+            "Your message has been deleted"
+            )
+        return redirect('index')
 
 
 class PostLike(View):
