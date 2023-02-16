@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% block content %}
+{% extends "base.html" %} {% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -79,10 +79,10 @@
                 <!-- Delete a comment-->
                 {% if user.username == comment.name %}
                 <!-- <button  class="btn btn-primary btn-sm"> -->
+             
                 <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
-                
-              
-                
+
+                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
                 {% endif %}
             </div>
             {% endfor %}
@@ -120,5 +120,4 @@
 </div>
 
 
-
-{%endblock%}
+{% endblock %}

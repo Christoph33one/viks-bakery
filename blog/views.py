@@ -89,12 +89,41 @@ def delete_comment(request, pk):
 
 
 @login_required(login_url='/accounts/login/')
-def edit_post(request, post_id):
-    post = get_object_or_404(Comment, pk=post_id)
-    if (
-        comment.name == request.user.username
-    ):
-        return redirect('index')
+def edit_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.method == 'POST':
+        if (
+            comment.name == request.user.username
+        ):
+            form = CommentForm(data=request.POST)
+            if form.is_valid():
+                comment.body = form.cleaned_data['body']
+                comment.save()
+                messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    "You have updated your comment!"
+                )
+                return HttpResponseRedirect(
+                        request.META.get('HTTP_REFERER'))
+            else:
+                messages.add_message(
+                    request,
+                    messages.ERROR,
+                    "Whoops something is wrong!"
+                )
+                return redirect('post_detail.html')
+                # return render(request, "errors/404.html", status=404)
+                # return HttpResponseRedirect(reverse, "errors/404.html", status=404)
+
+    return render(
+                request,
+                "edit_comment.html",
+                {
+                    'comment': comment,
+                    'comment_form': CommentForm(instance=comment)
+                }
+            )
 
 
 class PostLike(View):
@@ -107,3 +136,13 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+# def error_404(request, exception):
+#     """ 404 error page """
+#     return render(request, '404.html', status=404)
+
+
+# def error_500(request):
+#     """ 500 error page """
+#     return render(request, '500.html', status=500)

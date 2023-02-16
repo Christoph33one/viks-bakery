@@ -108,9 +108,7 @@ button {
     transform: scale(1.1);
 }
 /* -----------------------------------------POST DETAIL PAGE------------*/
-.fa-trash{
-    color: #BFBFBF;
-}
+
 .fa-trash:hover{
     color: #D3D925;
 }
