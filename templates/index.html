@@ -9,18 +9,20 @@
             class="img-thumbnail" alt="...">
     </div>
 </div>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 header-title text-center">
+            <p>All our produts come form a local source to help support the community and local  Businesses. <br>
+                As we server a variety of fresh seasonal ingredients, we like to change our menu every <br>
+                couple of weeks. We are located at 149 KING’S ROAD, London, so please feel free to pop <br>
+                in and enjoy a cake with  a fine dinning experience.<br>
+            </p>
+        </div>
+    </div>
+</div>
 
 <br>
-
-<div class=" header-title text-center container-sm">
-    <p>All our produts come form a local source to help support the community and local  Businesses. <br>
-        As we server a variety of fresh seasonal ingredients, we like to change our menu every <br>
-        couple of weeks. We are located at 149 KING’S ROAD, London, so please feel free to pop <br>
-        in and enjoy a cake with  a fine dinning experience. <br>
-        We use dairy and non products to create wonderful cakes <br>
-        please take a look at our menu for more details.
-    </p>
-</div>
 
 <hr>
 
@@ -34,12 +36,12 @@
 </div>
 
  <!-- competition posts -->
- <div class="col-9 mt-3">
+ <div class="col-9 mt-3 container">
     <div class="row">
         {% for post in post_list %}
-        <div class="col-md-4">
-            <div class="card comp-cards col-md-12 mb-4 ">
-                <div class="card-body " style="padding: 30px;">
+        <div class="col-md-4 gy-3">
+            <div class="card comp-cards ">
+                <div class="card-body ">
                     <div class="image-container">
                         {% if "placeholder" in post.featured_image.url %}
                         <img class="card-img-top"

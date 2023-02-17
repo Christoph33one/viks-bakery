@@ -1,0 +1,99 @@
+Post detail page 
+
+<!-- Posts container -->
+<div class=" col-9 mt-3 container">
+    <div class="row">
+        <div class="col mt-3 top">
+            <div class="card-body">
+                <p class="card-text ">
+                    {{ post.content | safe }}
+                </p>
+                <div class="row">
+                    <div class="col-1">
+                        <strong>
+                            <!--user like a post authentication-->
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                        <!-- Number of likes -->
+                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        </strong>
+                    </div>
+                    <div class="container">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            {{ total_comments }}</strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Comments section -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h5>Comments:</h3>
+            <div class="card-body">
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <h4 class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </h4>
+                    <h4>{{ comment.body | linebreaks }}</h4>
+                </div>
+
+                <!-- Delete a comment-->
+                {% if user.username == comment.name %}
+                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
+
+                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- user post approval -->
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
+                {% if user.is_authenticated %}
+
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <div class="alert alert-success" role="alert">
+                    Please Sign in | Register to like or leave a comment!
+                    <p>
+                        <a class="link" href="{% url 'account_login' %}">Sign in</a> | <a class="link"
+                        href="{% url 'account_signup' %}">Register</a>
+                    </p>
+                </div>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

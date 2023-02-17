@@ -23,23 +23,35 @@ h6 {
 }
 
 /* -----------------------------------------BASE.HTML------------*/
-.title {
-    margin-top: 30px;
-    padding: 10px;
-    text-align: center;
+@media screen and (max-width: 400px) {
+    .nav-brand{
+        font-size: 2rem;
+    }
+    h5 {
+        font-size: 0.8rem;
+    }
 }
+@media screen and (max-width: 991px) {
+    .nav-brand{
+        font-size: 2rem;
+    }
+}
+.nav-brand, h5 {
+    padding-left: 50px;
+}
+
+
 .title-comma {
     color: #D3D925;
 }
 
 
 /* -----------------------------------------NAV BAR------------*/
+
 li, a {
     font-family: Fira Sans Condensed;
     opacity: 1;
-    padding-left: 50px;
-    padding-right: 50px;
-    
+
 }
 .nav-colour {
     color: gray;
@@ -53,12 +65,14 @@ li, a {
 .dropdown-toggle:hover {
     color: #0D0D0D;
 }
-button {
+.nav-button {
     margin-left: 40px;
+
 }
 
 
 /* -----------------------------------------Index.html------------*/
+
 .header-title, .header-image {
     font-family: Montserrat;
     font-size: 20px;
@@ -93,6 +107,7 @@ button {
 
 .card {
     display: inline-block;
+    margin: 30px;
 }
 .col-sm-2 {
     margin-top: 10px;

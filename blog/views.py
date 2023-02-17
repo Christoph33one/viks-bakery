@@ -7,6 +7,7 @@ from .forms import CommentForm
 from django.contrib.auth.decorators import login_required
 
 
+# Post list view / takes post model / render index.html
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -15,6 +16,7 @@ class PostList(generic.ListView):
     paginate_by = 3
 
 
+# Post detail view
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -73,7 +75,7 @@ class PostDetail(View):
         )
 
 
-# pk to represent post ForeignKey in the comment model
+# delete comment function
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
@@ -85,7 +87,7 @@ def delete_comment(request, pk):
             request, messages.SUCCESS,
             "Your message has been deleted"
             )
-        return redirect('index')
+        return redirect('index.html')
 
 
 @login_required(login_url='/accounts/login/')
@@ -112,8 +114,8 @@ def edit_comment(request, pk):
                     messages.ERROR,
                     "Whoops something is wrong!"
                 )
-                return redirect('post_detail.html')
-                # return render(request, "errors/404.html", status=404)
+                # return render(request, '404.html', status=404)
+                # not rednering a 404????
                 # return HttpResponseRedirect(reverse, "errors/404.html", status=404)
 
     return render(
@@ -138,9 +140,9 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-# def error_404(request, exception):
-#     """ 404 error page """
-#     return render(request, '404.html', status=404)
+def error_404(request, exception):
+    """ 404 error page """
+    return render(request, '404.html', status=404)
 
 
 # def error_500(request):

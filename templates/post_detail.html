@@ -2,122 +2,129 @@
 
 {% load crispy_forms_tags %}
 
-<!-- post detail image -->
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <h1 class="post-title">{{ post.title }}</h1>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="60%">
-                {% else %}
-                <img src=" {{ post.featured_image.url }}" width="65%">
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Posts container -->
+<!--Card image-->
 <div class="container">
+
     <div class="row">
-        <div class="col card mb-4  mt-3 top">
+    
+    <div class="col-6">
+    
+        <div class="card " style="width:25rem;">
+    
+            <img class="card-img-top " src="{{ post.featured_image.url }}">
+    
             <div class="card-body">
-                <p class="card-text ">
-                    {{ post.content | safe }}
-                </p>
-                <div class="row">
-                    <div class="col-1">
-                        <strong>
-                            <!--user like a post authentication-->
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                        <!-- Number of likes -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
-                    </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
-                </div>
+                <!--post title section-->
+                <h5 class="card-title">{{ post.title }}</h5>
+    
+                <p class="card-text">{{ post.content | safe }}</p>
+    
             </div>
+    
         </div>
+    
     </div>
 
+
+<!--card 2-->
+    <div class="col-6">
     
-    <!-- Comments section -->
-    <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+        <div class="card" style="width:25rem;">
+    
+            <!--SHOW LIKES-->
             <div class="card-body">
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <h3 class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </h3>
-                    <h3>{{ comment.body | linebreaks }}</h3>
-                </div>
-
-                <!-- Delete a comment-->
-                {% if user.username == comment.name %}
-                <!-- <button  class="btn btn-primary btn-sm"> -->
-             
-                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
-
-                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                {% else %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                 {% endif %}
-            </div>
+            </form>
+            {% else %}
+            <span class="text-secondary"><i class="far fa-heart"></i></span>
+            {% endif %}
+
+            <!--NUMBER OF LIKES-->
+            {{ post.number_of_likes }} 
+
+            <!-- NUMBER OF COMMENTS-->
+            {% with comments.count as total_comments %}
+                <strong class="text-secondary"><i class="far fa-comments"></i>
+                    {{ total_comments }}
+                </strong>
+            {% endwith %}
+
+            <hr>
+
+            <!--VIEW ALL COMMENTS-->
+            <h5 class="card-title">Comments</h5>
+            {% for comment in comments %}
+
+            <p class="font-weight-bold">
+                {{ comment.name }}
+                <span class=" text-muted font-weight-normal">
+                    {{ comment.created_on }}
+                </span> wrote:
+            </p>
+            <hp>{{ comment.body | linebreaks }}</p>
+
+            <hr>
+            <!--DELETE A COMMENT-->
+            {% if user.username == comment.name %}
+            <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
+
+            <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
+            {% endif %}
+            <p class="card-text">Watch video tutorials of course for free!</p>
+
             {% endfor %}
-        </div>
-        
-        <!-- user post approval -->
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
-                {% if commented %}
+
+
+            <hr>
+            <!-- APPROVE COMMENT-->
+            {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
 
-                <h3>Leave a comment:</h3>
+                <h4>Leave a comment:</h4>
                 <p>Posting as: {{ user.username }}</p>
+
+                <!--COMMENT FORM-->
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
+
+                <!--NOT LOGGED IN - ALERT USER-->
                 {% else %}
                 <div class="alert alert-success" role="alert">
-                    Please Sign in or Register to leave a comment!
+                    Please Sign in | Register to like or leave a comment!
                     <p>
                         <a class="link" href="{% url 'account_login' %}">Sign in</a> | <a class="link"
-                        href="{% url 'account_signup' %}">Register</a></p>
+                        href="{% url 'account_signup' %}">Register</a>
+                    </p>
                 </div>
+
                 {% endif %}
-                {% endif %}
+            {% endif %}
+
+
             </div>
+
         </div>
+
     </div>
+    
+    </div>
+    
 </div>
+  
 
-
+  
 {% endblock %}

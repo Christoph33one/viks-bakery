@@ -44,37 +44,41 @@
 
 <body>
   <!--navigation bar-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white ">
     <a class="navbar-brand" href="{% url 'index' %}">
-      <h1>V I K T O R I A<span class="title-comma">'</span>S</h1>
-      <h5>- B A K E - H O U S E -</h5>
+      <h1 class="nav-brand">V I K T O R I A<span class="title-comma">'</span>S  
+        <h5>- B A K E - H O U S E -</h5>
+      </h1>
     </a>
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <!--collapsable nav bar for mobile screens -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarText">
-        <div class="justify-content-center">
+      <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><span
                   class="nav-colour">HOME</span></a>
             </li>
+
             <!--drop down menu-->
-            <li class="nav-item dropdown">
+            <ul class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">MENU</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'choc_cake' %}">CHOCLATE CAKES</a></li>
                 <li><a class="dropdown-item" href="{% url 'cream_cake' %}">CREAM CAKES</a></li>
                 <li><a class="dropdown-item" href="{% url 'cheese_cake' %}">CHEESE CAKES</a></li>
               </ul>
+            </ul>
               <!--Contact form-->
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour">CONTACT</span></a>
             </li>
-            <!--If user is authenicated. Return to home page-->
+
+            <!--If user is authenicated-->
             {% if user.is_authenticated %}
             <button type="button" class="btn btn-outline-success btn-sm">
               <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a>
@@ -88,6 +92,7 @@
             </button>
             {% endif %}
           </ul>
+
         </div>
       </div>
   </nav>
@@ -154,7 +159,7 @@
       </div>
       <!--socail media links-->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h5 class="text-uppercase mb-4 font-weight-bold">Follow us</h5>
+        <h5 class="text-uppercase font-weight-bold">Follow us</h5>
 
         <!-- Facebook -->
         <a class="btn  btn-floating m-1" style="background-color: #D4D948" href="https://www.facebook.com/"

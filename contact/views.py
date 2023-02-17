@@ -24,6 +24,6 @@ def Contact(request):
 
 
 # NOTES
-# user to update and delete their details. This updates the customer model
-# SEND AN EMAIL TO THE USER?
+# SEND AN EMAIL TO THE USER? STMP ?
 # ASK WHAT ELSE TO ADD FOR THE FORM? IMPORTANT!!!
+# CRUD functions

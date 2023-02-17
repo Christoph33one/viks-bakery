@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Contact
 
 
-# Display Contact model in admin.py
+# Admin contact from / taking contact model
 @admin.register(Contact)
 class CustomerAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email',)
