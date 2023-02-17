@@ -125,9 +125,11 @@ li, a {
 /* -----------------------------------------POST DETAIL PAGE------------*/
 
 .fa-trash:hover{
+    color: #ef0707;
+}
+.fa-pen-to-square:hover{
     color: #D3D925;
 }
-
 
 /* -----------------------------------------FOOTER------------*/
 /* for iphone screen size */

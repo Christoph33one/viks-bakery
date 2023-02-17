@@ -37,7 +37,7 @@
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-heart"></i></button>
                 {% else %}
                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                 {% endif %}
@@ -70,24 +70,28 @@
             </p>
             <hp>{{ comment.body | linebreaks }}</p>
 
-            <hr>
             <!--DELETE A COMMENT-->
             {% if user.username == comment.name %}
-            <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
-
-            <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
+            <span>
+                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
+                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
+            </span>
             {% endif %}
+
             <p class="card-text">Watch video tutorials of course for free!</p>
 
             {% endfor %}
 
-
             <hr>
+
             <!-- APPROVE COMMENT-->
             {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
+                <button class="btn btn-info btn-sm">
+                <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
+                </button>
                 {% else %}
                 {% if user.is_authenticated %}
 

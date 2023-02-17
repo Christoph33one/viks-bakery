@@ -87,7 +87,7 @@ def delete_comment(request, pk):
             request, messages.SUCCESS,
             "Your message has been deleted"
             )
-        return redirect('index.html')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required(login_url='/accounts/login/')
@@ -106,14 +106,14 @@ def edit_comment(request, pk):
                     messages.SUCCESS,
                     "You have updated your comment!"
                 )
-                return HttpResponseRedirect(
-                        request.META.get('HTTP_REFERER'))
+                return redirect('index')
             else:
                 messages.add_message(
                     request,
                     messages.ERROR,
                     "Whoops something is wrong!"
                 )
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
                 # return render(request, '404.html', status=404)
                 # not rednering a 404????
                 # return HttpResponseRedirect(reverse, "errors/404.html", status=404)
