@@ -37,9 +37,9 @@
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-heart"></i></button>
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" title="Like!" class="btn-like"><i class="fa-regular fa-heart"></i></button>
                 {% else %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" title="Unlike!" class="btn-like"><i class="far fa-heart"></i></button>
                 {% endif %}
             </form>
             {% else %}
@@ -70,64 +70,69 @@
             </p>
             <hp>{{ comment.body | linebreaks }}</p>
 
-            <!--DELETE A COMMENT-->
-            {% if user.username == comment.name %}
-            <span>
-                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
-                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
-            </span>
-            {% endif %}
-
-            <p class="card-text">Watch video tutorials of course for free!</p>
-
-            {% endfor %}
-
-            <hr>
-
-            <!-- APPROVE COMMENT-->
-            {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
+                <!--DELETE A COMMENT-->
+                {% if user.username == comment.name %}
+                <div title="Delete comment!">
+                    <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
                 </div>
-                <button class="btn btn-info btn-sm">
-                <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
-                </button>
-                {% else %}
-                {% if user.is_authenticated %}
-
-                <h4>Leave a comment:</h4>
-                <p>Posting as: {{ user.username }}</p>
-
-                <!--COMMENT FORM-->
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-
-                <!--NOT LOGGED IN - ALERT USER-->
-                {% else %}
-                <div class="alert alert-success" role="alert">
-                    Please Sign in | Register to like or leave a comment!
-                    <p>
-                        <a class="link" href="{% url 'account_login' %}">Sign in</a> | <a class="link"
-                        href="{% url 'account_signup' %}">Register</a>
-                    </p>
+                <div title="Edit comment">
+                    <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
                 </div>
 
+                
                 {% endif %}
-            {% endif %}
-
-
-            </div>
-
-        </div>
-
-    </div>
+  
+                <p class="card-text">Watch video tutorials of course for free!</p>
+  
+            {% endfor %}
+  
+              <hr>
+  
+              <!-- APPROVE COMMENT-->
+              {% if commented %}
+                  <div class="alert alert-success" role="alert">
+                      Your comment is awaiting approval
+                  </div>
+                  <button class="btn btn-info btn-sm">
+                  <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
+                  </button>
+                  {% else %}
+                  {% if user.is_authenticated %}
+  
+                  <h4>Leave a comment:</h4>
+                  <p>Posting as: {{ user.username }}</p>
+  
+                  <!--COMMENT FORM-->
+                  <form method="post" style="margin-top: 1.3em;">
+                      {{ comment_form | crispy }}
+                      {% csrf_token %}
+                      <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm">Submit</button>
+                  </form>
+  
+                  <!--NOT LOGGED IN - ALERT USER-->
+                  {% else %}
+                  <div class="alert alert-success" role="alert">
+                      Please Sign in | Register to like or leave a comment!
+                      <p>
+                          <a class="link" href="{% url 'account_login' %}" title="Sign in">Sign in</a> | <a class="link" title="Sign up"
+                          href="{% url 'account_signup' %}">Register</a>
+                      </p>
+                  </div>
+  
+                  {% endif %}
+              {% endif %}
+  
+  
+              </div>
+  
+          </div>
+  
+      </div>
+      
+      </div>
+      
+  </div>
     
-    </div>
-    
-</div>
   
 
   
