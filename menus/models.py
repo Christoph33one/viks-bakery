@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# list for chocolate cakes items in database
+# # list for chocolate cakes items in database
 CAKE_SELECTIONS = (
     (0, "Chocolate Cakes"),
     (1, "Vegan Cakes"),
@@ -90,8 +90,20 @@ class Meta:
         return self.cake_name
 
 
-# check user login and details are in the admin panel
+
 # create a user module !!
 # look at user module templates on github!
-# look at modules for a drop down menu. (for nav bar / menu)
 # look at a module for a user views
+
+
+# MERGE MODELS TO ONE MODEL?
+
+# CAKE_SELECTIONS = (
+#     (0, "Choclate Cakes"),
+#     (1, "Cream Cakes"),
+#     (3, "Cheese Cakes"),
+#     (4, "Vegan Cakes"),
+#     (5, "New item")
+# )
+
+# class CreamCakes(CakeItem):

@@ -22,8 +22,10 @@ def Contact(request):
 
     return render(request, 'contact.html', context)
 
+# To give users contact message and render it to reutrn_contact.html
+# class ReturnContact(request):
+#     model = Contact()
+#     queryset = Contact().objects.all().order_by('-read')
+#     template_name = 'return_contact.html'
+#     paginate_by = 3
 
-# NOTES
-# SEND AN EMAIL TO THE USER? STMP ?
-# ASK WHAT ELSE TO ADD FOR THE FORM? IMPORTANT!!!
-# CRUD functions

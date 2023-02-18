@@ -4,42 +4,31 @@
 
 <!--Card image-->
 <div class="container">
-
     <div class="row">
-    
-    <div class="col-6">
-    
-        <div class="card " style="width:25rem;">
-    
+        <div class="col-6">
+            <div class="card " style="width:25rem;">
             <img class="card-img-top " src="{{ post.featured_image.url }}">
-    
             <div class="card-body">
                 <!--post title section-->
                 <h5 class="card-title">{{ post.title }}</h5>
-    
                 <p class="card-text">{{ post.content | safe }}</p>
-    
             </div>
-    
         </div>
-    
     </div>
 
 
 <!--card 2-->
     <div class="col-6">
-    
         <div class="card" style="width:25rem;">
-    
             <!--SHOW LIKES-->
             <div class="card-body">
             {% if user.is_authenticated %}
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if liked %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" title="Like!" class="btn-like"><i class="fa-regular fa-heart"></i></button>
+                <button class="like-post" type="submit" name="blogpost_id" value="{{post.slug}}" title="Unlike!" class="btn-like"><i class="fas fa-heart"></i></button>
                 {% else %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" title="Unlike!" class="btn-like"><i class="far fa-heart"></i></button>
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" title="like!" class="btn-like"><i class="far fa-heart"></i></button>
                 {% endif %}
             </form>
             {% else %}

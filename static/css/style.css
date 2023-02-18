@@ -107,20 +107,26 @@ li, a {
 
 .card {
     display: inline-block;
-    margin: 30px;
+    margin-bottom: 30px;
+  
 }
 .col-sm-2 {
     margin-top: 10px;
 }
 .comp-cards{
-
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
     cursor: pointer;
 }
 .comp-cards:hover{
 
     box-shadow: 5px 6px 6px 2px #e9ecef;
     transform: scale(1.1);
+}
+/* user likes */
+.fa-heart, button {
+    color: #e70c6b;
+    border: none;
+    border-color: #e70c6b;
 }
 /* -----------------------------------------POST DETAIL PAGE------------*/
 
@@ -139,11 +145,7 @@ li, a {
     
 } 
 }
-/* @media screen and (max-width: 670px) {
-    #footer-image{
-        width: 50px;
-    }
-} */
+
 
 /* -----------------------------------------CAKE MENUS TEMPLATES------------*/
 .cake-menu-header {
@@ -203,8 +205,3 @@ li, a {
     color: #D3D925;
 }
 
-
-
-/* #popup{
-    display: none;
-} */

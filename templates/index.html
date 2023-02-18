@@ -6,7 +6,7 @@
 <div class="header-image container-sm">
     <div class="image-container">
         <img src="https://res.cloudinary.com/dsp0aehyj/image/upload/v1674401447/pexels-nestor-cortez-960540_y1ji9z.jpg"
-            class="img-thumbnail" alt="...">
+            class="img-thumbnail" alt="An image of three cakes on a glass table">
     </div>
 </div>
 <br>
@@ -29,9 +29,9 @@
 <div class="header-title text-center container-sm ">
     <h2 class=" justify-content-center">COMPETITION TIME</h2>
     <p>
-        At Viktoria's we like to bake so much that we have a cake competition <br>
-        each month. Come and check out our competition page for more information
-        <em><h6>Click below to view more!</h6></em>
+        At Viktoria's we like to bake so much that we have a cake competition each month <br>
+        The cake with the most likes will win and be displayed in our retaurant <br>
+        <em><h6>Click below to like and add a post!</h6></em>
     </p>
 </div>
 
@@ -47,7 +47,7 @@
                         <img class="card-img-top"
                             src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
                         {% else %}
-                        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="pictures of different cakes">
                         {% endif %}
                     </div>
                         <a href="{% url 'post_detail' post.slug %}" class="post-link">

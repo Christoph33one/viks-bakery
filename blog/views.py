@@ -114,9 +114,6 @@ def edit_comment(request, pk):
                     "Whoops something is wrong!"
                 )
                 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-                # return render(request, '404.html', status=404)
-                # not rednering a 404????
-                # return HttpResponseRedirect(reverse, "errors/404.html", status=404)
 
     return render(
                 request,

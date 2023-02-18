@@ -10,4 +10,4 @@ class ContactForm(forms.ModelForm):
 
     name = forms.CharField(label='Your full name', max_length=50)
     email = forms.EmailField(label='Your email', max_length=50)
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(label='Add your message', widget=forms.Textarea)
