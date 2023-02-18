@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 <!--Card image-->
-<div class="container">
+<div class="post-image container" style="margin-top: 60px;">
     <div class="row">
         <div class="col-6">
             <div class="card " style="width:25rem;">
@@ -53,11 +53,11 @@
 
             <p class="font-weight-bold">
                 {{ comment.name }}
-                <span class=" text-muted font-weight-normal">
-                    {{ comment.created_on }}
-                </span> wrote:
+                <span class=" text-muted font-weight-normal"> 
+                   {{ comment.created_on }}
+                </span>
             </p>
-            <hp>{{ comment.body | linebreaks }}</p>
+            <p>Wrote: {{ comment.body | linebreaks }}</p>
 
                 <!--DELETE A COMMENT-->
                 {% if user.username == comment.name %}
@@ -107,19 +107,12 @@
                           href="{% url 'account_signup' %}">Register</a>
                       </p>
                   </div>
-  
                   {% endif %}
               {% endif %}
-  
-  
               </div>
-  
           </div>
-  
       </div>
-      
       </div>
-      
   </div>
     
   

@@ -59,9 +59,11 @@ INSTALLED_APPS = [
 ]
 SITE_ID = 1
 
+# Login / out return urls
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Message handling
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
         messages.INFO: 'alert-info',
@@ -70,8 +72,10 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
     }
 
+# User verification
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# Crispy forms template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [

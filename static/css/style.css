@@ -1,4 +1,4 @@
-/* -----------------------------------------TEXT------------*/
+/* -----------------------------------------TEXT STYLING------------*/
 h1 {
     font-family: Montserrat, sans-serif;
     font-size: 3.5rem;
@@ -75,12 +75,12 @@ li, a {
 
 .header-title, .header-image {
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-top: 30px;
 }
 .header-text-bottom {
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-top: 30px;
     padding: 0;
 }

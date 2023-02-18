@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
 from django.http import HttpResponse
@@ -19,6 +19,9 @@ def Contact(request):
                 request, messages.SUCCESS,
                 "Thank you for contacting us, one of our staff will be in "
                 "touch with you")
+            return redirect('index')
+        else:
+            form = contact()
 
     return render(request, 'contact.html', context)
 
