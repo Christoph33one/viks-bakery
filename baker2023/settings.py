@@ -34,11 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['viks-bakes.herokuapp.com', 'localhost']
 
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'a3dfd3713bd1ce'
-EMAIL_HOST_PASSWORD = '16711e8c5f7cc6'
-EMAIL_PORT = '2525'
-
 
 # Application definition
 
@@ -79,6 +74,12 @@ MESSAGE_TAGS = {
 
 # User verification
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+# Email settings
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a3dfd3713bd1ce'
+EMAIL_HOST_PASSWORD = '16711e8c5f7cc6'
+EMAIL_PORT = '2525'
 
 # Crispy forms template pack
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

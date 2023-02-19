@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
 from blog.models import Post
+# from .forms import NewMenuForm
 
 
 # Render index.html
@@ -80,3 +81,23 @@ class CheeseCakeMenu(generic.ListView):
                 on_menu=True, cake_selections=1)
         }
         return queryset
+
+
+# class ChangeMenu(generic.ListView):
+#     """
+#     For admin to change menu
+#     """
+#     model = CakeItem
+#     # form = NewMenuForm()
+#     template_name = "new_menu.html"
+#     context_object_name = 'cake_items'
+
+#     def get_queryset(self):
+
+#         queryset = {
+#             'choclate_items': CakeItem.objects.all().filter(
+#                 on_menu=True, cake_selections=0),
+#             'vegan_items': CakeItem.objects.all().filter(
+#                 on_menu=True, cake_selections=1)
+#         }
+#         return queryset

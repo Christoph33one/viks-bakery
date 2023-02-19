@@ -36,10 +36,14 @@ h6 {
         font-size: 2rem;
     }
 }
-.nav-brand, h5 {
+.nav-brand{
+    padding-left: 50px;
+    font-size: 3rem;
+}
+.nav-title{
+    font-size: 1.5rem;
     padding-left: 50px;
 }
-
 
 .title-comma {
     color: #D3D925;
@@ -68,6 +72,9 @@ li, a {
 .nav-button {
     margin-left: 40px;
 
+}
+.navbar-buttons{
+    margin-right: 20px;
 }
 
 
@@ -189,7 +196,7 @@ li, a {
     font-family:  Montserrat;
     color: #0D0D0D;
 }
-
+s
 
 /* -----------------------------------------404 ERROR PAGE------------*/
 
@@ -197,6 +204,8 @@ li, a {
     min-height: 100vh;
     color: #BFBFBF;
 }
+
+
 /* -----------------------------------------500 ERROR PAGE------------*/
 
 
@@ -204,4 +213,7 @@ li, a {
     min-height: 100vh;
     color: #D3D925;
 }
+
+
+
 

@@ -45,30 +45,29 @@
   <title> Bake-house - {% block title%}{% endblock%}</title>
 </head>
 
-<body>
-  <!--navigation bar-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'index' %}">
       <h1 class="nav-brand">V I K T O R I A<span class="title-comma">'</span>S  
-        <h5>- B A K E - H O U S E -</h5>
+        <h5 class="nav-title">- B A K E - H O U S E -</h5>
       </h1>
     </a>
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <!--collapsable nav bar for mobile screens -->
-      <div class="collapse navbar-collapse" id="navbarText">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><span
                   class="nav-colour">HOME</span></a>
             </li>
+         
 
-            <!--drop down menu-->
-            <ul class="nav-item dropdown">
+             <!--drop down menu-->
+            <ul class="nav-item dropdown" style="padding: 0;">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">MENU</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'choc_cake' %}">CHOCLATE CAKES</a></li>
@@ -76,19 +75,15 @@
                 <li><a class="dropdown-item" href="{% url 'cheese_cake' %}">CHEESE CAKES</a></li>
               </ul>
             </ul>
-<!-- 
-             new login
+            <!--Contact form-->
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href=""><span
-                  class="nav-colour">returncontact</span></a>
-            </li> -->
+            <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour">CONTACT</span></a>
+          </li>
 
-              <!--Contact form-->
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour">CONTACT</span></a>
-            </li>
 
-            <!--If user is authenicated-->
+          </ul>
+          <span class="navbar-text navbar-buttons text-muted">
+               <!--If user is authenicated-->
             {% if user.is_authenticated %}
             <button type="button" class="btn btn-outline-success btn-sm">
               <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a>
@@ -101,11 +96,11 @@
               <a class="nav-link" href="{% url 'account_login' %}"><span class="nav-colour">Sign in</span></a>
             </button>
             {% endif %}
-          </ul>
 
-        </div>
+          </span>
       </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- Messsage handling  / Alerts -->
 <div class="container">
