@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from .models import Contact
 from django.contrib import messages
 from django.http import HttpResponse
@@ -9,9 +11,22 @@ from .forms import ContactForm
 # Contact form
 def Contact(request):
     context = {'form': ContactForm()}
+    # form has been submitted
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        # form is valid
         if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            html = render_to_string('email.html', {
+                'name': name,
+                'email': email,
+                'message': message
+            })
+
+            send_mail('The contact form subject', 'We have your message', 'noreply@viktorjia.com', ['viktorjia.com'], html_message=html)
             # send form to admin user
             form.save()
             # send a reply message to the user
@@ -20,15 +35,5 @@ def Contact(request):
                 "Thank you for contacting us, one of our staff will be in "
                 "touch with you")
             return redirect('index')
-        else:
-            form = contact()
 
     return render(request, 'contact.html', context)
-
-# To give users contact message and render it to reutrn_contact.html
-# class ReturnContact(request):
-#     model = Contact()
-#     queryset = Contact().objects.all().order_by('-read')
-#     template_name = 'return_contact.html'
-#     paginate_by = 3
-
