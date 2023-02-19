@@ -19,13 +19,12 @@ def Contact(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-
+            # render email to MailTrap.io
             html = render_to_string('email.html', {
                 'name': name,
                 'email': email,
                 'message': message
             })
-
             send_mail('The contact form subject', 'We have your message', 'noreply@viktorjia.com', ['viktorjia.com'], html_message=html)
             # send form to admin user
             form.save()
