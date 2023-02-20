@@ -16,6 +16,14 @@ class PostList(generic.ListView):
     paginate_by = 3
 
 
+# def edit_post(request):
+#     # queryset = Post.objects.filter(status=1).order_by("-created_on")
+#     post = Post.objects.filter(approved=True)
+#     queryset = Post.objects.filter(status=1).order_by("-created_on")
+
+#     return render(request, 'edit_post.html', {'post': post})
+
+
 # Post detail view
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
@@ -78,21 +86,18 @@ class PostDetail(View):
 # delete comment function
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    if (
-        comment.name == request.user.username
-    ):
-        comment.delete()
-        messages.add_message(
-            request, messages.SUCCESS,
-            "Your message has been deleted"
-            )
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    else:
-        messages.add_message(
-            request,
-            messages.ERROR,
-            "There seems to be an error")
+    comment = get_object_or_404(Comment, pk=pk, name=request.user.username)
+    comment.delete()
+    messages.add_message(
+        request, messages.SUCCESS,
+        "Your message has been deleted"
+        )
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# else:
+#     messages.add_message(
+#         request,
+#         messages.ERROR,
+#         "There seems to be an error")
 
 
 @login_required(login_url='/accounts/login/')
@@ -140,13 +145,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-def error_404(request, exception):
-    """ 404 error page """
-    return render(request, '404.html', status=404)
-
-
-# def error_500(request):
-#     """ 500 error page """
-#     return render(request, '500.html', status=500)

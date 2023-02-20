@@ -20,7 +20,7 @@ def Contact(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            # render email to MailTrap.io
+            # send email to MailTrap.io
             html = render_to_string('email.html', {
                 'name': name,
                 'email': email,
@@ -40,10 +40,16 @@ def Contact(request):
                 request,
                 messages.ERROR,
                 "Something is wrong")
-            return redirect(handle_not_found)
+            return redirect('contact.html', context)
 
     return render(request, 'contact.html', context)
 
 
-def handle_not_found(request, exception):
-    return render(request, '404.html')
+def error_404(request, exception):
+    """ 404 error page """
+    return render(request, '404.html', status=404)
+
+
+def error_500(request):
+    """ 500 error page """
+    return render(request, '500.html', status=500)

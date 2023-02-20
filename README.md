@@ -13,15 +13,17 @@ Viktoria's bake house is a full-stack project using the Django frame work, Javas
 <li><a href="#user-stories">User stories</a></li>
 <li><a href="#scope">Scope</a></li>
 <li><a href="#structure">Structure</a></li>
-<li><a href="#wire-frames">Wireframes</a></li>
-<li><a href="#data-base">Data base</a></li>
+<li><a href="#data-base">Data-base</a></li>
+<li><a href="#wire-frames">wireframes</a></li>
 <li><a href="#design">Design</a></li>
-<ul><a href="#home-page">Home page</a></ul>
-<ul><a href="#blog-page">Blog page</a></ul>
-<ul><a href="#menu-pages">Menu</a></ul>
-<ul><a href="#contact-page">Contact page</a></ul>
-<ul><a href="#registration-page">Registration page</a></ul>
-<li><a href="#data-base">Data base</a></li>
+<li><a href="#base-page">Base page</a></li>
+<li><a href="#home-page">Home page</a></li>
+<li><a href="#blog-page">Blog page</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#contact-page">Contact page</a></li>
+<li><a href="#authentication">Authentication</a></li>
+
+
 
 
 ---
@@ -40,14 +42,9 @@ and what key featuers could I use to benift that audience.
 
  I wanted to find people that would enjoy more than eating a nice cake. But to go out and enjoy some fine dinning with a variety of classic and modern cakes. To keep things more interesting, I added a cake competition tot he website. Users can register and leave comment or just like the best of three cakes displayed every month. 
  
-
 ---
 
 # Scope
-
----
-
-### Structure
 
  I tried to take in to account that all ages can use the site, so simplicity is the main goal here. 
 
@@ -62,41 +59,172 @@ and what key featuers could I use to benift that audience.
  - A blog page where users can read and post from a cake competition. Users that are registered can create, read, update and delete a post they have made.
 
  - A contact form where users can send a message that is saved in the data base and for the site administrator to read. 
-  
 
+ - 
   
+# Structure
+
+This website is made for three apps
+1. Cake menus app - display menus
+2. Blog app - post images and comments
+3. Contact app - customer support
+
+The menu, blog and contact apps all use a data base to store the users information. For this I have built 5 models.
 
 ---
 
-### Wire frames
+# Data base
 
-# Home page
+### Cake models
+I have created three serpate models for the cake menus. Each model is identical with displaying information on cake name, description, dietary and allergens.
+Once a product has been added to the data base, the suie administor can select when the product is added to the menu with an on_menu option.
+A created_on date is also logged to the  data base for when the product was added and a time feild. 
+
+- Menu pages
+![](assets/menu%20model.png)
+
+---
+
+### Blog models
+
+### Post model
+This model consists of the follwing fields for a site administrator:
+- A title and matching slug field
+
+- Description field in which I installed Django summernotes libary for better text styling
+
+- Status option for a darft post which is not posted or a pulished option to display the post
+
+- An updated on field giving a date and time
+
+- Feature image for an image to be uploaded with the post
+
+- Approved field to give a final approval to diplay the post
+
+- Likes function of the user to like a post
+
+I wanted the administrator to control what was being posted and for future development, a user will get the option to post their own cakes.
+
+---
+
+### Comments model
+This model is focused towards the user to display a comment. The model is controlled with the administors panel in the back end.
+I wanted all post to be approved this way before being posted.
+The data fields consist of the following:
+- A CASCADE on delete function for when a comment is deleted by the user, is will be deleted from the data base also.
+This is following django'sway of maintainind data integrity.
+
+- Name field for a user to a their name, and a minimum of 80 characters
+
+- an email feild for users email
+
+- a body text field for the user to add a comemnt
+
+- Created on to give a date and time of the post
+
+- Approved option for the site administrator to approve to be posted
+
+I have tried to follow some of the modern techniques within a comment being shown. By adding a time, date, like and to unlike a post. 
+
+- Blog page
+![](assets/Post%20model.png)
+![](assets/Comment%20model.png)
+
+---
+
+### Contact 
+The contact form is more towards a general enquiry’s form. For this reason I wanted the enquiry to be sent to the database.
+
+I have added the following fields:
+
+- Name - Customers full name 
+
+- Email - Customers email
+
+- Messgae - input box text field for any enquiries 
+
+- Not read - for administrative purposes to show now read
+
+- read - for administrative purposes to select when the enquiry ahs been read
+
+Contact page
+![](assets/contacts%20model.png)
+
+---
+
+# Wire frames
+
+- Home page
 ![](assets/home%20page%20wireframe.png)
 
 
-# Blog page
+- Blog page
 
 ![](assets/reviews%20page.png)
 
-# Menu page
+- Menu page
 ![](assets/menu%20page.png)
 
 ---
 
-# Contact page
+- Contact page
 ![](assets/contact%20page.png)
 
-### Data base
+---
+
+- Please be aware that the wireframes may be slightly different from the original site. 
 
 # Design
 
-### Home page
+---
+
+# Base page
+
+- nav bar & header
+
+- Footer
+
+# Home page
 - After getting good design ideas and information from https://elementor.com/blog/, who review website designs. I decided to keep a blank canvas in white for a background colour and then add colour with images.
 
-### Menu pages
+- Cake competition 
 
-### Blog page
+![](assets/Competition%20section.png)
 
-### Contact page
+---
 
-### Registration page
+# Blog page
+![](assets/post%20detail%20page.png)
+
+
+---
+
+# Menu
+
+![](assets/menus%20-%20page.png)
+
+---
+
+# Contact Page
+I wanted the contact for to be tested for a POST request. I used a free email service to test that the contact form can be sent to the provider.
+I used a MailTrap.io https://mailtrap.io/
+![](assets/email%20testing%20Mailtrap.iio.png)
+
+![](assets/contact%20-%20form.png)
+
+---
+
+
+# Authentication
+
+- Registration 
+![](assets/registration%20page.png)
+
+- Sign in
+![](assets/sign%20in.png)
+
+
+- Sign out
+![](assets/log%20out%20confom.png)
+
+---

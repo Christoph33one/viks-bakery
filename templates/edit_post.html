@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<h1>edit post page</h1>
+
+{% for post in post %}
+
+<p>{{post.title}}</p>
+
+
+
+<p>{{post.created_on}}</p>
+
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

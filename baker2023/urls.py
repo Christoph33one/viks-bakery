@@ -26,3 +26,5 @@ urlpatterns = [
 
 ]
 
+handler404 = 'menus.views.error_404'
+handler500 = 'menus.views.error_500'

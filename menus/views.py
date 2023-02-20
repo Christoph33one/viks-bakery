@@ -83,21 +83,11 @@ class CheeseCakeMenu(generic.ListView):
         return queryset
 
 
-# class ChangeMenu(generic.ListView):
-#     """
-#     For admin to change menu
-#     """
-#     model = CakeItem
-#     # form = NewMenuForm()
-#     template_name = "new_menu.html"
-#     context_object_name = 'cake_items'
+def error_404(request, exception):
+    """ 404 error page """
+    return render(request, '404.html', status=404)
 
-#     def get_queryset(self):
 
-#         queryset = {
-#             'choclate_items': CakeItem.objects.all().filter(
-#                 on_menu=True, cake_selections=0),
-#             'vegan_items': CakeItem.objects.all().filter(
-#                 on_menu=True, cake_selections=1)
-#         }
-#         return queryset
+def error_500(request):
+    """ 500 error page """
+    return render(request, '500.html', status=500)

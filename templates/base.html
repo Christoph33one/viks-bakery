@@ -55,10 +55,10 @@
 
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-        <div class="collapse navbar-collapse" id="navbarText">
+        <div class="collapse navbar-collapse " id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><span
@@ -67,7 +67,7 @@
          
 
              <!--drop down menu-->
-            <ul class="nav-item dropdown" style="padding: 0;">
+            <ul class="nav-item dropdown left" style="padding: 0;">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">MENU</a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'choc_cake' %}">CHOCLATE CAKES</a></li>
@@ -80,11 +80,12 @@
             <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour">CONTACT</span></a>
           </li>
 
-
+         
           </ul>
           <span class="navbar-text navbar-buttons text-muted">
                <!--If user is authenicated-->
             {% if user.is_authenticated %}
+           
             <button type="button" class="btn btn-outline-success btn-sm">
               <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a>
             </button>
@@ -155,12 +156,6 @@
           <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=london%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
           </iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:300px;}</style>
           <a href="https://www.embedgooglemap.net"></a>
-          <!-- <style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:300px;}</style> -->
-      
-        <!-- <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
-        <p><i class="fas fa-home mr-3"></i> 149, London, SW3 5TX UK</p>
-        <p><i class="fas fa-envelope mr-3"></i> viktoria's@gmail.com</p>
-        <p><i class="fas fa-phone mr-3"></i> 01793 555789</p> -->
       </div>
       <!--socail media links-->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
