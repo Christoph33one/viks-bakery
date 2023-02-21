@@ -93,11 +93,7 @@ def delete_comment(request, pk):
         "Your message has been deleted"
         )
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-# else:
-#     messages.add_message(
-#         request,
-#         messages.ERROR,
-#         "There seems to be an error")
+
 
 
 @login_required(login_url='/accounts/login/')
