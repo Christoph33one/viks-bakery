@@ -24,6 +24,8 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#menu">Menu</a></li>
 <li><a href="#contact-page">Contact page</a></li>
 <li><a href="#authentication">Authentication</a></li>
+<li><a href="#authentication"></a></li>
+
 
 
 
@@ -47,6 +49,7 @@ and what key featuers could I use to benift that audience.
 ---
 
 # User stories
+![](assets/user%20stories.png)
 
 ---
 
