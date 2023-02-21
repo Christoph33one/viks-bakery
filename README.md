@@ -3,7 +3,9 @@ ADD RESPONSIVE IMAGE OF WEBSITE ON ALL DEVICES AND A LINK TO THE SITE BELOW THE 
 
 # Viktoria's bake house 
 
-Viktoria's bake house is a full-stack project using the Django frame work, Javascript, Python, HTML and CSS. The website is designed to give a user a good look into Viktoria's bake house restaurant and three menus. 
+For my fourth milestone project with Code Institute I have created a full-stack restaurant website called Viktoria's bake house, using the Agile plannnig approach and CRUD operations through a relational database.
+
+The website idea is to give the user a look at the menu options and to sign up and leave a like or comment for the competiton page.
 
 ---
 
@@ -42,6 +44,10 @@ and what key featuers could I use to benift that audience.
 
  I wanted to find people that would enjoy more than eating a nice cake. But to go out and enjoy some fine dinning with a variety of classic and modern cakes. To keep things more interesting, I added a cake competition tot he website. Users can register and leave comment or just like the best of three cakes displayed every month. 
  
+---
+
+# User stories
+
 ---
 
 # Scope
