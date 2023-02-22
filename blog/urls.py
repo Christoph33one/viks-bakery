@@ -16,6 +16,5 @@ urlpatterns = [
         views.edit_comment,
         name="edit_comment",
     ),
-    # path('edit_post', views.edit_post, name='edit_post'),
 
 ]

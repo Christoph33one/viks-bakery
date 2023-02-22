@@ -3,14 +3,13 @@ from django.test import TestCase
 
 class TestViews(TestCase):
 
-    # Testing if index.html template renders in views.py  TEST PASSED
+    # Testing if all html templates render in views.py - all three tests pass
     def test_all_menus(self):
         response = self.client.get('/')
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'index.html')
 
-    # Testing if choc.html template renders in views.py  TEST PASSED
     def test_choc_cake_menu(self):
         response = self.client.get('choc_cake.html')
 

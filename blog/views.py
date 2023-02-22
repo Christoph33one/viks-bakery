@@ -16,14 +16,6 @@ class PostList(generic.ListView):
     paginate_by = 3
 
 
-# def edit_post(request):
-#     # queryset = Post.objects.filter(status=1).order_by("-created_on")
-#     post = Post.objects.filter(approved=True)
-#     queryset = Post.objects.filter(status=1).order_by("-created_on")
-
-#     return render(request, 'edit_post.html', {'post': post})
-
-
 # Post detail view
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
