@@ -87,10 +87,12 @@ The menu, blog and contact apps all use a data base to store the users informati
 
 ### Cake models
 I have created three serpate models for the cake menus. Each model is identical with displaying information on cake name, description, dietary and allergens.
-Once a product has been added to the data base, the suie administor can select when the product is added to the menu with an on_menu option.
+Once a product has been added to the data base, the site administor can select when the product is added to the menu with an on_menu option.
 A created_on date is also logged to the  data base for when the product was added and a time feild. 
 
-- Menu pages
+---
+
+### Menu pages
 ![](assets/menu%20model.png)
 
 ---
@@ -115,12 +117,14 @@ This model consists of the follwing fields for a site administrator:
 
 I wanted the administrator to control what was being posted and for future development, a user will get the option to post their own cakes.
 
+![](assets/Post%20model.png)
 ---
 
 ### Comments model
 This model is focused towards the user to display a comment. The model is controlled with the administors panel in the back end.
 I wanted all post to be approved this way before being posted.
 The data fields consist of the following:
+
 - A CASCADE on delete function for when a comment is deleted by the user, is will be deleted from the data base also.
 This is following django'sway of maintainind data integrity.
 
@@ -136,8 +140,7 @@ This is following django'sway of maintainind data integrity.
 
 I have tried to follow some of the modern techniques within a comment being shown. By adding a time, date, like and to unlike a post. 
 
-- Blog page
-![](assets/Post%20model.png)
+### 
 ![](assets/Comment%20model.png)
 
 ---
@@ -157,7 +160,6 @@ I have added the following fields:
 
 - read - for administrative purposes to select when the enquiry ahs been read
 
-Contact page
 ![](assets/contacts%20model.png)
 
 ---
@@ -168,16 +170,15 @@ Contact page
 ![](assets/home%20page%20wireframe.png)
 
 
-- Blog page
-
+# Blog page
 ![](assets/reviews%20page.png)
 
-- Menu page
+# Menu page
 ![](assets/menu%20page.png)
 
 ---
 
-- Contact page
+# Contact page
 ![](assets/contact%20page.png)
 
 ---
