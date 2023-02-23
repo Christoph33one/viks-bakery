@@ -1,15 +1,15 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from menus.views import CakesMenu, CreamMenu, CheeseCakeMenu
+from menus.views import index, CakesMenu, CreamMenu, CheeseCakeMenu
 
 
 class TestMenusUrls(SimpleTestCase):
 
     def Test_cake_menu_urls_reverse(self):
-        url = reverse('menus')
-        self.assertEquals(resolve(url).func, menus)
+        url = reverse('index')
+        self.assertEquals(resolve(url).func, index)
 
-    def Test_cake_menu_urls_reverse(self):
+    def Test_choc_cake_menu_urls_reverse(self):
         url = reverse('choc_cake')
         self.assertEquals(resolve(url).func.view_class, CakesMenu)
 
