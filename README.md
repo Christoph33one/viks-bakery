@@ -85,14 +85,13 @@ The menu, blog and contact apps all use a data base to store the users informati
 
 # Data base
 
-### Cake models
+### Menu models
 I have created three serpate models for the cake menus. Each model is identical with displaying information on cake name, description, dietary and allergens.
 Once a product has been added to the data base, the site administor can select when the product is added to the menu with an on_menu option.
 A created_on date is also logged to the  data base for when the product was added and a time feild. 
 
 ---
 
-### Menu pages
 ![](assets/menu%20model.png)
 
 ---
@@ -140,7 +139,6 @@ This is following django'sway of maintainind data integrity.
 
 I have tried to follow some of the modern techniques within a comment being shown. By adding a time, date, like and to unlike a post. 
 
-### 
 ![](assets/Comment%20model.png)
 
 ---
@@ -166,20 +164,38 @@ I have added the following fields:
 
 # Wire frames
 
-- Home page
-![](assets/home%20page%20wireframe.png)
+### Home page
+![](assets/wireframe%20home%20page.png)
 
-
-# Blog page
-![](assets/reviews%20page.png)
-
-# Menu page
-![](assets/menu%20page.png)
+![](assets/wireframes%20moblie%20home%20page.png)
 
 ---
 
-# Contact page
-![](assets/contact%20page.png)
+### Menu page
+![](assets/wireframe%20menus%20page.png)
+
+![](assets/wireframes%20mobile%20menu%20page%20.png)
+
+---
+
+### Post detail page
+![](assets/wireframe%20post%20detail%20page.png)
+
+![](assets/framework%20mobile%20post%20detail%20page%20.png)
+
+---
+
+### Edit post page
+![](assets/wireframe%20edit%20post%20page.png)
+
+![](assets/wireframe%20mobile%20edit%20post%20page%20.png)
+
+--- 
+
+### Contact page
+![](assets/wireframe%20contact%20form%20page.png)
+
+![](assets/wireframe%20mobile%20contact%20form%20page.png)
 
 ---
 
