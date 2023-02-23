@@ -17,7 +17,7 @@
     </div>
 
 
-<!--card 2-->
+<!--Card form-->
     <div class="col-6">
         <div class="card" style="width:25rem;">
             <!--SHOW LIKES-->
@@ -72,7 +72,6 @@
                 
                 {% endif %}
   
-                <p class="card-text">Watch video tutorials of course for free!</p>
   
             {% endfor %}
   
@@ -86,8 +85,7 @@
                   <button class="btn btn-info btn-sm">
                   <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
                   </button>
-                  {% else %}
-                  {% if user.is_authenticated %}
+                {% if user.is_authenticated %}
   
                   <h4>Leave a comment:</h4>
                   <p>Posting as: {{ user.username }}</p>
