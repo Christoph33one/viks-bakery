@@ -214,25 +214,27 @@ I have added the following fields:
 # Home page
 - After getting good design ideas and information from https://elementor.com/blog/, who review website designs. I decided to keep a blank canvas in white for a background colour and then add colour with images.
 
-- Cake competition 
+![](assets/home%20page%20header.png)
+
+### Cake competition 
 
 ![](assets/Competition%20section.png)
 
 ---
 
-# Blog page
+### Blog page
 ![](assets/post%20detail%20page.png)
 
 
 ---
 
-# Menu
+### Menu
 
 ![](assets/menus%20-%20page.png)
 
 ---
 
-# Contact Page
+### Contact Page
 I wanted the contact for to be tested for a POST request. I used a free email service to test that the contact form can be sent to the provider.
 I used a MailTrap.io https://mailtrap.io/
 ![](assets/email%20testing%20Mailtrap.iio.png)
