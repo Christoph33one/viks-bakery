@@ -237,9 +237,9 @@ I have added the following fields:
 ### Contact Page
 I wanted the contact for to be tested for a POST request. I used a free email service to test that the contact form can be sent to the provider.
 I used a MailTrap.io https://mailtrap.io/
-![](assets/email%20testing%20Mailtrap.iio.png)
+![](assets/contact%20form.png)
 
-![](assets/contact%20-%20form.png)
+![](assets/mail%20trap%20email.png)
 
 ---
 
