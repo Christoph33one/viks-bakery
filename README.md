@@ -287,8 +287,9 @@ For screen sizes at 900 pixels and smaller, the menu uses a Bootstrap container 
 ---
 
 ### Contact Page
-I wanted the contact for to be tested for a POST request. I used a free email service to test that the contact form can be sent to the provider.
-I used a MailTrap.io https://mailtrap.io/
+I wanted the contact for to be a simple and friendly form with not much input form the user. I would like the user to add a full name, email address the enquiry they wish to make. 
+
+I have had a strong point to consider to not include a phone number field within the contact form. If the customer would like to contact the restaurant, there is a clear view of a phiine number and address below the contact form.
 ![](assets/contact%20form.png)
 
 ![](assets/mobile%20contact%20page.png)
