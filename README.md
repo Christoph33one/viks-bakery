@@ -24,7 +24,8 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#menu-page">Menu page</a></li>
 <li><a href="#contact-page">Contact page</a></li>
 <li><a href="#authentication">Authentication</a></li>
-<li><a href="#authentication"></a></li>
+<li><a href="#typography">Typography</a></li>
+<li><a href="#colours">Colours</a></li>
 
 
 
@@ -332,3 +333,48 @@ For when the user wants to sign out, thwy will need to click on the sign out but
 ![](assets/log%20out%20confom.png)
 
 ---
+
+# Typography
+
+- All font family styling was used with an open source - Google Fonts https://fonts.google.com/
+
+- Font family used for H1 - Montserrat "regular 400" https://fonts.google.com/specimen/Permanent+Marker?query=perm#standard-styles
+
+- Default setting - "sans serif"
+
+- Font family used for H3, H4 & P - ira Sans Condensed"light 300"
+
+- Defaul setting - "sans serif"
+
+- All icons are taken from an open source - fontawesome https://fontawesome.com/
+
+---
+
+# Colours
+
+All colors where picked with desgin industry colours which are trusted within communitys of website design. I used a fastion colour plate in Adobe Color Wheel. the Shade of grey #BFBFBF is used to give a feeling of warmth with the text. I have used the a shade of yellow #D4D948 to gice a small pop of colour and detial with parts on the website. For when using the shade of black I used #0D0D0D. This shade gives a deeper colour and more detail to text. 
+
+The reason I have not used many colours, is for the images to product the colour to the site. As the images are full of colour, I wanted them to stand out and make an impression to the user.
+
+All colors are taken from an open source - Adobe Color Wheel https://color.adobe.com/create/color-wheel
+
+- Background color for body - #00000 "white"
+
+- Header title - #0D0D0D "Deep black"
+
+- Nav bar text and h6 font size - #BFBFBF "medium / light grey"
+
+- H1, H2,h3 H4 & H5 - #0D0D0D; "Deep black"
+
+Icons  
+- Heart Icon - ##e70c6b "pink"
+
+- Edit post icon - #D3D925 "yellow"
+
+- Delete post icon - #ef0707 "red"
+
+- Links - #D3D925 "yellow"
+
+- Buttons - bnt-success - "Bootstrap default button colour" "green"
+
+![](assets/colours.png)
