@@ -23,7 +23,6 @@ urlpatterns = [
     path("contact/", include('contact.urls'), name="contact-urls"),
     path('post_detail/', include('blog.urls'), name="post_detail-urls"),
     path('summernote', include('django_summernote.urls')),
-
 ]
 
 handler404 = 'menus.views.error_404'
