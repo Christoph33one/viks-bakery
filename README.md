@@ -21,7 +21,7 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#base-page">Base page</a></li>
 <li><a href="#home-page">Home page</a></li>
 <li><a href="#blog-page">Blog page</a></li>
-<li><a href="#menu">Menu</a></li>
+<li><a href="#menu-page">Menu page</a></li>
 <li><a href="#contact-page">Contact page</a></li>
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#authentication"></a></li>
@@ -164,14 +164,14 @@ I have added the following fields:
 
 # Wire frames
 
-### Home page
+### landing page
 ![](assets/wireframe%20home%20page.png)
 
 ![](assets/wireframes%20moblie%20home%20page.png)
 
 ---
 
-### Menu page
+### Menus
 ![](assets/wireframe%20menus%20page.png)
 
 ![](assets/wireframes%20mobile%20menu%20page%20.png)
@@ -192,7 +192,7 @@ I have added the following fields:
 
 --- 
 
-### Contact page
+### Contact
 ![](assets/wireframe%20contact%20form%20page.png)
 
 ![](assets/wireframe%20mobile%20contact%20form%20page.png)
@@ -272,7 +272,7 @@ When a user wants to edit a post, they are sent to a seperate page in which they
 
 ---
 
-### Menu
+### Menu page
 
 With the menu pages I decied to postion the text in the center of the page for a better readable view on bigger screens. I use a couple of differnt font familys and font sizes to break up the layout as the menu only consists of text. 
 
