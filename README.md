@@ -289,24 +289,46 @@ For screen sizes at 900 pixels and smaller, the menu uses a Bootstrap container 
 ### Contact Page
 I wanted the contact for to be a simple and friendly form with not much input form the user. I would like the user to add a full name, email address the enquiry they wish to make. 
 
-I have had a strong point to consider to not include a phone number field within the contact form. If the customer would like to contact the restaurant, there is a clear view of a phiine number and address below the contact form.
 ![](assets/contact%20form.png)
 
+
 ![](assets/mobile%20contact%20page.png)
+
+I have had a strong point to consider to not include a phone number field within the contact form. If the customer would like to contact the restaurant, there is a clear view of a phone number and address below the contact form.
+
+![](assets/address%20contact%20page.png)
+
 
 ---
 
 
 # Authentication
 
-- Registration 
+Registration 
+
+User registion follows the same design layout as all the other forms. I have added clear titles to all pages for user to not get confused. This registration form consists of a user adding a username, email address and a password which has a secondary input for the user to hopefully remember there password.
+
 ![](assets/registration%20page.png)
 
-- Sign in
-![](assets/sign%20in.png)
+Sign in
+
+The user sign in for is again a simple and quick form for the user to fill in. Once they have signed up, they can choose to use the full site and add a comment or like a post and jion the competion.
+
+![](assets/sign%20in%20page.png)
+![](assets/mobile%20sign%20in%20page.png)
 
 
-- Sign out
+Once singed in, the user can see clearly that they are logged in as the sign and register buttons re removed from the nav bar and only the log out button is displayed. 
+
+
+![](assets/when%20signed%20in.png)
+
+---
+
+Sign out
+For when the user wants to sign out, thwy will need to click on the sign out button in the nav bar. From there the site will ask them once more if they are 'sure to sign out'. Incase a user is to click sign out by mistake, this is a fail safe function.
+
+![](assets/sign%20out%20message.png)
 ![](assets/log%20out%20confom.png)
 
 ---

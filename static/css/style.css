@@ -97,7 +97,6 @@ li, a {
 }
 .nav-button {
     margin-left: 40px;
-
 }
 .navbar-buttons{
     margin-right: 20px;
@@ -197,8 +196,9 @@ li, a {
 }
 .contact-form-header {
     font-size: 1rem;
-    
-
+}
+.contact-link:hover{
+    color: #D3D925;
 }
 
 
