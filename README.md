@@ -60,7 +60,7 @@ and what key featuers could I use to benift that audience.
 
  - The header and footer of each page is kept the same throughout all the pages, to keep symetry and repetitive UX experience. 
 
- - The nav bar will send a user to the required pages label within the nav bar. I have given a drop down menu for the all menu pages. This keepsthe nav bar small and with more functions. 
+ - The nav bar consists if three links, a home page, menu drop down link and a contact form.
 
  - A registration form for users to make an account. Users information is then saved in the data base. Once registered, a user can see clearly that they are logged in. When a used chooses to log out, a second reminded message is asked before the user fully commits to being logged out.
 
@@ -68,9 +68,9 @@ and what key featuers could I use to benift that audience.
 
  - A blog page where users can read and post from a cake competition. Users that are registered can create, read, update and delete a post they have made.
 
- - A contact form where users can send a message that is saved in the data base and for the site administrator to read. 
+ - A contact form where users can send a message that is saved in the data base and for the site administrator to read. User post request has been tested with MailTrap https://mailtrap.io/ for contormation that the email has been sent and received to am email provider.
 
- - 
+---
   
 # Structure
 
@@ -88,7 +88,7 @@ The menu, blog and contact apps all use a data base to store the users informati
 ### Menu models
 I have created three serpate models for the cake menus. Each model is identical with displaying information on cake name, description, dietary and allergens.
 Once a product has been added to the data base, the site administor can select when the product is added to the menu with an on_menu option.
-A created_on date is also logged to the  data base for when the product was added and a time feild. 
+A created_on date is also logged to the data base for when the product was added and a time feild. 
 
 ---
 
@@ -207,30 +207,82 @@ I have added the following fields:
 
 # Base page
 
-- nav bar & header
+I wanted a symmetric feel throughout all pages with the website. To do this I created a base html page that extend its content of a header and footer on all pages. 
 
-- Footer
 
-# Home page
-- After getting good design ideas and information from https://elementor.com/blog/, who review website designs. I decided to keep a blank canvas in white for a background colour and then add colour with images.
+### Home page
+ After getting good design ideas and information from https://elementor.com/blog/, who review website designs. I decided to keep a blank canvas in white for a background colour and then add colour with images.
+
+I used a header image of a width of 100% to stretch across the whole screen on all devices. I want the image to give a good idea as to what the site is about, so choosing the correct imagine was inportant. I aslo added a fixed position to give a srolling effect for this image.
 
 ![](assets/home%20page%20header.png)
 
+--- 
+
+### Nav bar
+The navigation bar for my site uses three links, home page, cake menus and a contact form. I have added a mouse over effect to change the colour of the text when the mouse cursor is on the link. This gives a user an indication that they about the use that link.
+
+I have given a drop down menu for the all menu pages. This keepsthe nav bar small and with more functions.
+
+![](assets/nav%20bar.png)
+
+For screen sizes of 900 piexls and smaller, the Navigation bar drops the collapseible button and  all three links can be accessed from there. This is keeping with modern UX design as most webpages are viewed on a mobile platform today.
+
+![](assets/mobile%20screen%20size%20nav%20abr.png)
+
+
+---
+
+### Footer
+For a footer, I have given imformtaion on the opening hours, a google map of the location form which a user can view, an address and three common socail media links for the them to use and follow the webiste. I kept a white background using a line break effect to apply a speprate section of the page. 
+
+![](assets/footer.png)
+
+For screen sizes of 900 pixels and smaller, the footer section will reduce it's size of content and be stacked on top of one another to keep a modern UX design. 
+
+![](assets/mobile%20screen%20size%20footer.png)
+
+---
+
 ### Cake competition 
+The competition section, I decied to keep it with the landing page. I wanted bring more colour to this part of the page, so by adding pictures with bright and vibrant colours it adds a good amount of colour. I added some text under the images to give a little more input of what to expecpt from the description above.
 
 ![](assets/Competition%20section.png)
+
+For screen sizes 900 and below, I have followed modern designs and stacked images on top of one another. I keep the images at a larger display to give a user a better feel to the image on a smaller screen. 
+
+![](assets/blog%20section%20mobile%20scrren%20size.png)
 
 ---
 
 ### Blog page
+The blog page this is one of the main interests I believe that a user would like to visit on the website. I wanted to keep simplistically on this page as I have done throughout the website. Going by modern desgin ideas on a browser and table screen size and with the help from https://elementor.com/blog/, I have placed the image to the left and  the post detail section to the right. When reviewing sites such as FaceBook https://www.facebook.com/ and Instagram https://www.instagram.com/ I had noticed when adding a comment, it removes the user out of site from the image that they are commenting one. For better UX in my option, I would like the user to see the image when adding a comment. I my opinion tis gives a easy way to think about what to right not having to forget what the image looks like.
+
 ![](assets/post%20detail%20page.png)
+
+YOU NEED TO STYLE THE BLOG PAGE FOR MOBILE SCREEN SIZE!!!!!!!
+
+### Edit blog page
+When a user wants to edit a post, they are sent to a seperate page in which they can add or delete their psot in a simple form. This form layout stays the same when reducing to a smaller screen size.
+
+![](assets/edit%20post%20html.png)
+
+![](assets/mobile%20edit%20post%20html.png)
 
 
 ---
 
 ### Menu
 
+With the menu pages I decied to postion the text in the center of the page for a better readable view on bigger screens. I use a couple of differnt font familys and font sizes to break up the layout as the menu only consists of text. 
+
+I used three seperate pages for the menus as I wanted to keep the three cake type separate and to give an easier structure for reading each menu. I have added a product title, description, dietary and allergies information clearly within the menu on each product.
+
 ![](assets/menus%20-%20page.png)
+
+For screen sizes at 900 pixels and smaller, the menu uses a Bootstrap container to help keep text within a readable size and layout. For a mobile device, the text will be positioned to the left to give a better reader frendly experience.
+
+![](assets/mobile%20menu%20page.png)
 
 ---
 
@@ -239,7 +291,7 @@ I wanted the contact for to be tested for a POST request. I used a free email se
 I used a MailTrap.io https://mailtrap.io/
 ![](assets/contact%20form.png)
 
-![](assets/mail%20trap%20email.png)
+![](assets/mobile%20contact%20page.png)
 
 ---
 
