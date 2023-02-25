@@ -25,7 +25,6 @@ h6 {
     font-family: Fira Sans Condensed;
     color: #BFBFBF;
 }
-
 /* -----------------------------------------BASE.HTML------------*/
 body {
     margin: 0;
@@ -53,19 +52,6 @@ body {
     background-image: url('a.jpg');
     background-size: cover;
   }
-@media screen and (max-width: 400px) {
-    .nav-brand{
-        font-size: 2rem;
-    }
-    h5 {
-        font-size: 0.8rem;
-    }
-}
-@media screen and (max-width: 991px) {
-    .nav-brand{
-        font-size: 2rem;
-    }
-}
 .nav-brand{
     padding-left: 50px;
     font-size: 3rem;
@@ -74,18 +60,13 @@ body {
     font-size: 1.5rem;
     padding-left: 50px;
 }
-
 .title-comma {
     color: #D3D925;
 }
-
-
 /* -----------------------------------------NAV BAR------------*/
-
 li, a {
     font-family: Fira Sans Condensed;
     opacity: 1;
-
 }
 .nav-colour {
     color: gray;
@@ -105,10 +86,7 @@ li, a {
 .navbar-buttons{
     margin-right: 20px;
 }
-
-
 /* -----------------------------------------Index.html------------*/
-
 .header-title, .header-image {
     font-family: Montserrat;
     font-size: 1.2rem;
@@ -132,7 +110,6 @@ li, a {
 .post-link, a{
     color: inherit;
     text-decoration: none;
-    
 }
 .post-link:hover{
     cursor:pointer;
@@ -140,11 +117,9 @@ li, a {
     text-decoration:none; 
 }
 /* -----------------------------------------COMPETITION SECTION------------*/
-
 .card {
     display: inline-block;
     margin-bottom: 30px;
-  
 }
 .col-sm-2 {
     margin-top: 10px;
@@ -165,23 +140,12 @@ li, a {
     border-color: #e70c6b;
 }
 /* -----------------------------------------POST DETAIL PAGE------------*/
-
 .fa-trash:hover{
     color: #ef0707;
 }
 .fa-pen-to-square:hover{
     color: #D3D925;
 }
-
-/* -----------------------------------------FOOTER------------*/
-/* for iphone screen size */
-@media screen and (max-width: 500px) {
-#footer-address{
-    display: none;
-    
-} 
-}
-
 
 /* -----------------------------------------CAKE MENUS TEMPLATES------------*/
 .cake-menu-header {
@@ -192,8 +156,6 @@ li, a {
     width: 70%;
     margin-top: 50px;
 }
-
-
 /* ----------------------------------------- CONTACT FORM -----------*/
 .submit-button:hover {
     color: #0D0D0D;
@@ -204,8 +166,6 @@ li, a {
 .contact-link:hover{
     color: #D3D925;
 }
-
-
 /* ----------------------------------------- REGISTER FORM------------*/
 .sign-up-header {
     color: #0D0D0D;
@@ -217,33 +177,48 @@ li, a {
     font-size: 0.8rem;
 }
 .sign-up-form > h4 {
-    font-weight: Montserrat;
+    font-family: Montserrat;
 }
-
-
 /* -----------------------------------------LOGIN FORM------------*/
 .form-label {
     font-family:  Montserrat;
     color: #0D0D0D;
 }
-s
-
 /* -----------------------------------------404 ERROR PAGE------------*/
 
 .page-wrap-400 {
     min-height: 100vh;
     color: #BFBFBF;
 }
-
-
 /* -----------------------------------------500 ERROR PAGE------------*/
-
-
 .page-wrap-500 {
     min-height: 100vh;
     color: #D3D925;
 }
+/* -----------------------------------------BASE.HTML------------*/
+/*For screen sizes max-width 400 pixels*/
+@media screen and (max-width: 400px) {
 
+    .nav-brand{
+        font-size: 2rem;
+    }
 
+    h5 {
+        font-size: 0.8rem;
+    }
+}
+/*For media screens of max-width 990 pixels and smaller*/
+@media screen and (max-width: 991px) {
 
+    .nav-brand{
+        font-size: 2rem;
+    }
+}
+/* -----------------------------------------FOOTER------------*/
+/* for phone screen size max-width 500 pixels */
+@media screen and (max-width: 500px) {
 
+    #footer-address{
+        display: none;
+    } 
+    }
