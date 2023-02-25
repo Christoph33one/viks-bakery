@@ -27,6 +27,11 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#typography">Typography</a></li>
 <li><a href="#colours">Colours</a></li>
 <li><a href="#testing">Testing</a></li>
+<li><a href="#technologys">Technology's</a></li>
+<li><a href="#deployment">Deployment</a></li>
+
+
+
 
 
 
@@ -462,13 +467,104 @@ Installing Coverage and report commands
 - Menu fonts and text are desplay well for all screeen sizes
 ---
 
-
-
 ### Bugs and testing
 
 ![](assets/spread%20sheet%20for%20bugs%20and%20tests.png)
 
+--- 
+
+# Technology's
+
+
+
+---
+
+# Deployment
+
+Deplyment Django application follow link instructions 
+
+- https://github.com/Code-Institute-Org/python-essentials-template
+
+Repository using GitPod
+
+- Navigate to the repository page on GitHub
+- Click the "GitPod" button in the top right of the repository.
+- Once the project is open you can follow this link.
+- To create a Gitpod workspace you then need to click Gitpod.
+- Now you can create your files within your work space. Remeber to add .html for example when creating a html file, as this lets Gitpod know what script and code you will be creating. 
+- For documentation and saving your work, which should be done on a regular basis. use the command: 
+- git add .
+- git commit -m"YOUR MESSAGE HERE! PLEASE KEEP IT SHORT BUT BRIEF!"
+- git push ( saves your work with the commit message. Your work will now be pushed to your GitHub repository )
+
+# Setting up Django Project and Deploying to Heroku
+Please follow the cheat sheet links below and in the order provided.
+
+1. https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit#
+
+2. Deployment: Heroku app
+- Click "create a new app" in top right corner 
+- Give your app a name and select the region closest to you. When you’re done, click “Create app” to confirm.
+
+3. Create a database
+- Log in to ElephantSQL.com to access your dashboard
+- Click “Create New Instance”
+
+Set up your plan
+- Give your plan a Name (this is commonly the name of the project)
+- Select the Tiny Turtle (Free) plan
+- You can leave the Tags field blank
+- Select “Select Region”
+- Then click “Review”
+- Return to the ElephantSQL dashboard and click on the database instance name for this project
+- In the URL section, click the copy icon to copy the database URL
+
+That’s the database created
+
+Process 
+- In your project workspace, create a file called env.py. It’s a good idea to check that this file is included in the .gitignore file too. If you are using the Code Institute provided GitHub template, then the env.py file is already in the .gitignore file.
+- In your env.py file add the following line of code.
+ import os
+
+ - Next we need to set some environment variables.
+ os.environ["DATABASE_URL"]="<copiedURL>"
+
+ - As this is a Django application it has a SECRET_KEY
+  os.environ["SECRET_KEY"]="my_super^secret@key"
+
+We don't want to share our secrets either, so this documentation shows you a made up key. Just replace my_super^secret@key with your key
+
+Make sure you save the file.
+
+Modifying settings.py
+- Now you have created an env.py file in your file paths
+add the follow:
+ import os
+ import dj_database_url
+ if os.path.isfile('env.py'):
+     import env
+
+- A little further down, remove the insecure secret key provided by Django and replace with:
+ SECRET_KEY = os.environ.get('SECRET_KEY')
+
+ - Now that is taken care of, we need to hook up your database. We are going to use the dj_database_url import
+ Comment out the original DATABASES variable and add the code below, as shown. 
+ The please add:
+  - DATABASES = {
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
+
+ The code that has been commented out connects your Django application to the created db.sqlite3 database within your repo. 
+
+ - With those changes in place, make sure to save your file. Your application will now connect to your remote database hosted on ElephantSQL
+
+ -  Run the coomand - python manage.py migrate
 
 
 
 
+---
+# Creating an app in Django
+please follow the link the instructions to create an app 
+
+- https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf
