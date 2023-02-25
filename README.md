@@ -475,7 +475,50 @@ Installing Coverage and report commands
 
 # Technology's
 
+<details open>
+<summary>languages</summary>
 
+- HTML - https://developer.mozilla.org/en-US/docs/Glossary/HTML5
+- CSS - https://developer.mozilla.org/en-US/docs/Web/CSS
+- Python - https://www.python.org/
+-  Javascript - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+</details>
+
+<details open>
+<summary>Frame works and libraries</summary>
+
+- Django - https://www.djangoproject.com/
+- Bootstrap - https://getbootstrap.com/docs/4.0/getting-started/introduction/
+</details>
+
+<details open>
+<summary>Third party technologies</summary>
+
+- Google Fonts - https://fonts.google.com/
+- Fonts awseome - https://fontawesome.com/
+- Pixels - https://www.pexels.com/
+- Adobe colour wheel - https://color.adobe.com/
+- Performance, Best Practice, Accessibility and SEO testing - 
+
+</details>
+
+
+<details open>
+<summary>Validation and Testing</summary>
+- Javascript validation ( Validating JS code) -https://beautifytools.com/javascript-validator.php
+- HTMl validator (HTML Validation) - https://validator.w3.org/
+- CSS validator https://validator.w3.org/
+- Light house - Performance, Best Practice, Accessibility and SEO testing
+- pepe8 (Multi type code validation) - https://simcast.com/?d=pep8online.com&pcid=802&rid=152&a=1
+</details>
+
+
+<details open>
+<summary>IDE and Version Control</summary>
+-  GitPod-(Integrated Development Environment) - https://www.gitpod.io/
+- GitHub - (Cloud based hosting service to manager my Git Repositories) - https://github.com/
+- Code institute full template (Provides GitPod extensions to help with code production) - https://github.com/Code-Institute-Org/gitpod-full-template
+</details>
 
 ---
 
@@ -484,6 +527,11 @@ Installing Coverage and report commands
 ### Deplyment Django application follow link instructions 
 
 - https://github.com/Code-Institute-Org/python-essentials-template
+
+Creating an app in Django
+please follow the link the instructions to create an app 
+
+- https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf
 
 ### Repository using GitPod
 
@@ -497,9 +545,8 @@ Installing Coverage and report commands
 - git commit -m"YOUR MESSAGE HERE! PLEASE KEEP IT SHORT BUT BRIEF!"
 - git push ( saves your work with the commit message. Your work will now be pushed to your GitHub repository )
 
-# Setting up Django Project and Deploying to Heroku
-
-### Please follow the cheat sheet links below and in the order provided.
+Setting up Django Project and Deploying to Heroku
+Please follow the cheat sheet links below and in the order provided.
 
 1. https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit#
 
@@ -533,7 +580,7 @@ Set up your plan
  - As this is a Django application it has a SECRET_KEY
   os.environ["SECRET_KEY"]="my_super^secret@key"
 
-### We don't want to share our secrets either, so this documentation shows you a made up key. Just replace my_super^secret@key with your key
+We don't want to share our secrets either, so this documentation shows you a made up key. Just replace my_super^secret@key with your key
 
 ### Make sure you save the file.
 
@@ -555,17 +602,10 @@ add the follow:
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
 
- ### The code that has been commented out connects your Django application to the created db.sqlite3 database within your repo. 
+ The code that has been commented out connects your Django application to the created db.sqlite3 database within your repo. 
 
  - With those changes in place, make sure to save your file. Your application will now connect to your remote database hosted on ElephantSQL
 
  -  Run the coomand - python manage.py migrate
 
-
-
-
 ---
-# Creating an app in Django
-please follow the link the instructions to create an app 
-
-- https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf
