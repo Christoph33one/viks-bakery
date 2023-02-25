@@ -481,11 +481,11 @@ Installing Coverage and report commands
 
 # Deployment
 
-Deplyment Django application follow link instructions 
+### Deplyment Django application follow link instructions 
 
 - https://github.com/Code-Institute-Org/python-essentials-template
 
-Repository using GitPod
+### Repository using GitPod
 
 - Navigate to the repository page on GitHub
 - Click the "GitPod" button in the top right of the repository.
@@ -498,7 +498,8 @@ Repository using GitPod
 - git push ( saves your work with the commit message. Your work will now be pushed to your GitHub repository )
 
 # Setting up Django Project and Deploying to Heroku
-Please follow the cheat sheet links below and in the order provided.
+
+### Please follow the cheat sheet links below and in the order provided.
 
 1. https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit#
 
@@ -519,9 +520,9 @@ Set up your plan
 - Return to the ElephantSQL dashboard and click on the database instance name for this project
 - In the URL section, click the copy icon to copy the database URL
 
-That’s the database created
+### That’s the database created
 
-Process 
+### Process 
 - In your project workspace, create a file called env.py. It’s a good idea to check that this file is included in the .gitignore file too. If you are using the Code Institute provided GitHub template, then the env.py file is already in the .gitignore file.
 - In your env.py file add the following line of code.
  import os
@@ -532,11 +533,11 @@ Process
  - As this is a Django application it has a SECRET_KEY
   os.environ["SECRET_KEY"]="my_super^secret@key"
 
-We don't want to share our secrets either, so this documentation shows you a made up key. Just replace my_super^secret@key with your key
+### We don't want to share our secrets either, so this documentation shows you a made up key. Just replace my_super^secret@key with your key
 
-Make sure you save the file.
+### Make sure you save the file.
 
-Modifying settings.py
+### Modifying settings.py
 - Now you have created an env.py file in your file paths
 add the follow:
  import os
@@ -554,7 +555,7 @@ add the follow:
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
 
- The code that has been commented out connects your Django application to the created db.sqlite3 database within your repo. 
+ ### The code that has been commented out connects your Django application to the created db.sqlite3 database within your repo. 
 
  - With those changes in place, make sure to save your file. Your application will now connect to your remote database hosted on ElephantSQL
 
