@@ -26,6 +26,8 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#typography">Typography</a></li>
 <li><a href="#colours">Colours</a></li>
+<li><a href="#testing">Testing</a></li>
+
 
 
 
@@ -378,3 +380,95 @@ Icons
 - Buttons - bnt-success - "Bootstrap default button colour" "green"
 
 ![](assets/colours.png)
+
+---
+
+# Testing
+
+I have used  manual and automated testing to ensure the website's functionality meets the desired and developemnt standards throughou the website.
+
+### Code Validation
+All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
+
+- CSS validation 
+https://jigsaw.w3.org/css-validator/
+![](assets/CSS%20validation%20test%20pass.png)
+
+
+### Automated Testing
+
+I have used the Coverage library throughout testing to keep track of how much Python code was covered by the tests. From running the coverage report my website has of my code tested. The remaining code is covered by manual testing.
+
+### Automated tests
+
+I have tested all three of the projects apps and have covered a total of 83%. For the rest of my tesing I will manually test all functions.
+
+![](assets/full%20site%20tests%20coverage.png)
+
+### Menus app test
+![](assets/test%20menus%20coverage%20report.png)
+
+### Blog app test
+![](assets/test%20blog%20coverage%20report.png)
+
+### Contact app test
+![](assets/test%20contact%20coverage%20report.png)
+
+Installing Coverage and report commands
+
+- Install the package using pip3 install coverage
+
+- Run coverage run manage.py test
+
+- Then coverage html to generate the report
+
+- You can view the report in a browser by using the command python3 -m http.server and opening the index.html file from inside the htmlcov folder.
+
+### Manual tests
+
+### Landing page
+- How design looks and feels with contrasting colors and text 
+- How all images and text look on screen sizes for brower, tablet and mobile
+- Nav bar links function to correct urls and hoover effect works with mouse courser
+- Post section shows clear images and cards reacts when user selects to view card as a post in post detial page
+- Footer section shows clear information and google maps open on a separate page for user to view.
+- Registration and sign in buttons are easy to view and react to a mouse curser.
+- Social media links are displayed and send user to correct url as intended
+
+### Authentication form
+- Registration button takes user to new page and a clear form to add details
+- Required input field works to indicate to the user that all form fields need information before submitting 
+- Submit button is well presented and the url is given 
+- Message handler gives well presented message to user after submittion
+- Returns user to index url as excepted 
+
+### Sign in / out form
+- Registration button takes user to new page and a clear form to add details
+- Required input field works to indicate to the user that all form fields need 
+- Message handler gives weel resented message to user after submittion
+- Logout asks user for second conformation of sign out
+- Returns user to index url as excepted 
+
+### Post detail page
+- Gives user nice visual layout of images and post a comment areaa
+- User is given good imformtion on the product 
+- A clear indication of how to delete and update a comment
+- Post detail displays well in browser, tablet and mobile screen sizes
+- Message handler gives well presented message to user after editing post or deleting a post
+
+### Cake menus
+- All three menu links send user to correct url for the menu they choose
+- Menus a well designed and easy to read and understand 
+- Menu fonts and text are desplay well for all screeen sizes
+---
+
+
+
+### Bugs and testing
+
+![](assets/spread%20sheet%20for%20bugs%20and%20tests.png)
+
+
+
+
+

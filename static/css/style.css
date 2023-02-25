@@ -1,4 +1,4 @@
-/* -----------------------------------------TEXT STYLING------------*/
+/* --Text styling and sizes--*/
 h1 {
     font-family: Montserrat, sans-serif;
     font-size: 3.5rem;
@@ -25,7 +25,7 @@ h6 {
     font-family: Fira Sans Condensed;
     color: #BFBFBF;
 }
-/* -----------------------------------------BASE.HTML------------*/
+/* --Base.html--*/
 body {
     margin: 0;
     padding: 0;
@@ -63,7 +63,7 @@ body {
 .title-comma {
     color: #D3D925;
 }
-/* -----------------------------------------NAV BAR------------*/
+/* --nav bar--*/
 li, a {
     font-family: Fira Sans Condensed;
     opacity: 1;
@@ -86,7 +86,7 @@ li, a {
 .navbar-buttons{
     margin-right: 20px;
 }
-/* -----------------------------------------Index.html------------*/
+/* --Index.html--*/
 .header-title, .header-image {
     font-family: Montserrat;
     font-size: 1.2rem;
@@ -116,7 +116,7 @@ li, a {
     color: inherit;  
     text-decoration:none; 
 }
-/* -----------------------------------------COMPETITION SECTION------------*/
+/* --Competiton section / index.html--*/
 .card {
     display: inline-block;
     margin-bottom: 30px;
@@ -139,7 +139,7 @@ li, a {
     border: none;
     border-color: #e70c6b;
 }
-/* -----------------------------------------POST DETAIL PAGE------------*/
+/* --Post detail.html--*/
 .fa-trash:hover{
     color: #ef0707;
 }
@@ -147,7 +147,7 @@ li, a {
     color: #D3D925;
 }
 
-/* -----------------------------------------CAKE MENUS TEMPLATES------------*/
+/* --cake menus--*/
 .cake-menu-header {
     margin-top: 20px;
 }
@@ -156,7 +156,7 @@ li, a {
     width: 70%;
     margin-top: 50px;
 }
-/* ----------------------------------------- CONTACT FORM -----------*/
+/* --Contact.html--*/
 .submit-button:hover {
     color: #0D0D0D;
 }
@@ -166,7 +166,7 @@ li, a {
 .contact-link:hover{
     color: #D3D925;
 }
-/* ----------------------------------------- REGISTER FORM------------*/
+/* --Registration form--*/
 .sign-up-header {
     color: #0D0D0D;
     text-align: center;
@@ -179,23 +179,23 @@ li, a {
 .sign-up-form > h4 {
     font-family: Montserrat;
 }
-/* -----------------------------------------LOGIN FORM------------*/
+/* --Sign in form--*/
 .form-label {
     font-family:  Montserrat;
     color: #0D0D0D;
 }
-/* -----------------------------------------404 ERROR PAGE------------*/
+/* --404.html--*/
 
 .page-wrap-400 {
     min-height: 100vh;
     color: #BFBFBF;
 }
-/* -----------------------------------------500 ERROR PAGE------------*/
+/* --500.html--*/
 .page-wrap-500 {
     min-height: 100vh;
     color: #D3D925;
 }
-/* -----------------------------------------BASE.HTML------------*/
+/* --Media querys / base.html--*/
 /*For screen sizes max-width 400 pixels*/
 @media screen and (max-width: 400px) {
 
@@ -207,14 +207,14 @@ li, a {
         font-size: 0.8rem;
     }
 }
-/*For media screens of max-width 990 pixels and smaller*/
+/* --Nav bar--*/
 @media screen and (max-width: 991px) {
 
     .nav-brand{
         font-size: 2rem;
     }
 }
-/* -----------------------------------------FOOTER------------*/
+/* --Footer--*/
 /* for phone screen size max-width 500 pixels */
 @media screen and (max-width: 500px) {
 

@@ -16,7 +16,7 @@ class PostList(generic.ListView):
     paginate_by = 3
 
 
-# Post detail view
+# Post detail / render post_detail.html
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -75,7 +75,7 @@ class PostDetail(View):
         )
 
 
-# delete comment function
+# Delete comment function
 @login_required(login_url='/accounts/login/')
 def delete_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk, name=request.user.username)
@@ -87,7 +87,7 @@ def delete_comment(request, pk):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-
+# Edit a comment
 @login_required(login_url='/accounts/login/')
 def edit_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
@@ -123,6 +123,7 @@ def edit_comment(request, pk):
             )
 
 
+# Post a like
 class PostLike(View):
 
     def post(self, request, slug, *args, **kwargs):

@@ -7,14 +7,14 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card" style="width:25rem;">
-            <img class="card-img-top" src="{{ post.featured_image.url }}">
-            <div class="card-body">
-                <!--post title section-->
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text">{{ post.content | safe }}</p>
+                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                    <div class="card-body">
+                    <!--post title section-->
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content | safe }}</p>
+                </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -33,71 +33,62 @@
                         <button type="submit" name="blogpost_id" value="{{post.slug}}" title="like!" class="btn-like"><i class="far fa-heart"></i></button>
                         {% endif %}
                     </form>
-                        {% else %}
-                        <span class="text-secondary"><i class="far fa-heart"></i></span>
-                        {% endif %}
-
-                    <!--NUMBER OF LIKES-->
-                        {{ post.number_of_likes }} 
-
-                        <!-- NUMBER OF COMMENTS-->
-                        {% with comments.count as total_comments %}
-                            <strong class="text-secondary"><i class="far fa-comments"></i>
-                                {{ total_comments }}
-                            </strong>
-                    {% endwith %}
+                    {% else %}
+                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                    {% endif %}
+                    <!--Number of likes-->
+                    {{ post.number_of_likes }} 
+                    <!-- Number of comments-->
+                    {% with comments.count as total_comments %}
+                    <strong class="text-secondary"><i class="far fa-comments"></i>
+                        {{ total_comments }}
+                    </strong>
+                    <!-- {% endwith %} -->
                     <hr>
-
                     <!--View comments-->
                     <h5 class="card-title">Comments</h5>
                     {% for comment in comments %}
                         <p class="font-weight-bold">
                             {{ comment.name }}
                             <span class=" text-muted font-weight-normal"> 
-                            {{ comment.created_on }}
+                                {{ comment.created_on }}
                             </span>
                         </p>
                         <p>Wrote: {{ comment.body | linebreaks }}</p>
-
                         <!--Delete comement-->
                         {% if user.username == comment.name %}
                             <div title="Delete comment!">
                                 <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
                             </div>
-
                             <!--Edit comment-->
                             <div title="Edit comment">
                                 <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
                             </div>
                         {% endif %}
-                            <p class="card-text">Watch video tutorials of course for free!</p>
                     {% endfor %}
                     <hr>
-        
                     <!-- APPROVE COMMENT-->
                     {% if commented %}
                         <div class="alert alert-success" role="alert">
                             Your comment is awaiting approval
                         </div>
-                            <button class="btn btn-info btn-sm">
-                                <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
-                            </button>
+                        <button class="btn btn-info btn-sm">
+                            <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
+                        </button>
                     {% else %}
-                        {% if user.is_authenticated %}
-                        <h4>Leave a comment:</h4>
-                            <p>Posting as: {{ user.username }}</p>
-
+                    {% if user.is_authenticated %}
+                    <h4>Leave a comment:</h4>
+                        <p>Posting as: {{ user.username }}</p>
                         <!--Comment form-->
                         <form method="post" style="margin-top: 1.3em;">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
                             <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm">Submit</button>
                         </form>
-
                         <!--Not logged in - user aleart-->
-                    {% else %}
+                        {% else %}
                         <div class="alert alert-success" role="alert">
-                        Please Sign in | Register to like or leave a comment!
+                            Please Sign in | Register to like or leave a comment!
                             <p>
                                 <a class="link" href="{% url 'account_login' %}" title="Sign in">Sign in</a> | <a class="link" title="Sign up"
                                 href="{% url 'account_signup' %}">Register</a>
@@ -109,9 +100,7 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 </div>
-    
-  
 
 {% endblock %}

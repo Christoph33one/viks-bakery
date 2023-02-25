@@ -2,12 +2,11 @@
 
 {% block content %}
 
-
+<!--Cheese cake menu-->
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center cake-menu-header ">"Because every cake has a story to tell"</h4>
         <!-- Loop through list to display only cheese cake items -->
-
         {% if cheese_cakes.cheese_items %}
 
         {% for cheesecakes in cheese_cakes.cheese_items %}
@@ -20,17 +19,12 @@
 
         <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
         <hr>
-
         {% endfor %}
-
         {% endif %}
     </div>
 </div>
-
 <br>
 <br>
-
-</div>
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center cake-menu-header ">"Happiness starts here"</h4>
@@ -48,10 +42,9 @@
 
         <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
         <hr>
-
         {% endfor %}
-
         {% endif %}
     </div>
 </div>
+
 {% endblock %}

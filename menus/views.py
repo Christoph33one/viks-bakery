@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
 from blog.models import Post
-# from .forms import NewMenuForm
 
 
 # Render index.html

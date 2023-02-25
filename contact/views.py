@@ -27,7 +27,6 @@ def Contact(request):
                 'message': message
             })
             send_mail('The contact form subject', 'We have your message', 'noreply@viktorija.com', ['viktorija.com'], html_message=html)
-            # send form to admin user
             form.save()
             # send a reply message to the user
             messages.add_message(

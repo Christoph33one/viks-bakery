@@ -1,24 +1,21 @@
 {% extends 'base.html'%}
 
 {% block content %}
+
 <!--Edit posts-->
 <h1>Edit your post</h1>
 {% for post in post %}
-<p>{{post.title}}</p>
+    <p>{{post.title}}</p>
 
-<p>{{post.created_on}}</p>
-
+    <p>{{post.created_on}}</p>
 {% endfor %}
 {% if commented %}
-<div class="alert alert-success" role="alert">
-    Your comment is awaiting approval
-</div>
-<button class="btn btn-info btn-sm">
-<a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
-</button>
+    <div class="alert alert-success" role="alert">
+        Your comment is awaiting approval
+    </div>
+    <button class="btn btn-info btn-sm">
+        <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
+    </button>
 {% endif %}
-
-
-
 
 {% endblock %}
