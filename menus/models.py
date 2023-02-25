@@ -89,21 +89,3 @@ class Meta:
     def __str__(self):
         return self.cake_name
 
-
-
-# create a user module !!
-# look at user module templates on github!
-# look at a module for a user views
-
-
-# MERGE MODELS TO ONE MODEL?
-
-# CAKE_SELECTIONS = (
-#     (0, "Choclate Cakes"),
-#     (1, "Cream Cakes"),
-#     (3, "Cheese Cakes"),
-#     (4, "Vegan Cakes"),
-#     (5, "New item")
-# )
-
-# class CreamCakes(CakeItem):

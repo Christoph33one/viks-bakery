@@ -27,7 +27,3 @@ class TestCakeMenusViews(TestCase):
 
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'cheese_cake.html')
-
-
-
-# Command to run test : python3 manage.py test blog.test_views
