@@ -214,6 +214,8 @@ I wanted a symmetric feel throughout all pages with the website. To do this I cr
 
 I used a header image of a width of 100% to stretch across the whole screen on all devices. I want the image to give a good idea as to what the site is about, so choosing the correct imagine was inportant. I aslo added a fixed position to give a scrolling effect for this image.
 
+A scroll to top button is displayed once the user starts to scroll down any page on the website. I try to keep small within the modern functions that most site have.
+
 ![](assets/home%20page%20header.png)
 
 --- 
@@ -615,13 +617,15 @@ add the following:
 
  # Future goals
 
- - Users can post their own cakes and the winner will be given an award
+ - Users can post their own cakes and the winner will get a reward
 
- - Users can create a bigger profile with a mehtod to post their special recipes
+ - Users can create a bigger profile with a mehtod to post their special recipes and pictures
 
- - A booking systems for user to book a table 
+ - A booking system for users to book a table 
 
  - A booking system for a user to order a cake
+
+ #
 
 
 

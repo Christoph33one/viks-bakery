@@ -75,34 +75,26 @@
         </li>
           <!--Contact form-->
         <li class="nav-item">
-          <a class="nav-link nav-colour" href="{% url 'contact' %}">CONTACT</a>         
+          <a class="nav-link nav-colour" onclick="myFunction()" href="{% url 'contact' %}">CONTACT</a>         
         </li>
       </ul>
-      <!-- <span class="navbar-text navbar-buttons text-muted"> -->
-            <!--If user is authenicated-->
+        <!--If user is authenicated-->
         {% if user.is_authenticated %}
+        <!--Log out-->
+        <p class="logged-in">Signed in as | {{ user.username }}</p>
         <form class="btn btn-outline-success btn-sm"  action="{% url 'account_logout' %}">
           <button>Logout</button>
         </form>
-          <!-- <button type="button" class="btn btn-outline-success btn-sm">
-            <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a> -->
-     
-          <!--add user login name-->
           {% else %}
+          <!--Sign in-->
           <form class="btn btn-outline-success btn-sm" action="{% url 'account_signup' %}">
             <button>Register</button>
           </form>
-          <!-- <button type="button" class="btn btn-outline-success  btn-sm">
-            <a class="nav-link" href="{% url 'account_signup' %}"><span class="nav-colour">Register</span></a>
-          </button> -->
+          <!--Sign in-->
           <form class="btn btn-outline-success btn-sm"  action="{% url 'account_login' %}">
             <button>Sign in</button>
           </form>
-          <!-- <button type="button" class="btn btn-outline-success  btn-sm">
-            <a class="nav-link" href="{% url 'account_login' %}" ><span class="nav-colour">Sign in</span></a>
-          </button> -->
           {% endif %}
-        <!-- </span> -->
       </div>
   </div>
 </nav>
@@ -162,6 +154,7 @@
     </table>
   </div>
     <div class="col-md-3 col-md-6 col-lg-4 col-xl-4 mx-auto mt-3 map-responsive" id="footer-address">
+      <h5>Come find us!</h5>
       <!--Google maps address-->
       <iframe src="https://maps.google.com/maps?q=london%20&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
@@ -187,6 +180,15 @@
 
 <!--JavaScript file / file path-->
 <script src="{% static 'js/script.js' %}"></script>
+
+<!--Message handler-->
+<script>
+setTimeout(function () {
+  let messages = document.getElementById('msg');
+  let alert = new bootstrap.Alert(messages);
+  alert.close();
+}, 2000);
+</script>
 
 </body>
 </html>

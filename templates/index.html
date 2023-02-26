@@ -17,19 +17,18 @@
 <hr>
 <div class="header-title text-center container-sm ">
     <h2 class=" justify-content-center">PICK YOUR FAVOURITE!</h2>
-    <p>
-        We want hear from you! Which of the cakes displayed below is your favourite? <br>
+    <p>We want hear from you! Which of the cakes displayed below is your favourite? <br>
         Let us know by giving a like and leaving a comment <br>
-        <h6><em>Click below to like or add a post!</em></h6>
+        <p style="font-size: 1rem; color: #BFBFBF;"><em>Click below to like or add a post!</em></p>
     </p>
 </div>
- <!-- Competition posts -->
-<div class="col-9 mt-3 container">
+<!--Blog cards-->
+<div class="col-9 mt-5 container">
     <div class="row">
         {% for post in post_list %}
         <div class="col-md-4 gy-3">
-            <div class="card comp-cards ">
-                <div class="card-body ">
+            <div class="card comp-cards h-100">
+                <div class="card-body h-100">
                     <div class="image-container">
                         {% if "placeholder" in post.featured_image.url %}
                         <img class="card-img-top"

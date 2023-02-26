@@ -1,5 +1,3 @@
-document.innerHTML = "Scroll to top button";
-
 // Get the button:
 let mybutton = document.getElementById("myBtn");
 
@@ -19,19 +17,3 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-// Message handler timer //
-
-  setTimeout(function () {
-      let messages = document.getElementById('msg');
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
-  }, 2000);
-
-  // // Scroll into view //
-
-//   function myFunction() {
-//   const element = document.getElementById("content");
-//   element.scrollIntoView();
-//   // anchorlink.scrollIntoView();
-//   }
