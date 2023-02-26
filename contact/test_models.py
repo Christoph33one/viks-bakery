@@ -21,4 +21,3 @@ class TestContactModel(TestCase):
         testemail = get_object_or_404(Contact, email="Test email")
 
         self.assertEqual(self.contact.created_on, testemail.created_on)
-

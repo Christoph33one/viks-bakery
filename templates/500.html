@@ -3,18 +3,16 @@
 {% block content %}
 
 <!-- 500 error page -->
-<div class="page-wrap-500 d-flex flex-row align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <span class="display-1 d-block">404</span>
-                <h2>Oops something went wrong</h2>
-                <div class="mb-4 lead">Due to an internal error we are unable to process this request. Please refresh to try again.</div>
-                <!--redierects to home page-->
-                <a href="{% url 'index' %}" class="btn btn-link">Back to Home</a>
-            </div>
+<div class=" container">
+    <div class="text-center">
+        <h4 style="background:rgb(249, 250, 249)" >500 Server Error</h4>
+        <h5 style="background:rgb(249, 250, 249)"  >Ooops, the page was not found.</h5>
+        <div>
+            <img src="https://res.cloudinary.com/djiqea4sz/image/upload/v1677180062/04_26_64_02_o27tb7.jpg" alt="person serching image" style="max-width:80%;">
         </div>
+        <a href="{% url 'home' %}" class="link-button">Return Home</a>
     </div>
 </div>
+
 
 {% endblock %}

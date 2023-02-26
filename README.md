@@ -482,7 +482,7 @@ Installing Coverage and report commands
 - HTML - https://developer.mozilla.org/en-US/docs/Glossary/HTML5
 - CSS - https://developer.mozilla.org/en-US/docs/Web/CSS
 - Python - https://www.python.org/
--  Javascript - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- Javascript - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 </details>
 
 <details open>
@@ -490,6 +490,9 @@ Installing Coverage and report commands
 
 - Django - https://www.djangoproject.com/
 - Bootstrap - https://getbootstrap.com/docs/4.0/getting-started/introduction/
+- Cloudinary - A service that hosts image files in the project. https://console.cloudinary.com/
+- Heruko - A cloud platform that the application is deployed to https://www.heroku.com/
+- 
 </details>
 
 <details open>
