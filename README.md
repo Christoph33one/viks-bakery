@@ -1,11 +1,10 @@
-
-ADD RESPONSIVE IMAGE OF WEBSITE ON ALL DEVICES AND A LINK TO THE SITE BELOW THE IMAGE
-
 # Viktoria's bake house 
 
 For my fourth milestone project with Code Institute I have created a full-stack restaurant website called Viktoria's bake house, using the Agile plannnig approach and CRUD operations through a relational database.
 
 The website idea is to give the user a look at the menu options and to sign up and leave a like or comment on the competiton page.
+
+![](assets/I%20am%20responsive%20image.png)
 
 ---
 
@@ -29,18 +28,9 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#testing">Testing</a></li>
 <li><a href="#technologies">Technologies</a></li>
 <li><a href="#deployment">Deployment</a></li>
-
-
-
-
-
-
-
-
-
+<li><a href="#future-goals">Future goals</a></li>
 
 ---
-
 
 # Target Audience
 
@@ -620,3 +610,16 @@ add the following:
  -  Run the command - python manage.py migrate
 
 ---
+
+ # Future goals
+
+ - Users can post their own cakes and the winner will be given an award
+
+ - Users can create a bigger profile with a mehtod to post their special recipes
+
+ - A booking systems for user to book a table 
+
+ - A booking system for a user to order a cake
+
+
+

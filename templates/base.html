@@ -69,7 +69,7 @@
           </ul>
           <!--Contact form-->
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour"></span>CONTACT</span></a>
+            <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour"></span>CONTACT</span></a>         
           </li>
         </ul>
         <span class="navbar-text navbar-buttons text-muted">
@@ -91,9 +91,7 @@
   </div>
 </nav>
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <!--Header image-->
-
 <header>
   <div class="row">
     <div class="bg-image" id="jumboid">
@@ -101,6 +99,8 @@
   </div>
 </header>
 
+<!--Scroll to top-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
 <!-- Messsage handling  / Alerts -->
 <div class="container">
@@ -173,45 +173,8 @@
     </section>
 </footer>
 
-<!-- Message handler timer -->
-<script>
-  setTimeout(function () {
-      let messages = document.getElementById('msg');
-      let alert = new bootstrap.Alert(messages);
-      alert.close();
-  }, 2000);
-</script>
-<!-- 
-
-<script>
-  function myFunction() {
-  const element = document.getElementById("content");
-  element.scrollIntoView();
-  anchorlink.scrollIntoView();
-  }
-</script> -->
-
-<script>
-// Get the button:
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-</script>
+<!--JavaScript file / file path-->
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
