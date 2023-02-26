@@ -29,6 +29,9 @@ The website idea is to give the user a look at the menu options and to sign up a
 <li><a href="#technologies">Technologies</a></li>
 <li><a href="#deployment">Deployment</a></li>
 <li><a href="#future-goals">Future goals</a></li>
+<li><a href="#credits">Credits</a></li>
+<li><a href="#acknowledgements">Acknowledgements </a></li>
+
 
 ---
 
@@ -486,7 +489,7 @@ Installing Coverage and report commands
 - Bootstrap - https://getbootstrap.com/docs/4.0/getting-started/introduction/
 - Cloudinary - A service that hosts image files in the project. https://console.cloudinary.com/
 - Heruko - A cloud platform that the application is deployed to https://www.heroku.com/
-- 
+
 </details>
 
 <details open>
@@ -625,7 +628,27 @@ add the following:
 
  - A booking system for a user to order a cake
 
- #
+ # Credits
+
+To build this project I sourced a variety online web building modules to help me. 
+
+- Coverage https://coverage.readthedocs.io/en/6.2/
+
+- Django Allauth https://django-allauth.readthedocs.io/en/latest/installation.html
+
+- Django cripsyforms https://django-crispy-forms.readthedocs.io/en/latest/
+
+- MailTrap https://mailtrap.io/
+
+---
+
+# Acknowledgements 
+
+- I would like to say a thank you to Code Institute for giving me the tools to build my 4th milestone project and also my first full stack development project.
+
+- A big thank you to my mentor for keeping me on track with the build stages and giving me valuable advise within key areas.
+
+- The Slack community has been a great help when I needed it the most, so a thank you to all that answered my qustions and guided me in the process to build this project.
 
 
 
