@@ -3,19 +3,22 @@
 {% block content %}
 
 <!--Edit posts-->
-<h1>Edit your post</h1>
+<!-- <h1>Edit your post</h1>
 {% for post in post %}
-    <p>{{post.title}}</p>
+    <h5>{{post.title}}</h5>
 
-    <p>{{post.created_on}}</p>
+    <h5>{{post.created_on}}</h5>
 {% endfor %}
 {% if commented %}
     <div class="alert alert-success" role="alert">
         Your comment is awaiting approval
     </div>
-    <button class="btn btn-info btn-sm">
+    <!-- <button class="btn btn-info btn-sm">
         <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
-    </button>
+    </button> -->
+    <form class="btn btn-outline-success btn-sm" action="{% url 'index' %}">
+        <button>Rbvbv</button>
+      </form> -->
 {% endif %}
 
 {% endblock %}

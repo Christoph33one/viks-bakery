@@ -43,8 +43,8 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'index' %}">
       <h1 class="nav-brand">V I K T O R I A<span class="title-comma">'</span>S  
-        <h5 class="nav-title">- B A K E - H O U S E -</h5>
       </h1>
+      <h5 class="nav-title">- B A K E - H O U S E -</h5>
     </a>
     <!--Toggle button-->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -52,41 +52,57 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <!--Collapsable nav bar-->
-      <div class="collapse navbar-collapse " id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><span
-                class="nav-colour">HOME</span></a>
+    <div class="collapse navbar-collapse " id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">
+              <span class="nav-colour">HOME</span>
+            </a>
           </li>
             <!--Drop down menu-->
-          <ul class="nav-item dropdown left" style="padding: 0;">
+          <li class="nav-item dropdown green-bground">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">MENU</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'choc_cake' %}">CHOCLATE CAKES</a></li>
-              <li><a class="dropdown-item" href="{% url 'cream_cake' %}">CREAM CAKES</a></li>
-              <li><a class="dropdown-item" href="{% url 'cheese_cake' %}">CHEESE CAKES</a></li>
+            <!-- Dropdown for the different menus options -->
+            <ul class="dropdown-menu green-bground">
+                <li><a class="dropdown-item" href="{% url 'choc_cake' %}">CHOCLATE CAKES</a>
+                </li>
+                <li><a class="dropdown-item" href="{% url 'cream_cake' %}">CREAM CAKES</a>
+                </li>
+                <li><a class="dropdown-item" href="{% url 'cheese_cake' %}">CHEESE CAKES</a>
+                </li>
+                <li>
             </ul>
-          </ul>
+        </li>
           <!--Contact form-->
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}"><span class="nav-colour"></span>CONTACT</span></a>         
-          </li>
-        </ul>
-        <span class="navbar-text navbar-buttons text-muted">
-              <!--If user is authenicated-->
-          {% if user.is_authenticated %}
-          <button type="button" class="btn btn-outline-success btn-sm">
-            <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a>
-          </button>
+        <li class="nav-item">
+          <a class="nav-link nav-colour" href="{% url 'contact' %}">CONTACT</a>         
+        </li>
+      </ul>
+      <!-- <span class="navbar-text navbar-buttons text-muted"> -->
+            <!--If user is authenicated-->
+        {% if user.is_authenticated %}
+        <form class="btn btn-outline-success btn-sm"  action="{% url 'account_logout' %}">
+          <button>Logout</button>
+        </form>
+          <!-- <button type="button" class="btn btn-outline-success btn-sm">
+            <a class="nav-link" href="{% url 'account_logout' %}"><span class="nav-colour">Logout</span></a> -->
+     
+          <!--add user login name-->
           {% else %}
-          <button type="button" class="btn btn-outline-success  btn-sm">
+          <form class="btn btn-outline-success btn-sm" action="{% url 'account_signup' %}">
+            <button>Register</button>
+          </form>
+          <!-- <button type="button" class="btn btn-outline-success  btn-sm">
             <a class="nav-link" href="{% url 'account_signup' %}"><span class="nav-colour">Register</span></a>
-          </button>
-          <button type="button" class="btn btn-outline-success  btn-sm">
+          </button> -->
+          <form class="btn btn-outline-success btn-sm"  action="{% url 'account_login' %}">
+            <button>Sign in</button>
+          </form>
+          <!-- <button type="button" class="btn btn-outline-success  btn-sm">
             <a class="nav-link" href="{% url 'account_login' %}" ><span class="nav-colour">Sign in</span></a>
-          </button>
+          </button> -->
           {% endif %}
-        </span>
+        <!-- </span> -->
       </div>
   </div>
 </nav>
@@ -145,32 +161,28 @@
       </tbody>
     </table>
   </div>
-
-      <!--Google maps / address section-->
-      <div class="col-md-3 col-md-6 col-lg-4 col-xl-4 mx-auto mt-3" id="footer-address">
-          <iframe width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=london%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-          </iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:300px;}</style>
-          <a href="https://www.embedgooglemap.net"></a>
-      </div>
+    <div class="col-md-3 col-md-6 col-lg-4 col-xl-4 mx-auto mt-3 map-responsive" id="footer-address">
+      <!--Google maps address-->
+      <iframe src="https://maps.google.com/maps?q=london%20&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
       <!--Socail media links-->
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase font-weight-bold">Follow us</h5>
         <!-- Facebook -->
-        <a class="btn  btn-floating m-1" style="background-color: #D4D948" href="https://www.facebook.com/"
-          target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn  btn-floating m-1" style="background-color: #D4D948" href="https://www.facebook.com/" target="_blank"
+          ><i class="fab fa-facebook-f"></i></a>
         <!-- Twitter -->
-        <a class="btn btn-floating m-1" style="background-color: #D6D979" href="https://twitter.com/"
-          target="_blank role=" button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-floating m-1" style="background-color: #D6D979" href="https://twitter.com/" target="_blank"
+          ><i class="fab fa-twitter"></i></a>
         <!-- Instagram -->
-        <a class="btn btn-floating m-1" style="background-color: #D4D948" href="https://www.instagram.com/"
-          target="_blank role=" button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-floating m-1" style="background-color: #D4D948" href="https://www.instagram.com/" target="_blank"
+          ><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     <!-- Copyright -->
     <div class="text-center p-3">
       <h6>Copyright:2023 @viks-bake-house</h6>
     </div>
-    </section>
 </footer>
 
 <!--JavaScript file / file path-->

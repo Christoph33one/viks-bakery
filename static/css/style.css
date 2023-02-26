@@ -243,6 +243,9 @@ li, a {
 @media screen and (max-width: 500px) {
 
     #footer-address{
-        display: none;
-    } 
+
+        width: 300;
+        height: 250;
+
+        } 
     }

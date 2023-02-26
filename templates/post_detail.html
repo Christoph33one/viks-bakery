@@ -7,96 +7,93 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card" style="width:25rem;">
-                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="A post of a cake">
                     <div class="card-body">
                     <!--post title section-->
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.content | safe }}</p>
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <h5 class="card-text">{{ post.content | safe }}</h5>
                 </div>
             </div>
         </div>
 
-
-
-<!--Post content card-->
- 
-        <div class="col-md-6">
-            <div class="card" style="width:25rem;">
-                <!--SHOW LIKES-->
-                <div class="card-body">
-                {% if user.is_authenticated %}
-                    <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button class="like-post" type="submit" name="blogpost_id" value="{{post.slug}}" title="Unlike!" class="btn-like"><i class="fas fa-heart"></i></button>
-                        {% else %}
-                        <button type="submit" name="blogpost_id" value="{{post.slug}}" title="like!" class="btn-like"><i class="far fa-heart"></i></button>
-                        {% endif %}
-                    </form>
+<!--Post comment card-->
+    <div class="col-md-6">
+        <div class="card" style="width:25rem;">
+            <!--SHOW LIKES-->
+            <div class="card-body">
+            {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button class="like-post" type="submit" name="blogpost_id" value="{{post.slug}}" title="Unlike!" class="btn-like"><i class="fas fa-heart"></i></button>
                     {% else %}
-                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" title="like!" class="btn-like"><i class="far fa-heart"></i></button>
                     {% endif %}
-                    <!--Number of likes-->
-                    {{ post.number_of_likes }} 
-                    <!-- Number of comments-->
-                    {% with comments.count as total_comments %}
-                    <strong class="text-secondary"><i class="far fa-comments"></i>
-                        {{ total_comments }}
-                    </strong>
-                    <!-- {% endwith %} -->
-                    <hr>
-                    <!--View comments-->
-                    <h5 class="card-title">Comments</h5>
-                    {% for comment in comments %}
-                        <p class="font-weight-bold">
-                            {{ comment.name }}
-                            <span class=" text-muted font-weight-normal"> 
-                                {{ comment.created_on }}
-                            </span>
-                        </p>
-                        <p>Wrote: {{ comment.body | linebreaks }}</p>
-                        <!--Delete comement-->
-                        {% if user.username == comment.name %}
-                            <div title="Delete comment!">
-                                <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
-                            </div>
-                            <!--Edit comment-->
-                            <div title="Edit comment">
-                                <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                    <hr>
-                    <!-- APPROVE COMMENT-->
-                    {% if commented %}
-                        <div class="alert alert-success" role="alert">
-                            Your comment is awaiting approval
+                </form>
+                {% else %}
+                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                {% endif %}
+                <!--Number of likes-->
+                {{ post.number_of_likes }} 
+                <!-- Number of comments-->
+                {% with comments.count as total_comments %}
+                <strong class="text-secondary"><i class="far fa-comments"></i>
+                    {{ total_comments }}
+                </strong>
+                <!-- {% endwith %} -->
+                <hr>
+                <!--View comments-->
+                <h5 class="card-title">Comments</h5>
+                {% for comment in comments %}
+                    <h5 class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal"> 
+                            {{ comment.created_on }}
+                        </span>
+                    </h5>
+                    <h5>Wrote: {{ comment.body | linebreaks }}</h5>
+                    <!--Delete comement-->
+                    {% if user.username == comment.name %}
+                        <div title="Delete comment!">
+                            <a href="{% url 'delete_comment'  comment.pk  %}"><h4><i class="fa-solid fa-trash"></i></h4></a>
                         </div>
-                        <button class="btn btn-info btn-sm">
-                            <a href="{% url 'index' %}" class="post-link">Click to see more posts</a>
-                        </button>
-                    {% else %}
-                    {% if user.is_authenticated %}
-                    <h4>Leave a comment:</h4>
-                        <p>Posting as: {{ user.username }}</p>
-                        <!--Comment form-->
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm">Submit</button>
-                        </form>
-                        <!--Not logged in - user aleart-->
-                        {% else %}
-                        <div class="alert alert-success" role="alert">
-                            Please Sign in | Register to like or leave a comment!
-                            <p>
-                                <a class="link" href="{% url 'account_login' %}" title="Sign in">Sign in</a> | <a class="link" title="Sign up"
-                                href="{% url 'account_signup' %}">Register</a>
-                            </p>
+                        <!--Edit comment-->
+                        <div title="Edit comment">
+                            <a href="{% url 'edit_comment' comment.pk %}"><h4><i class="fa-solid fa-pen-to-square"></i></h4></a>
                         </div>
-                        {% endif %}
                     {% endif %}
+                {% endfor %}
+                <hr>
+                <!-- APPROVE COMMENT-->
+                {% if commented %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting approval
                     </div>
+                   
+                    <form class="btn btn-info btn-sm btn-sm" action="{% url 'index' %}">
+                        <button>View more posts</button>
+                    </form>
+                {% else %}
+                {% if user.is_authenticated %}
+                <h4>Leave a comment:</h4>
+                    <h5>Posting as: {{ user.username }}</h5>
+                    <!--Submit comment-->
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm">Submit</button>
+                    </form>
+                    <!--Not logged in - user aleart-->
+                    {% else %}
+                    <div class="alert alert-success" role="alert">
+                        Please Sign in | Register to like or leave a comment!
+                        <h5>
+                            <a class="link" href="{% url 'account_login' %}" title="Sign in">Sign in</a> | <a class="link" title="Sign up"
+                            href="{% url 'account_signup' %}">Register</a>
+                        </h5>
+                    </div>
+                    {% endif %}
+                {% endif %}
                 </div>
             </div>
         </div>

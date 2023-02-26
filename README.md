@@ -44,7 +44,7 @@ and what key featuers could I use to benefit that audience.
  - People that enjoy dining out and fine dinning
  - Peolpe that enjoy commenting on social media
 
- I wanted to find people that would enjoy more than eating a nice cake. But to go out and enjoy some fine dining with a variety of classic and modern cakes. To keep things more interesting, I added a cake competition to the website. Users can register and leave comments or just like the best of three cakes displayed every month. 
+ I wanted to find people that would enjoy more than eating a nice cake. But to go out and enjoy some fine dining with a variety of classic and modern cakes. To keep things more interesting, I added cake voting to the website. Users can register and leave comments or just like the best of three cakes displayed every month. 
  
 ---
 
@@ -65,7 +65,7 @@ and what key featuers could I use to benefit that audience.
 
  - Three menu pages which can be created, updated and deleted by a site administrator. 
 
- - A blog page where users can read and comment under a cake competition post. Users that are registered can create, read, update and delete a comment they have made.
+ - A blog page where users can read and comment under a cake post. Users that are registered can create, read, update and delete a comment they have made.
 
  - A contact form where users can send a message that is saved in the data base and for the site administrator to read. User comment request has been tested with MailTrap https://mailtrap.io/ for confirmation that the email has been sent and received to an email provider.
 
@@ -243,14 +243,16 @@ For screen sizes of 900 pixels and smaller, the footer section will reduce it's 
 
 ---
 
-### Cake competition 
-The competition section, I decided to keep it with the landing page. I wanted to bring more colour to this part of the page, so by adding pictures with bright and vibrant colours it adds a good amount of colour. I added some text under the images to give a little more input of what to expect from the description above.
+### Cake voting
+The cake voting section, I decided to keep it with the landing page. I wanted to bring more colour to this part of the page, so by adding pictures with bright and vibrant colours it adds a good amount of colour. I added some text under the images to give a little more input of what to expect from the description above.
 
-![](assets/Competition%20section.png)
+![](assets/post%20section%20index%20page.png)
 
-For screen sizes 900 and below, I have followed modern designs and stacked images on top of one another. I keep the images at a larger display to give a user a better feel to the image on a smaller screen. 
+For screen sizes 900 and below, I have followed modern designs and stacked images on top of one another simalr an Instagrams design https://www.instagram.com/. I keep the images at a larger display to give a user a better feel to the image on a smaller screen. 
 
 ![](assets/blog%20section%20mobile%20scrren%20size.png)
+
+![](assets/mobile%20screen%20blog%20section.png)
 
 ---
 
