@@ -6,6 +6,8 @@ The website idea is to give the user a look at the menu options and to sign up a
 
 ![](assets/I%20am%20responsive%20image.png)
 
+ADD LINK TO WEBPAGE!!!!!!!!!!!!
+
 ---
 
 # List of contents
@@ -523,6 +525,13 @@ Installing Coverage and generate a report.
 - Eamil is sent to free test provider (MailTrap.oi) to test POST request on form submittion.
 - User is returned a message handle to notify their enquiry has been sent.
 
+### Extra feaures
+- Google maps is displayed well in the footer and responds to all screen sizes.
+- Scroll to top function works on all pages and directs user to top of page as intended.
+- Message handler returns message and clears after three seconds as intended.
+- All hover effect work to a mouse over action.
+- Website is tested on Google Chrome browser & Safari broswer.
+
 ---
 
 ### Bugs and testing
@@ -709,6 +718,3 @@ To build this project I sourced a variety online web building modules to help me
 - A big thank you to my mentor for keeping me on track with the build stages and giving me valuable advise within key areas.
 
 - The Slack community has been a great help when I needed it the most, so a thank you to all that answered my qustions and guided me in the process to build this project.
-
-
-
