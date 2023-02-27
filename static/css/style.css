@@ -220,9 +220,18 @@ li, a {
     margin-right: 10px;
 }
 /*--404.html--*/
-.page-wrap-400 {
+/* .page-wrap-400 {
     min-height: 100vh;
     color: #BFBFBF;
+} */
+.img {
+    width:80%;
+    z-index: 0; }
+    
+.text-center {
+z-index:1;
+font-size: 1.2em
+margin-top: -100px;
 }
 /*--500.html--*/
 .page-wrap-500 {
