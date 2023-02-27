@@ -81,7 +81,7 @@ Project tasks
 In the project plan (scrum board) you can view all three projects and the added templates called issues, these issues will hold the user stories.
 ![](assets/user%20stoiry%20scrum%20board.png)
 
-When opening a user story, you will be able to read more requirements and functions to be achieved.
+When opening a user story, you will be able to read more requirements and project tasks to be achieved.
 ![](assets/user%20stories%20info.png)
 
 This is another example of how you could read the user stories.
@@ -120,12 +120,14 @@ https://en.wikipedia.org/wiki/MoSCoW_method
   
 # Structure
 
-This website is made for three apps
-1. Cake menus app - display menus
-2. Blog app - post comments
-3. Contact app - customer support
+This website is made using three apps
+1. Cake menus app - display up to date menus
+2. Blog app - post  / comments
+3. Contact app - customer support ' enquiries 
 
 The menu, blog and contact apps all use a data base to store user information. For this I have built 5 models.
+
+Each app within the project has one or more models. I wanted to have as much information stored in the database as possible. For future development and using the MVC method, the models are already created and all data is stored. 
 
 ---
 
