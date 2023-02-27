@@ -1,4 +1,4 @@
-/* --Text styling and sizes--*/
+/*--Text styling and sizes--*/
 h1 {
     font-family: Montserrat, sans-serif;
     font-size: 3.5rem;
@@ -25,7 +25,7 @@ h6 {
     font-family: Fira Sans Condensed;
     color: #BFBFBF;
 }
-/* --Base.html--*/
+/*--Base.html--*/
 body {
     margin: 0;
     padding: 0;
@@ -109,7 +109,7 @@ li, a {
     padding: 5px;
     margin-left: 10px;
 }
-/* --Index.html--*/
+/*--Index.html--*/
 .header-title, .header-image {
     font-family: Montserrat;
     font-size: 1.2rem;
@@ -139,7 +139,7 @@ li, a {
     color: inherit;  
     text-decoration:none; 
 }
-/* --Post cake section / index.html--*/
+/*--Post cake section / index.html--*/
 .card {
     display: inline-block;
     margin-bottom: 30px;
@@ -162,7 +162,7 @@ li, a {
     border: none;
     border-color: #e70c6b;
 }
-/* --Post detail.html--*/
+/*--Post detail.html--*/
 .fa-trash:hover{
     color: #ef0707;
 }
@@ -179,7 +179,7 @@ li, a {
     font-weight: bold;
 }
 
-/* --cake menus--*/
+/*--cake menus--*/
 .cake-menu-header {
     margin-top: 20px;
 }
@@ -188,7 +188,7 @@ li, a {
     width: 70%;
     margin-top: 50px;
 }
-/* --Contact.html--*/
+/*--Contact.html--*/
 .submit-button:hover {
     color: #0D0D0D;
 }
@@ -198,7 +198,7 @@ li, a {
 .contact-link:hover{
     color: #D3D925;
 }
-/* --Registration form--*/
+/*--Registration form--*/
 .sign-up-header {
     color: #0D0D0D;
     text-align: center;
@@ -211,7 +211,7 @@ li, a {
 .sign-up-form > h4 {
     font-family: Montserrat;
 }
-/* --Sign in form--*/
+/*--Sign in form--*/
 .form-label {
     font-family:  Montserrat;
     color: #0D0D0D;
@@ -219,17 +219,17 @@ li, a {
 .logged-in{
     margin-right: 10px;
 }
-/* --404.html---------------------------------------------------*/
+/*--404.html--*/
 .page-wrap-400 {
     min-height: 100vh;
     color: #BFBFBF;
 }
-/* --500.html--*/
+/*--500.html--*/
 .page-wrap-500 {
     min-height: 100vh;
     color: #D3D925;
 }
-/* --Media querys / base.html--*/
+/*--Media querys / base.html--*/
 /*For screen sizes max-width 400 pixels*/
 @media screen and (max-width: 400px) {
 
@@ -241,7 +241,7 @@ li, a {
         font-size: 0.8rem;
     }
 }
-/* --Nav bar--*/
+/*--Nav bar--*/
 @media screen and (max-width: 991px) {
 
     .nav-brand{
@@ -254,7 +254,7 @@ li, a {
         font-size: 1rem;
     }
     }
-/* --Footer--*/
+/*--Footer--*/
 /* for phone screen size max-width 500 pixels */
 @media screen and (max-width: 500px) {
 

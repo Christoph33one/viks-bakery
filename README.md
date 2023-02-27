@@ -11,7 +11,9 @@ The website idea is to give the user a look at the menu options and to sign up a
 # List of contents
 
 <li><a href="#target-audience">Target audience</a></li>
+<li><a href="#project-plan">Project plan</a></li>
 <li><a href="#user-stories">User stories</a></li>
+<li><a href="#agile-plannig">Agile planning</a></li>
 <li><a href="#scope">Scope</a></li>
 <li><a href="#structure">Structure</a></li>
 <li><a href="#data-base">Data-base</a></li>
@@ -51,8 +53,46 @@ and what key featuers could I use to benefit that audience.
  
 ---
 
+# Project plan
+
+For project requirements and project planning I followed the agile methodologies and best practices. I used a scrum board which is a built in feature in the projects repository with GitHub https://github.com/.
+
+I created a list of project goals using aglies user stories method. A User Story is a small, self-contained unit of development work designed to accomplish a specific goal within a product and articulate the value proposition for the work and drive the development work. I have broken down my user stoires into three categories for better organisation and readability.
+
+Admin user stoiries
+- A list of all functions and expectations for a site administrator
+
+Site user stores
+- All functionality's and expectations from a site users point of view
+- All functions for a user not registerd
+- All functions for a registered user
+
+Project tasks
+- The build process requirements to start the project
+- A list of files to be added to the project
+- Project requirements
+
+![](assets/scrum%20projects%20board.png)
+
+---
+
 # User stories
+
+In the project plan (scrum board) you can view all three projects and the added templates called issues, these issues will hold the user stories. 
+![](assets/user%20stoiry%20scrum%20board.png)
+
+This is another example of how you could read the user stories.
 ![](assets/user%20stories.png)
+
+With agile it is advised to use a team velocity approach. Team velocity represents how many story points the development team can manage to finish in one iteration of a particular length. Team velocity represents how many story points the development team can manage to finish in one iteration of a particular length. 
+
+As I am the only one planning this project, I will not be using the team velocity approach and point score system.
+
+Within the user stories and highlight the importance of project acceptance criteria for each tack. The use labels to indicate the importance of each user story and it's involvment with the project.
+![](assets/tags%20in%20user%20stories.png)
+
+
+
 
 ---
 
