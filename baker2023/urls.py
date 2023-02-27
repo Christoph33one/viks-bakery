@@ -23,6 +23,3 @@ urlpatterns = [
     path('post_detail/', include('blog.urls'), name="post_detail-urls"),
     path('summernote', include('django_summernote.urls')),
 ]
-
-# handler404 = 'menus.views.error_404'
-# handler500 = 'menus.views.error_500'

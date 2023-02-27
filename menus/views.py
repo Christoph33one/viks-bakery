@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
 from blog.models import Post
+from django.conf import settings
 
 
 # Render index.html
@@ -81,12 +82,3 @@ class CheeseCakeMenu(generic.ListView):
         }
         return queryset
 
-
-# def error_404(request, exception):
-#     """ 404 error page """
-#     return render(request, '404.html', status=404)
-
-
-# def error_500(request):
-#     """ 500 error page """
-#     return render(request, '500.html', status=500)
