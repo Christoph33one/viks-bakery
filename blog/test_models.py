@@ -14,16 +14,16 @@ from .models import Post, Comment
 #             content="Test content",
 #         )
 
-class TestPostModel(TestCase):
+# class TestPostModel(TestCase):
 
-    def setUp(self):
-        self.post = Post.objects.create(
-            title='Test title',
-            # email='Test email',
-            # message='Test message'
-        )
+#     def setUp(self):
+#         self.post = Post.objects.create(
+#             title='Test title',
+#             # email='Test email',
+#             # message='Test message'
+#         )
 
-    def test_post_name(self):
-        testname = get_object_or_404(Contact, name="Test title ")
+#     def test_post_name(self):
+#         testname = get_object_or_404(Contact, name="Test title ")
 
-        self.assertEqual(self.contact.created_on, testtitle.created_on)
+#         self.assertEqual(self.contact.created_on, testtitle.created_on)

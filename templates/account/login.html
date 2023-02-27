@@ -10,30 +10,31 @@
 <!--Sign in / register container-->
 <div class="container">
   <div class="row">
-    <div class="col-md-8 mt-2 offset-md-2">
+    <div class="col-md-8 offset-md-2">
       <!--Sign in or register message-->
       <h3>{% trans "Sign In" %}</h3>
-        <p>{% blocktrans %}Welcome back, if you have not created an account yet then please click here
-          <button class="btn btn-success btn-sm">
-            <a href="{{ signup_url }}" class="post-link">Click here!</a>
+        <p class="header-title ">{% blocktrans %}Welcome back, if you have not created an account yet then please click here
+          <button class="btn btn-success btn-sm mt-2">
+            <a href="{{ signup_url }}" class="post-link">Click here! &raquo;</a>
           </button>
           {% endblocktrans %}</p>
       </div>
     </div>
   <div class="row">
-    <div class="col-md-8 mt-3 mb-4 offset-md-2">
+    <div class="col-md-8 mt-2 mb-4 offset-md-2">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup btn-success right" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-signup btn-success right" type="submit">{% trans "Sign In" %} &raquo;</button>
       </form>
       <br>
-      <p>If you have forgotten your password, please do not panic!</p>
-      <p>Simply click on the link below, fill out the form and we will send you a new passord request to your email.</p>
+      <p class="header-title ">If you have forgotten your password, please do not panic!</p>
+      <p class="header-title ">Simply click on the link below, fill out the form and we will send you a new passord request to your email.</p>
       <h3><a href="{% url 'contact' %}" class="contact-link">Contact us</a></h3>
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
     </div>
   </div>
 </div>
