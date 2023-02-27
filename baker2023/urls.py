@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# add all app and libarys in the urlpatterns!!
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('menus.urls'), name="menus-urls"),
@@ -25,5 +24,5 @@ urlpatterns = [
     path('summernote', include('django_summernote.urls')),
 ]
 
-handler404 = 'menus.views.error_404'
-handler500 = 'menus.views.error_500'
+# handler404 = 'menus.views.error_404'
+# handler500 = 'menus.views.error_500'
