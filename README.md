@@ -253,7 +253,7 @@ The cake voting section, I decided to keep it with the landing page. I wanted to
 
 ![](assets/post%20section%20index%20page.png)
 
-For screen sizes 900 and below, I have followed modern designs and stacked images on top of one another simalr an Instagrams design https://www.instagram.com/. I keep the images at a larger display to give a user a better feel to the image on a smaller screen. 
+For screen sizes 900 and below, I have followed modern designs and stacked images on top of one another similar to Instagrams design https://www.instagram.com/. I keep the images at a larger display to give a user a better feel to the image on a smaller screen. 
 
 ![](assets/blog%20section%20mobile%20scrren%20size.png)
 
@@ -292,7 +292,7 @@ For screen sizes at 900 pixels and smaller, the menu uses a Bootstrap container 
 ---
 
 ### Contact Page
-I wanted the contact form to be a simple and friendly form with not much input form the user. I would like the user to add a full name, email address and the enquiry they wish to make. 
+I wanted the contact form to be a simple and friendly form with not much input from the user. I would like the user to add a full name, email address and the enquiry they wish to make. 
 
 ![](assets/contact%20form.png)
 
@@ -309,13 +309,13 @@ I have had a strong point to consider to not include a phone number field within
 
 # Authentication
 
-Registration 
+### Registration 
 
 User registration follows the same design layout as all the other forms. I have added clear titles to all pages for user to not get confused. This registration form consists of a user adding a username, email address and a password which has a secondary input for the user to hopefully remember there password.
 
 ![](assets/registration%20page.png)
 
-Sign in
+### Sign in
 
 The user sign in form is again a simple and quick form for the user to fill in. Once they have signed up, they can choose to use the full site and add a comment or like a post and join the competion.
 
@@ -323,14 +323,14 @@ The user sign in form is again a simple and quick form for the user to fill in. 
 ![](assets/mobile%20sign%20in%20page.png)
 
 
-Once singed in, the user can see clearly that they are logged in as the sign and register buttons are removed from the nav bar and only the log out button is displayed. 
+Once signed in, the user can see clearly that they are logged in as the sign and register buttons are removed from the nav bar and only the log out button is displayed. To also help notify the user for being logged in, their login name will appear left to the log out button. 
 
-
+![](assets/when%20signed%20in.png)
 ![](assets/when%20signed%20in.png)
 
 ---
 
-Sign out 
+### Sign out 
 
 For when the user wants to sign out, they will need to click on the sign out button in the nav bar. From there the site will ask them once more if they are 'sure to sign out'. In case a user is to click sign out by mistake, this is a fail safe function.
 
