@@ -20,8 +20,3 @@ class TestMenusUrls(SimpleTestCase):
     def Test_cheese_cake_menu_urls_reverse(self):
         url = reverse('cheese_cake')
         self.assertEquals(resolve(url).func.view_class, CheeseCakeMenu)
-
-    # def Test_cake_menu_urls_reverse(self):
-    #     url = reverse('404')
-
-    #     self.assertEquals(resolve(url).func, 404)
