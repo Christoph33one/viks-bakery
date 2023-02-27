@@ -1,3 +1,5 @@
+// Scroll to top function
+
 // Get the button:
 let mybutton = document.getElementById("myBtn");
 

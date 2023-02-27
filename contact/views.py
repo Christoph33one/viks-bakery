@@ -42,5 +42,3 @@ def Contact(request):
             return redirect('contact.html', context)
 
     return render(request, 'contact.html', context)
-
-# pepe8 indentation error. ask student care to fix this issue!!

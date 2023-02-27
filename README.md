@@ -59,7 +59,7 @@ and what key featuers could I use to benefit that audience.
 
 For project requirements and project planning I followed the agile methodologies and best practices. I used a scrum board which is a built in feature in the projects repository with GitHub https://github.com/.
 
-I created a list of project goals using aglies user stories method. A user Story is a small, self-contained unit of development work designed to accomplish a specific goal within a product and articulate the value proposition for the work and drive the development work. I have broken down my user stoires into three categories for better organisation and readability.
+I created a list of project goals using agile user stories method. A user Story is a small, self-contained unit of development work designed to accomplish a specific goal within a product and articulate the value proposition for the work and drive the development work. I have broken down my user stoires into three categories for better organisation and readability.
 
 Admin user stoiries
 - A list of all functions and expectations for a site administrator
@@ -439,7 +439,7 @@ Icons
 I have used manual and automated testing to ensure the website's functionality meets the desired and development standards throughout the website.
 
 ### Code validation
-### HTML 
+HTML 
 - All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
 
 - CSS validation 
@@ -531,6 +531,7 @@ Installing Coverage and generate a report.
 - Message handler returns message and clears after three seconds as intended.
 - All hover effect work to a mouse over action.
 - Website is tested on Google Chrome browser & Safari broswer.
+- I have added a error 404 page and I have tested if a user adds an incorrect url to the site. The user gets a 404 error page. 
 
 ---
 

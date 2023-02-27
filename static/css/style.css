@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Source+Sans+Pro:wght@200&display=swap');
 /*--Text styling and sizes--*/
 h1 {
     font-family: Montserrat, sans-serif;
@@ -219,19 +220,10 @@ li, a {
 .logged-in{
     margin-right: 10px;
 }
-/*--404.html--*/
-/* .page-wrap-400 {
+/*404.html*/
+.page-wrap-400 {
     min-height: 100vh;
     color: #BFBFBF;
-} */
-.img {
-    width:80%;
-    z-index: 0; }
-    
-.text-center {
-z-index:1;
-font-size: 1.2em
-margin-top: -100px;
 }
 /*--500.html--*/
 .page-wrap-500 {

@@ -81,4 +81,3 @@ class CheeseCakeMenu(generic.ListView):
                 on_menu=True, cake_selections=1)
         }
         return queryset
-
