@@ -263,7 +263,7 @@ I wanted a symmetric feel throughout all pages with the website. To do this I cr
 
 I used a header image of a width of 100% to stretch across the whole screen on all devices. I want the image to give a good idea as to what the site is about, so choosing the correct imagine was inportant. I aslo added a fixed position to give a scrolling effect for this image.
 
-A scroll to top button is displayed once the user starts to scroll down any page on the website. I try to keep small within the modern functions that most site have.
+A scroll to top button is displayed once the user starts to scroll down any page on the website. I try to keep within the modern functions that most websites have.
 
 ![](assets/home%20page%20header.png)
 
@@ -369,10 +369,10 @@ The user sign in form is again a simple and quick form for the user to fill in. 
 ![](assets/mobile%20sign%20in%20page.png)
 
 
-Once signed in, the user can see clearly that they are logged in as the sign and register buttons are removed from the nav bar and only the log out button is displayed. To also help notify the user for being logged in, their login name will appear left to the log out button. 
+Once signed in, the user can see clearly that they are logged in as the sign in and register buttons are removed from the nav bar and only the log out button is displayed. To also help notify the user for being logged in, their login name will appear left to the log out button. 
 
 ![](assets/when%20signed%20in.png)
-![](assets/when%20signed%20in.png)
+
 
 ---
 
@@ -434,23 +434,22 @@ Icons
 
 # Testing
 
-I have used  manual and automated testing to ensure the website's functionality meets the desired and development standards throughout the website.
+I have used manual and automated testing to ensure the website's functionality meets the desired and development standards throughout the website.
 
 ### Code validation
-All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
+### HTML 
+- All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
 
 - CSS validation 
 https://jigsaw.w3.org/css-validator/
 ![](assets/CSS%20validation%20test%20pass.png)
 
 
-### Automated testing
+### Automated tests
 
 I have used the Coverage library throughout testing to keep track of how much Python code was covered by the tests. The remaining code is covered by manual testing.
 
-### Automated tests
-
-I have tested all three of the project's apps and have covered a total of 83%. For the rest of my tesing I will manually test all functions.
+I have tested all three apps and the views, urls and models. The coverage report shows a total of 83% tested. For the rest of my tesing I will manually test all functions.
 
 ![](assets/full%20site%20tests%20coverage.png)
 
@@ -463,7 +462,7 @@ I have tested all three of the project's apps and have covered a total of 83%. F
 ### Contact app test
 ![](assets/test%20contact%20coverage%20report.png)
 
-Installing Coverage and report commands
+Installing Coverage and generate a report.
 
 - Install the package using pip3 install coverage
 
@@ -471,44 +470,59 @@ Installing Coverage and report commands
 
 - Then coverage html to generate the report
 
-- You can view the report in a browser by using the command python3 -m http.server and opening the index.html file from inside the htmlcov folder.
+
+- You can view the report in a browser by using the command python3 -m http.server and opening the the required file from inside the htmlcov folder.
 
 ### Manual tests
 
 ### Landing page
-- How design looks and feels with contrasting colors and text 
-- How all images and text look on screen sizes for browser, tablet and mobile
-- Nav bar links function to correct urls and hover effect works with mouse cursor
-- Post section shows clear images and cards react when user selects to view card as a post in post detail page
+- How design looks and feels with contrasting colors and text.
+- How all images and text look on screen sizes for browser, tablet and mobile.
+- Nav bar links function to correct urls and hover effect works with mouse cursor.
+- Post section shows clear images and cards react when user selects to view card as a post in post detail page.
 - Footer section shows clear information and google maps open on a separate page for user to view.
 - Registration and sign in buttons are easy to view and react to a mouse cursor.
-- Social media links are displayed and send user to correct url as intended
+- Social media links are displayed and send user to correct url as intended in a sperate page.
 
 ### Authentication form
-- Registration button takes user to new page and a clear form to add details
-- Required input field works to indicate to the user that all form fields need information before submitting 
-- Submit button is well presented and the url is given 
-- Message handler gives well presented message to user after submittion
-- Returns user to index url as excepted 
+- Registration button takes user to the correct url path and a clear form to add details.
+- Required attribute on input field works to indicate to the user that all form fields need information before submitting.
+- Submit button is well presented and the url is given.
+- Message handler gives well presented message to user after submittion.
+- After sumitting, url returns user to index page as excepted.
 
 ### Sign in / out form
-- Registration button takes user to new page and a clear form to add details
-- Required input field works to indicate to the user that all form fields need 
-- Message handler gives weel resented message to user after submitting
-- Logout asks user for second confirmation of sign out
-- Returns user to index url as excepted 
+- Registration button takes user to correct url and a clear form to add details.
+- Required attribute on input field works to indicate to the user that all form fields need information.
+- Message handler gives a visible message to user after submitting.
+- Logout asks user for second confirmation of sign out.
+- Returns user to index url as excepted.
 
 ### Post detail page
-- Gives user nice visual layout of images and post a comment area
-- User is given good imformation on the product 
-- A clear indication of how to delete and update a comment
-- Post detail displays well in browser, tablet and mobile screen sizes
-- Message handler gives well presented message to user after editing post or deleting a post
+- Gives user nice visual layout of images and post a comment area.
+- User is given good imformation on the product. 
+- A clear indication of how to delete and update a comment, with a label to name when user hovers mouse over icon.
+- Post detail displays well in browser, tablet and mobile screen sizes.
+- Message handler gives well presented message to user after editing post or deleting a post.
+- User is taken to a seprate url for editing a post.
+- The edit post page functions as intended and returns a message that the comment is updated.
+- The updated comment is visible to view.
 
 ### Cake menus
-- All three menu links send user to correct url for the menu they choose
-- Menus are well designed and easy to read and understand 
-- Menu fonts and text are displayed well for all screeen sizes
+- All three menu links send user to correct url for the menu they choose to view.
+- Menus are well designed and easy to read and understand.
+- Menu fonts and text are displayed well for all screeen sizes.
+
+
+### Contact form
+- Correct url path takes the user to the contact page.
+- A simple form is displayed.
+- Name and email required attribute on input fields do not let the user submit the form unless fields have information.
+- Enquires field is of a good size to add a long enquiry.
+- Sumbit button is well displayed.
+- Eamil is sent to free test provider (MailTrap.oi) to test POST request on form submittion.
+- User is returned a message handle to notify their enquiry has been sent.
+
 ---
 
 ### Bugs and testing
