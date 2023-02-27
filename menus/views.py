@@ -82,9 +82,9 @@ class CheeseCakeMenu(generic.ListView):
         return queryset
 
 
-def error_404(request, exception):
-    """ 404 error page """
-    return render(request, '404.html', status=404)
+# def error_404(request, exception):
+#     """ 404 error page """
+#     return render(request, '404.html', status=404)
 
 
 # def error_500(request):
