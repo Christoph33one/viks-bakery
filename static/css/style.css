@@ -164,8 +164,17 @@ li, a {
     border-color: #e70c6b;
 }
 /*--Post detail.html--*/
+.fa-edit{
+    color: #D3D925;
+}
+.fa-edit:hover {
+    color: #BFBFBF;
+}
+.fa-trash{
+    color: #FF0000;
+}
 .fa-trash:hover{
-    color: #ef0707;
+    color: #0D0D0D;
 }
 .fa-pen-to-square:hover{
     color: #D3D925;
