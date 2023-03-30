@@ -444,6 +444,31 @@ I have used manual and automated testing to ensure the website's functionality m
 HTML 
 - All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
 
+- Home page
+![](assets/home%20page%20html%20test.png)
+
+Menus
+- choclate cakes
+![](assets/choc%20cake%20html%20test.png)
+- cream cakes
+![](assets/cream%20cake%20html%20test.png)
+- cheese cakes
+![](assets/cheese%20cake%20html%20test.png)
+
+- Blog page
+![](assets/blog%20page%20html%20test.png)
+
+- Contact page
+![](assets/contact%20form%20html%20test.png)
+
+- Registration page
+![](assets/register%20form%20html%20test.png)
+
+- login page
+![](assets/login%20html%20test.png)
+
+
+
 - CSS validation 
 https://jigsaw.w3.org/css-validator/
 ![](assets/CSS%20validation%20test%20pass.png)

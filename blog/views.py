@@ -117,6 +117,7 @@ def edit_comment(request, pk):
                 request,
                 "edit_comment.html",
                 {
+                    'commented': True,
                     'comment': comment,
                     'comment_form': CommentForm(instance=comment)
                 }
