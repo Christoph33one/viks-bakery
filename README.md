@@ -467,11 +467,12 @@ Menus
 - login page
 ![](assets/login%20html%20test.png)
 
-
-
 - CSS validation 
 https://jigsaw.w3.org/css-validator/
 ![](assets/CSS%20validation%20test%20pass.png)
+
+- JavaScript validation
+![](assets/javascript%20tests.png)
 
 
 ### Automated tests
@@ -499,8 +500,7 @@ Installing Coverage and generate a report.
 
 - Then coverage html to generate the report
 
-
-- You can view the report in a browser by using the command python3 -m http.server and opening the the required file from inside the htmlcov folder.
+- You can view the report in a browser by using the command python3 -m http.server and opening the required file from inside the htmlcov folder.
 
 ### Manual tests
 
@@ -530,12 +530,13 @@ Installing Coverage and generate a report.
 ### Post detail page
 - Gives user nice visual layout of images and post a comment area.
 - User is given good imformation on the product. 
-- A clear indication of how to delete and update a comment, with a label to name when user hovers mouse over icon.
 - Post detail displays well in browser, tablet and mobile screen sizes.
-- Message handler gives well presented message to user after editing post or deleting a post.
+- A clear indication of how to delete and update a comment, simply click on each    icon displayed. A mouse over function will display a lable on each icon to match it's function to also notify the user.
 - User is taken to a seprate url for editing a post.
 - The edit post page functions as intended and returns a message that the comment is updated.
 - The updated comment is visible to view.
+- Message handler gives well presented message to user after editing post or deleting a post.
+
 
 ### Cake menus
 - All three menu links send user to correct url for the menu they choose to view.
