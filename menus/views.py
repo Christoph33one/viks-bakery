@@ -12,12 +12,12 @@ def index(request):
     # import post_list from blog views and model to render in index.html
     post_list = Post.objects.all()
 
+    # To render post list in index page
     return render(
         request,
         "index.html",
         {
             "post_list": post_list,
-
         }
 
     )
