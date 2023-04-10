@@ -16,19 +16,6 @@ class PostList(generic.ListView):
     paginate_by = 3
 
 
-class EditPostlist(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "edit_post.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        post = self.get_queryset().first()  # Get the first post in the queryset
-        form = PostForm(instance=post)  # Pass the post object to the form
-        context['form'] = PostForm()
-        return context
-
-
 # Post detail / render post_detail.html
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
@@ -135,6 +122,61 @@ def edit_comment(request, pk):
                     'comment_form': CommentForm(instance=comment)
                 }
             )
+
+
+def edit_post(request):
+    post_list = Post.objects.filter().order_by("-created_on")
+    post = Post.objects.filter(approved=True).first()
+    form = PostForm(instance=post)
+
+    context = {
+        'post_list': post_list,
+        'form': form,
+    }
+    if request.method == 'POST':
+        # Update the post fields with the submitted data
+        post.title = request.POST.get('title')
+        post.author = request.POST.get('author')
+        post.excerpt = request.POST.get('excerpt')
+        post.content = request.POST.get('content')
+        post.body = request.POST.get('body')
+        # Save the post
+        post.save()
+        messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    "You have edited a comment!"
+                )
+        return render(request, 'edit_post.html', context)
+    return render(request, 'edit_post.html', context)
+
+
+# class EditPostList(generic.ListView):
+#     model = Post
+#     queryset = Post.objects.filter(status=1).order_by("-created_on")
+#     post = Post.objects.filter(approved=True)
+#     template_name = "edit_post.html"
+#     paginate_by = 3
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         post = self.get_queryset().first() # Get the first post in the queryset
+#         form = PostForm(instance=post) # Pass the post object to the form
+#         context['form'] = form
+#         return context
+
+#     def edit_post(self, request, pk):
+#         post = get_object_or_404(Post, pk=pk)
+#         if request.method == 'POST':
+#             # Update the post fields with the submitted data
+#             post.title = request.POST.get('title')
+#             post.body = request.POST.get('body')
+#             # Save the post
+#             post.save()
+#             return render(request, 'edit_post.html', context)
+#         else:
+#             context = {'post': post}
+#             return render(request, 'edit_post.html', context)
 
 
 # Post a like

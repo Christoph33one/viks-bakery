@@ -18,16 +18,16 @@
             <form method="post">
                 {{post_form | crispy}}
                 {% csrf_token %}
+                <!--as.p method to render all fields in the form-->
                 {{ form.as_p }}
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ post_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm mt-2">Submit</button>
+                <button type="submit" title="Submit" 
+                    class="btn btn-signup btn-success btn-sm mt-2">
+                    Submit
+                </button>
                 </form>
             </form>
         </div>
     </div>
 </div>
-
   
 {% endblock %}
