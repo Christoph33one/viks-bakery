@@ -16,5 +16,6 @@ urlpatterns = [
         views.edit_comment,
         name="edit_comment",
     ),
+    path('edit_post', views.EditPostlist.as_view(), name='edit_post'),
 
 ]

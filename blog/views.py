@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -14,6 +14,19 @@ class PostList(generic.ListView):
     post = Post.objects.filter(approved=True)
     template_name = "index.html"
     paginate_by = 3
+
+
+class EditPostlist(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "edit_post.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_queryset().first()  # Get the first post in the queryset
+        form = PostForm(instance=post)  # Pass the post object to the form
+        context['form'] = PostForm()
+        return context
 
 
 # Post detail / render post_detail.html

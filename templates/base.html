@@ -83,6 +83,9 @@
         <form class="btn btn-outline-success btn-sm"  action="{% url 'account_logout' %}">
           <button>Logout</button>
         </form>
+        <form class="btn btn-outline-success btn-sm" action="{% url 'edit_post' %}">
+          <button>Edit post</button>
+        </form>
           {% else %}
           <!--Sign in-->
           <form class="btn btn-outline-success btn-sm" action="{% url 'account_signup' %}">
