@@ -125,7 +125,8 @@ def edit_comment(request, pk):
 
 
 def edit_post(request):
-    post_list = Post.objects.filter().order_by("-created_on")
+    post_list = Post.objects.filter(status=1).order_by("-created_on")
+    
     post = Post.objects.filter(approved=True).first()
     form = PostForm(instance=post)
 
@@ -136,9 +137,6 @@ def edit_post(request):
     if request.method == 'POST':
         # Update the post fields with the submitted data
         post.title = request.POST.get('title')
-        post.author = request.POST.get('author')
-        post.excerpt = request.POST.get('excerpt')
-        post.content = request.POST.get('content')
         post.body = request.POST.get('body')
         # Save the post
         post.save()
