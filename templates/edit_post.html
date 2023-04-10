@@ -8,6 +8,7 @@
     <em>Only authorised administration can edit this post<br>
         If you are not the administrator, please contact us!
     </em></p>
+
 <!-- edit_post.html -->
 <div class="container">
     <div class="row">
@@ -18,7 +19,11 @@
                 {{post_form | crispy}}
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Save changes</button>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ post_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" title="Submit" class="btn btn-signup btn-success btn-sm mt-2">Submit</button>
+                </form>
             </form>
         </div>
     </div>

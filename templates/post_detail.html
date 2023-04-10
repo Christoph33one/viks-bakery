@@ -13,6 +13,10 @@
                     {{ post.title }}
                     {{ post.content | safe }}
                 </div>
+                 <!--Edit post form-->
+                 <button type="submit" title="submit" class="btn btn-signup btn-success btn-sm mt-2">
+                    <a href="{% url 'edit_post' %}">Edit post</a>
+                </button>
             </div>
         </div>
 <!--Post comment card-->
