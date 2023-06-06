@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% load crispy_forms_tags %}
+  <h1>Editing Page!!!</h1>
+  <!-- Edit post form -->
+  <h2 class="text-center">Edit posts</h2>
+  <p style="font-size: 1rem; color: #BFBFBF;" class="text-center">
+    <em>Only authorized administration can edit this post<br>
+        If you are not the administrator, please contact us!
+    </em>
+  </p>
+
+  <!-- Edit cake item form -->
+  <div class="m-2 row d-flex justify-content-center">
+    <div class="col-sm-8">
+      <h2 class="mb-4 text-center cake-menu-header">Edit Cake Item</h2>
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form-group">
+              <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+              {{ field|as_crispy_field }}
+            </div>
+          {% endfor %}
+          <button type="submit">Save</button>
+        </form>
+    </div>
+  </div>
+
+  <style>
+    /* Apply CSS styles to make the input fields bigger */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      height: 50px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+
+  <h2 class="mb-4 text-center">Cake Menu</h2>
+  <!-- Loop through the cake_items and render each item in a form -->
+  {% for cakeitem in cake_items %}
+    <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="cake_id" value="{{ cakeitem.id }}">
+      <div class="m-2 row d-flex justify-content-center">
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label for="cake_name">Cake Name</label>
+            <input type="text" name="cake_name" id="cake_name" value="{{ cakeitem.cake_name }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="form-control">{{ cakeitem.description }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="dietary">Dietary</label>
+            <input type="text" name="dietary" id="dietary" value="{{ cakeitem.dietary }}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="allergens">Allergens</label>
+            <input type="text" name="allergens" id="allergens" value="{{ cakeitem.allergens }}" class="form-control">
+          </div>
+          <button type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+  {% endfor %}
+
+{% endblock %}

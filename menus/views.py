@@ -3,6 +3,7 @@ from django.views import generic
 from .models import CakeItem, CreamCakes, CheeseCakes
 from blog.models import Post
 from django.conf import settings
+from .forms import CakeItemForm, CreamCakesForm, CheeseCakesForm
 
 
 # Render index.html
@@ -81,3 +82,25 @@ class CheeseCakeMenu(generic.ListView):
                 on_menu=True, cake_selections=1)
         }
         return queryset
+
+
+def edit_item(request, model, pk):
+    # Determine the model and form based on the 'model' parameter
+    if model == 'cake_item':
+        instance = CakeItem.objects.get(pk=pk)
+        form = CakeItemForm(request.POST or None, instance=instance)
+    elif model == 'cream_cake':
+        instance = CreamCakes.objects.get(pk=pk)
+        form = CreamCakesForm(request.POST or None, instance=instance)
+    elif model == 'cheese_cake':
+        instance = CheeseCakes.objects.get(pk=pk)
+        form = CheeseCakesForm(request.POST or None, instance=instance)
+    else:
+        raise Http404("Invalid model name")
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('choc_cake')  # You can change the redirect URL here
+
+    return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})

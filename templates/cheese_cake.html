@@ -45,6 +45,9 @@
         {% endfor %}
         {% endif %}
     </div>
+    <button>
+        <a href="{% url 'edit_menu' model='cheese_cake' pk=cheese_cakes.cheese_items.0.pk %}" class="btn btn-primary">Edit</a>
+    </button>
 </div>
 
 {% endblock %}

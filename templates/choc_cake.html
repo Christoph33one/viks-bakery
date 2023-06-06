@@ -3,52 +3,45 @@
 {% block content %}
 
 <!-- Choclate cake menu -->
-<div class=" m-2 row d-flex justify-content-center">
+<div class="m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
-        <h4 class="mb-4 text-center cake-menu-header ">"There’s nothing better than cake but more cake"</h4>
+        <h4 class="mb-4 text-center cake-menu-header">"There’s nothing better than cake but more cake"</h4>
         <!-- Loop through list to display only chocolate cake items -->
-
         {% if cake_items.choclate_items %}
-
-        {% for cakeitems in cake_items.choclate_items %}
-
-        <h4>{{ cakeitems.cake_name}}</h4>
-
-        <p>{{ cakeitems.description }}</p>
-
-        <p>Dietary |<strong>{{ cakeitems.dietary }}</strong></p>
-
-        <p>Allergens | <strong>{{ cakeitems.allergens}}</strong></p>
-        <hr>
-        {% endfor%}
-
+            {% for cakeitem in cake_items.choclate_items %}
+                <h4>{{ cakeitem.cake_name }}</h4>
+                <p>{{ cakeitem.description }}</p>
+                <p>Dietary | <strong>{{ cakeitem.dietary }}</strong></p>
+                <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
+                <hr>
+            {% endfor %}
         {% else %}
-        <p>Menu being updated. No items found</p>
+            <p>Menu being updated. No items found</p>
         {% endif %}
     </div>
 </div>
+
 <br>
 <br>
+
 <!-- Vegan chocolate cake menu -->
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center">Our vegan range is just as good!</h4>
         <!-- Loop through list to display only vegan chocolate cake items -->
         {% if cake_items.vegan_items %}
-
-        {% for cakeitems in cake_items.vegan_items %}
-
-        <h3>{{ cakeitems.cake_name }}</h3>
-
-        <p>{{ cakeitems.description }}</p>
-
-        <p>Dietary |<strong>{{ cakeitems.dietary }}</strong></p>
-
-        <p>Allergens | <strong>{{ cakeitems.allergens}}</strong></p>
-        <hr>
-        {% endfor %}
+            {% for cakeitem in cake_items.vegan_items %}
+                <h3>{{ cakeitem.cake_name }}</h3>
+                <p>{{ cakeitem.description }}</p>
+                <p>Dietary | <strong>{{ cakeitem.dietary }}</strong></p>
+                <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
+                <hr>
+            {% endfor %}
         {% endif %}
     </div>
+    <button>
+        <a href="{% url 'edit_menu' model='cake_item' pk=cake_items.choclate_items.0.pk %}" class="btn btn-primary">Edit</a>
+    </button>
 </div>
 
 {% endblock %}
