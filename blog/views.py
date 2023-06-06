@@ -34,7 +34,8 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                # "edit_post_url": reverse("edit_post"),
             },
         )
 
@@ -55,9 +56,8 @@ class PostDetail(View):
             comment.post = post
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS,
-                "Your message has been sent"
-                )
+                request, messages.SUCCESS, "Your message has been sent"
+            )
         else:
             comment_form = CommentForm()
 
@@ -69,117 +69,79 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
-
+                "comment_form": CommentForm(),
             },
         )
 
 
 # Delete comment function
-@login_required(login_url='/accounts/login/')
+@login_required(login_url="/accounts/login/")
 def delete_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk, name=request.user.username)
     comment.delete()
     messages.add_message(
-        request, messages.SUCCESS,
-        "Your message has been deleted"
-        )
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        request, messages.SUCCESS, "Your message has been deleted"
+    )
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
 
 # Edit a comment
-@login_required(login_url='/accounts/login/')
+@login_required(login_url="/accounts/login/")
 def edit_comment(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
-    if request.method == 'POST':
-        if (
-            comment.name == request.user.username
-        ):
+    if request.method == "POST":
+        if comment.name == request.user.username:
             form = CommentForm(data=request.POST)
             if form.is_valid():
-                comment.body = form.cleaned_data['body']
+                comment.body = form.cleaned_data["body"]
                 comment.save()
                 messages.add_message(
-                    request,
-                    messages.SUCCESS,
-                    "You have updated your comment!"
+                    request, messages.SUCCESS, "You have updated your comment!"
                 )
-                return redirect('index')
+                return redirect("index")
             else:
                 messages.add_message(
-                    request,
-                    messages.ERROR,
-                    "Whoops something is wrong!"
+                    request, messages.ERROR, "Whoops something is wrong!"
                 )
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+                return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
     return render(
-                request,
-                "edit_comment.html",
-                {
-                    'commented': True,
-                    'comment': comment,
-                    'comment_form': CommentForm(instance=comment)
-                }
-            )
+        request,
+        "edit_comment.html",
+        {
+            "commented": True,
+            "comment": comment,
+            "comment_form": CommentForm(instance=comment),
+        },
+    )
 
 
-def edit_post(request):
-    post_list = Post.objects.filter(status=1).order_by("-created_on")
-    
-    post = Post.objects.filter(approved=True).first()
-    form = PostForm(instance=post)
+# def edit_post(request, pk):
+#     post = get_object_or_404(Post, slug=request.POST.get("post_slug"))
+#     form = PostForm(request.POST, instance=post)
 
-    context = {
-        'post_list': post_list,
-        'form': form,
-    }
-    if request.method == 'POST':
-        # Update the post fields with the submitted data
-        post.title = request.POST.get('title')
-        post.body = request.POST.get('body')
-        # Save the post
-        post.save()
-        messages.add_message(
-                    request,
-                    messages.SUCCESS,
-                    "You have edited a comment!"
-                )
-        return render(request, 'edit_post.html', context)
-    return render(request, 'edit_post.html', context)
+#     if form.is_valid():
+#         form.save()
+#         messages.success(request, "Post edited successfully!")
+#         return redirect("post_detail", slug=post.slug)
+
+#     return render(request, "edit_post.html", {"form": form, "post": post})
 
 
-# class EditPostList(generic.ListView):
-#     model = Post
-#     queryset = Post.objects.filter(status=1).order_by("-created_on")
-#     post = Post.objects.filter(approved=True)
-#     template_name = "edit_post.html"
-#     paginate_by = 3
+def edit_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    form = PostForm(request.POST, instance=post)
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         post = self.get_queryset().first() # Get the first post in the queryset
-#         form = PostForm(instance=post) # Pass the post object to the form
-#         context['form'] = form
-#         return context
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Post edited successfully!")
+        return redirect("post_detail", slug=post.slug)
 
-#     def edit_post(self, request, pk):
-#         post = get_object_or_404(Post, pk=pk)
-#         if request.method == 'POST':
-#             # Update the post fields with the submitted data
-#             post.title = request.POST.get('title')
-#             post.body = request.POST.get('body')
-#             # Save the post
-#             post.save()
-#             return render(request, 'edit_post.html', context)
-#         else:
-#             context = {'post': post}
-#             return render(request, 'edit_post.html', context)
+    return render(request, "edit_post.html", {"form": form, "post": post})
 
 
 # Post a like
 class PostLike(View):
-
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -187,4 +149,4 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        return HttpResponseRedirect(reverse("post_detail", args=[slug]))

@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path
 
-
 urlpatterns = [
     path('', views.PostList.as_view(), name='home_page'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
@@ -16,6 +15,6 @@ urlpatterns = [
         views.edit_comment,
         name="edit_comment",
     ),
-    path('edit_post', views.edit_post, name='edit_post'),
+    path('post_detail/edit_post/<int:pk>/', views.edit_post, name='edit_post'),
 
 ]
