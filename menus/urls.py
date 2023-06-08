@@ -7,4 +7,5 @@ urlpatterns = [
     path('cream_cake/', views.CreamMenu.as_view(), name='cream_cake'),
     path('cheese_cake/', views.CheeseCakeMenu.as_view(), name='cheese_cake'),
     path('edit_menu/<str:model>/<int:pk>/', views.edit_item, name='edit_menu'),
+    path('delete/<str:model>/<int:pk>/', views.delete_item, name='delete_menu')
 ]

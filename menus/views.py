@@ -102,10 +102,32 @@ def edit_item(request, model, pk):
         redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
     else:
         raise Http404("Invalid model name")
-
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse(redirect_url))  # Redirect to the corresponding menu
+            return redirect(reverse(redirect_url))
 
     return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})
+
+
+from django.shortcuts import redirect
+
+def delete_item(request, model, pk):
+    # Determine the model based on the 'model' parameter
+    if model == 'cake_item':
+        instance = CakeItem.objects.get(pk=pk)
+        redirect_url = 'choc_cake'  # Redirect to the choc_cake menu
+    elif model == 'cream_cake':
+        instance = CreamCakes.objects.get(pk=pk)
+        redirect_url = 'cream_cake'  # Redirect to the cream_cake menu
+    elif model == 'cheese_cake':
+        instance = CheeseCakes.objects.get(pk=pk)
+        redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
+    else:
+        raise Http404("Invalid model name")
+
+    if request.method == 'POST':
+        instance.delete()
+        return redirect(reverse(redirect_url))
+
+    return redirect(reverse(redirect_url))
