@@ -4,6 +4,8 @@ from .models import CakeItem, CreamCakes, CheeseCakes
 from blog.models import Post
 from django.conf import settings
 from .forms import CakeItemForm, CreamCakesForm, CheeseCakesForm
+from django.http import Http404
+from django.urls import reverse
 
 
 # Render index.html
@@ -89,18 +91,21 @@ def edit_item(request, model, pk):
     if model == 'cake_item':
         instance = CakeItem.objects.get(pk=pk)
         form = CakeItemForm(request.POST or None, instance=instance)
+        redirect_url = 'choc_cake'  # Redirect to the choc_cake menu
     elif model == 'cream_cake':
         instance = CreamCakes.objects.get(pk=pk)
         form = CreamCakesForm(request.POST or None, instance=instance)
+        redirect_url = 'cream_cake'  # Redirect to the cream_cake menu
     elif model == 'cheese_cake':
         instance = CheeseCakes.objects.get(pk=pk)
         form = CheeseCakesForm(request.POST or None, instance=instance)
+        redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
     else:
         raise Http404("Invalid model name")
 
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect('choc_cake')  # You can change the redirect URL here
+            return redirect(reverse(redirect_url))  # Redirect to the corresponding menu
 
     return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})

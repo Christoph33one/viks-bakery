@@ -1,6 +1,9 @@
 {% extends 'base.html' %}{% block content %}
 
 <!-- Choclate cake menu -->
+<p style="font-size: 1rem; color: #BFBFBF;" class="text-center">
+    <em>Choclate cakes</em>
+</p>
 <div class="m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center cake-menu-header">"There’s nothing better than cake but more cake"</h4>
@@ -13,7 +16,7 @@
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin-top: 10px;">
-                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
                     </button>
                 <hr>
                 {% endif %}
@@ -36,7 +39,7 @@
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin: 10px;">
-                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
                     </button>
                 <hr>
                 {% endif %}

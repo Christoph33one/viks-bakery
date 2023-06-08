@@ -8,18 +8,18 @@
         <h4 class="mb-4 text-center cake-menu-header ">"Because every cake has a story to tell"</h4>
         <!-- Loop through list to display only cheese cake items -->
         {% if cheese_cakes.cheese_items %}
-
-        {% for cheesecakes in cheese_cakes.cheese_items %}
-
-        <h4>{{ cheesecakes.cake_name }}</h4>
-
-        <p>{{ cheesecakes.description }}</p>
-
-        <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
-
-        <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
-        <hr>
-        {% endfor %}
+            {% for cheesecakes in cheese_cakes.cheese_items %}
+                <h4>{{ cheesecakes.cake_name }}</h4>
+                <p>{{ cheesecakes.description }}</p>
+                <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
+                <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
+                {% if user.is_authenticated and user.is_staff %}
+                    <button style="margin: 10px;">
+                    <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
+                    </button>
+                    {% endif %}
+                <hr>
+            {% endfor %}
         {% endif %}
     </div>
 </div>
@@ -29,27 +29,22 @@
     <div class="col-sm-8">
         <h4 class="mb-4 text-center cake-menu-header ">"Happiness starts here"</h4>
         <!-- Loop through list to display vegan cheese  cake items -->
-
         {% if cheese_cakes.vegan_items %}
-
-        {% for cheesecakes in cheese_cakes.vegan_items %}
-
-        <h4>{{ cheesecakes.cake_name }}</h4>
-
-        <p>{{ cheesecakes.description }}</p>
-
-        <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
-
-        <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
-        <hr>
-        {% endfor %}
+            {% for cheesecakes in cheese_cakes.vegan_items %}
+                <h4>{{ cheesecakes.cake_name }}</h4>
+                <p>{{ cheesecakes.description }}</p>
+                <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
+                <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
+                {% if user.is_authenticated and user.is_staff %}
+                    <button style="margin: 10px;">
+                    <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
+                    </button>
+                {% endif %}
+                <hr>
+            {% endfor %}
         {% endif %}
     </div>
-    {% if user.is_authenticated and user.is_staff %}
-        <button>
-            <a href="{% url 'edit_menu' model='cheese_cake' pk=cheese_cakes.cheese_items.0.pk %}" class="btn btn-primary">Edit</a>
-        </button>
-    {% endif %}
+    
 </div>
 
 {% endblock %}

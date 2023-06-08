@@ -3,28 +3,30 @@
 {% block content %}
 
 <!-- Cream cake menu -->
+<p style="font-size: 1rem; color: #BFBFBF;" class="text-center">
+    <em>Cream cakes</em>
+</p>
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
         <h4 class="mb-4 text-center cake-menu-header">"I can’t eat another slice of cake, said no one ever"</h4>
-        
         <!-- Loop through list to display cream cake items -->
-
         {% if cream_cakes.white_items %}
-
-        {% for creamcakes in cream_cakes.white_items %}
-
-        <h4>{{ creamcakes.cake_name }}</h4>
-
-        <p>{{ creamcakes.description }}</p>
-
-        <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
-
-        <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
-        <hr>
-        {% endfor %}
+            {% for creamcakes in cream_cakes.white_items %}
+                <h4>{{ creamcakes.cake_name }}</h4>
+                <p>{{ creamcakes.description }}</p>
+                <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
+                <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
+                {% if user.is_authenticated and user.is_staff %}
+                    <button>
+                    <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
+                    </button>
+                <hr>
+                {% endif %}
+            {% endfor %}
         {% endif %}
     </div>
 </div>
+
 <br>
 <br>
 <!-- Vegan cream cake menu -->
@@ -32,27 +34,21 @@
     <div class="col-sm-8">
         <h4 class="mb-4 text-center">"A new way to bake - vegan"</h4>
         <!-- Loop through list to display vegan cream cake items -->
-
         {% if cream_cakes.vegan_items %}
-
-        {% for creamcakes in cream_cakes.vegan_items %}
-
-        <h4>{{ creamcakes.cake_name}}</h4>
-
-        <p>{{ creamcakes.description }}</p>
-
-        <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
-
-        <p>Allergens | <strong> {{ creamcakes.allergens }}</strong></p>
-        <hr>
+            {% for creamcakes in cream_cakes.vegan_items %}
+                <h4>{{ creamcakes.cake_name}}</h4>
+                <p>{{ creamcakes.description }}</p>
+                <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
+                <p>Allergens | <strong> {{ creamcakes.allergens }}</strong></p>
+                {% if user.is_authenticated and user.is_staff %}
+                <button>
+                <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
+                </button>
+                <hr>
+            {% endif %}
         {% endfor %}
         {% endif %}
     </div>
-    {% if user.is_authenticated and user.is_staff %}
-        <button>
-            <a href="{% url 'edit_menu' model='cream_cake' pk=cream_cakes.white_items.0.pk %}" class="btn btn-primary">Edit</a>
-        </button>
-    {% endif %}
 </div>
 
 {% endblock %}
