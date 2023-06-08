@@ -251,6 +251,20 @@ li, a {
         font-size: 0.8rem;
     }
 }
+
+/* Edit cake menu*/
+.cakeEditMenu {
+    .cakeEditMenu input[type="text"],
+    .cakeEditMenu input[type="email"],
+    .cakeEditMenu textarea {
+        height: 50px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+}
+
 /*--Nav bar--*/
 @media screen and (max-width: 991px) {
 

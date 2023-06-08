@@ -3,18 +3,27 @@ from .models import CakeItem, CreamCakes, CheeseCakes
 
 
 class CakeItemForm(forms.ModelForm):
+    """
+    Retrevies all model objects for editing cake menu
+    """
     class Meta:
         model = CakeItem
         fields = '__all__'
 
 
 class CreamCakesForm(forms.ModelForm):
+    """
+    Retrevies all model objects for editing cake menu
+    """
     class Meta:
         model = CreamCakes
         fields = '__all__'
 
 
 class CheeseCakesForm(forms.ModelForm):
+    """
+    Retrevies all model objects for editing cake menu
+    """
     class Meta:
         model = CheeseCakes
         fields = '__all__'
