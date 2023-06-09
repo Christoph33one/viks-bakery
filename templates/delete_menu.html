@@ -6,6 +6,7 @@
 <form action="{% url 'delete_menu' model=model pk=pk %}" method="post">
   {% csrf_token %}
   <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'choc_cake' %}" class="btn btn-secondary">Cancel</a>
 </form>
 
 
