@@ -14,6 +14,7 @@ https://viks-bakes.herokuapp.com/
 
 # List of contents
 
+Structure
 <li><a href="#target-audience">Target audience</a></li>
 <li><a href="#project-plan">Project plan</a></li>
 <li><a href="#user-stories">User stories</a></li>
@@ -21,6 +22,8 @@ https://viks-bakes.herokuapp.com/
 <li><a href="#scope">Scope</a></li>
 <li><a href="#structure">Structure</a></li>
 <li><a href="#data-base">Data-base</a></li>
+
+Design
 <li><a href="#wire-frames">Wireframes</a></li>
 <li><a href="#design">Design</a></li>
 <li><a href="#base-page">Base page</a></li>
@@ -31,14 +34,17 @@ https://viks-bakes.herokuapp.com/
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#typography">Typography</a></li>
 <li><a href="#colours">Colours</a></li>
+
+Testing
 <li><a href="#testing">Testing</a></li>
 <li><a href="#manual-tests">Manual tests</a></li>
 <li><a href="#technologies">Technologies</a></li>
 <li><a href="#deployment">Deployment</a></li>
 <li><a href="#future-goals">Future goals</a></li>
-<li><a href="#credits">Credits</a></li>
-<li><a href="#acknowledgements">Acknowledgements </a></li>
 
+Credits
+<li><a href="#credits">Credits</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
 
 ---
 
@@ -563,7 +569,6 @@ Delete item:
 - Once the item in deleted I am redirected to the menu page to view the menu item is removed for the menu.
 - If a choose to cancle the deletion of an item, I can voew a cancel button in the conformation page. Once selected to cancel, I am returned to the menu page with no changs made.
 - On submitting the requst, I am returned a message to confirm I have made changes to the menu. 
-
 
 
 ### Contact form
