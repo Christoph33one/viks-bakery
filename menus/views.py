@@ -6,6 +6,8 @@ from django.conf import settings
 from .forms import CakeItemForm, CreamCakesForm, CheeseCakesForm
 from django.http import Http404
 from django.urls import reverse
+from django.contrib import messages
+from django.shortcuts import get_object_or_404
 
 
 # Render index.html
@@ -38,9 +40,9 @@ class CakesMenu(generic.ListView):
     def get_queryset(self):
 
         queryset = {
-            'choclate_items': CakeItem.objects.all().filter(
+            'choclate_items': CakeItem.objects.filter(
                 on_menu=True, cake_selections=0),
-            'vegan_items': CakeItem.objects.all().filter(
+            'vegan_items': CakeItem.objects.filter(
                 on_menu=True, cake_selections=1)
         }
         return queryset
@@ -110,24 +112,22 @@ def edit_item(request, model, pk):
     return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})
 
 
-from django.shortcuts import redirect
-
 def delete_item(request, model, pk):
     # Determine the model based on the 'model' parameter
     if model == 'cake_item':
         instance = CakeItem.objects.get(pk=pk)
-        redirect_url = 'choc_cake'  # Redirect to the choc_cake menu
     elif model == 'cream_cake':
         instance = CreamCakes.objects.get(pk=pk)
-        redirect_url = 'cream_cake'  # Redirect to the cream_cake menu
     elif model == 'cheese_cake':
         instance = CheeseCakes.objects.get(pk=pk)
-        redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
     else:
         raise Http404("Invalid model name")
 
     if request.method == 'POST':
         instance.delete()
-        return redirect(reverse(redirect_url))
+        messages.add_message(
+            request, messages.SUCCESS, "Your item has been deleted"
+        )
+        return redirect(reverse('choc_cake'))
 
-    return redirect(reverse(redirect_url))
+    return render(request, 'delete_menu.html', {'model': model, 'pk': pk})

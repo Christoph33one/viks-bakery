@@ -21,6 +21,9 @@
                     <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
                     </button>
                 <hr>
+                    <button style="margin-top: 10px;">
+                    <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
+                    </button>
                 {% endif %}
             {% endfor %}
         {% endif %}
