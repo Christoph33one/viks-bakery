@@ -66,7 +66,7 @@ and what key featuers could I use to benefit that audience.
 
 # Project plan
 
-For project requirements and project planning I followed the agile methodologies and best practices. I used a scrum board which is a built in feature in the projects repository with GitHub https://github.com/.
+For project requirements and project planning I followed the agile methodologies and best practices. I used a scrum board which is a built in feature in the projects repository with <a href="https://github.com/">GitHub</a>
 
 I created a list of project goals using agile user stories method. A user Story is a small, self-contained unit of development work designed to accomplish a specific goal within a product and articulate the value proposition for the work and drive the development work. I have broken down my user stoires into three categories for better organisation and readability.
 
