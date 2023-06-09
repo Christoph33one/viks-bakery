@@ -1,13 +1,14 @@
 {% extends 'base.html' %}{% block content %}
 
-<h2>Confirm Item Deletion</h2>
-<p>Are you sure you want to delete this item?</p>
-
-<form action="{% url 'delete_menu' model=model pk=pk %}" method="post">
-  {% csrf_token %}
-  <button type="submit" class="btn btn-danger">Delete</button>
-    <a href="{% url 'choc_cake' %}" class="btn btn-secondary">Cancel</a>
-</form>
-
+<!-- Delete menu item confirmation -->
+<div class="row m-2 row d-flex justify-content-center"></div>
+    <h2>Confirm Item Deletion</h2>
+        <p>Are you sure you want to delete this item?</p>
+    <form action="{% url 'delete_menu' model=model pk=pk %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger" style="margin: 10px;">Delete</button>
+        <a href="{% url 'choc_cake' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
 
 {% endblock %}

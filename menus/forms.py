@@ -4,26 +4,29 @@ from .models import CakeItem, CreamCakes, CheeseCakes
 
 class CakeItemForm(forms.ModelForm):
     """
-    Retrevies all model objects for editing cake menu
+    Retrieves model objects for editing cake menu
+    excuding image object
     """
     class Meta:
         model = CakeItem
-        fields = '__all__'
+        exclude = ['featured_image']
 
 
 class CreamCakesForm(forms.ModelForm):
     """
-    Retrevies all model objects for editing cake menu
+    Retrieves all model objects for editing cake menu
+    excuding image object
     """
     class Meta:
         model = CreamCakes
-        fields = '__all__'
+        exclude = ['featured_image']
 
 
 class CheeseCakesForm(forms.ModelForm):
     """
-    Retrevies all model objects for editing cake menu
+    Retrieves all model objects for editing cake menu
+    excuding image object
     """
     class Meta:
         model = CheeseCakes
-        fields = '__all__'
+        exclude = ['featured_image']

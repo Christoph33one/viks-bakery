@@ -15,10 +15,13 @@
                 <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin: 10px;">
-                    <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
                     </button>
-                    {% endif %}
-                <hr>
+                    <button style="margin-top: 10px;">
+                        <a href="{% url 'delete_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-danger">Delete</a>
+                    </button>
+                    <hr>
+                {% endif %}
             {% endfor %}
         {% endif %}
     </div>
@@ -37,8 +40,12 @@
                 <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin: 10px;">
-                    <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-primary">Edit</a>
                     </button>
+                    <button style="margin-top: 10px;">
+                        <a href="{% url 'delete_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-danger">Delete</a>
+                    </button>
+                    <hr>
                 {% endif %}
                 <hr>
             {% endfor %}

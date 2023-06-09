@@ -18,12 +18,12 @@
                 <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button>
-                    <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
                     </button>
-                <hr>
                     <button style="margin-top: 10px;">
-                    <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
+                        <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
                     </button>
+                    <hr>
                 {% endif %}
             {% endfor %}
         {% endif %}
@@ -45,7 +45,10 @@
                 <p>Allergens | <strong> {{ creamcakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                 <button>
-                <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-primary">Edit</a>
+                </button>
+                <button style="margin-top: 10px;">
+                    <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
                 </button>
                 <hr>
             {% endif %}

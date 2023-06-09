@@ -16,12 +16,12 @@
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin-top: 10px;">
-                    <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                    </button>
+                    <button style="margin-top: 10px;">
+                        <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>
                     </button>
                     <hr>
-                    <button style="margin-top: 10px;">
-                    <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>
-                    </button>
                 {% endif %}
             {% endfor %}
         {% endif %}
@@ -42,12 +42,12 @@
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin: 10px;">
-                    <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
                     </button>
-                <hr>
                     <button style="margin-top: 10px;">
-                    <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>
+                        <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>
                     </button>
+                    <hr>
                 {% endif %}
             {% endfor %}
         {% endif %}
