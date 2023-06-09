@@ -89,28 +89,36 @@ class CheeseCakeMenu(generic.ListView):
 
 
 def add_item(request, model):
+    """
+    Determine the model and form based on the 'model' parameter
+    """
     if model == 'cake_item':
         form = CakeItemForm(request.POST or None)
-        redirect_url = 'choc_cake'  # Redirect to the choc_cake menu
+        redirect_url = 'choc_cake'
     elif model == 'cream_cake':
         form = CreamCakesForm(request.POST or None)
-        redirect_url = 'cream_cake'  # Redirect to the cream_cake menu
+        redirect_url = 'cream_cake'
     elif model == 'cheese_cake':
         form = CheeseCakesForm(request.POST or None)
-        redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
+        redirect_url = 'cheese_cake'
     else:
         raise Http404("Invalid model name")
 
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "A new item has been added!"
+            )
             return redirect(reverse(redirect_url))
 
     return render(request, 'add_menu.html', {'form': form, 'model': model})
 
 
 def edit_item(request, model, pk):
-    # Determine the model and form based on the 'model' parameter
+    """
+    Determine the model and form based on the 'model' parameter
+    """
     if model == 'cake_item':
         instance = CakeItem.objects.get(pk=pk)
         form = CakeItemForm(request.POST or None, instance=instance)
@@ -128,13 +136,18 @@ def edit_item(request, model, pk):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Your item has been edited"
+            )
             return redirect(reverse(redirect_url))
 
     return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})
 
 
 def delete_item(request, model, pk):
-    # Determine the model based on the 'model' parameter
+    """
+    Determine the model and form based on the 'model' parameter
+    """
     if model == 'cake_item':
         instance = CakeItem.objects.get(pk=pk)
     elif model == 'cream_cake':
