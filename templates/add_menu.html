@@ -11,20 +11,10 @@
   <!-- Edit cake item form -->
   <div class="m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
-      <h3 class="mb-4 text-center cake-menu-header">Please review or edit the menu</h3>
+      <h3 class="mb-4 text-center cake-menu-header">Please add an item to the menu</h3>
         <form method="post">
           {% csrf_token %}
           {% for field in form %}
-          {% if cake_items.choclate_items %}
-          {% for cakeitem in cake_items.choclate_items %}
-              <h4>{{ cakeitem.cake_name }}</h4>
-              <p>{{ cakeitem.description }}</p>
-              <p>Dietary | <strong>{{ cakeitem.dietary }}</strong></p>
-              <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
-              <hr>
-              {% endfor %}
-          {% else %}
-          {% endif %}
             <div class="form-group">
               {{ field|as_crispy_field }}
             </div>

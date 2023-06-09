@@ -16,7 +16,10 @@
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
                     <button style="margin-top: 10px;">
-                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'add_menu' model='cake_item' %}" class="btn btn-primary">Add</a>
+                    </button>
+                    <button style="margin-top: 10px;">
+                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-info">Edit</a>
                     </button>
                     <button style="margin-top: 10px;">
                         <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>
@@ -41,8 +44,11 @@
                 <p>Dietary | <strong>{{ cakeitem.dietary }}</strong></p>
                 <p>Allergens | <strong>{{ cakeitem.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
+                    <button style="margin-top: 10px;">
+                        <a href="{% url 'add_menu' model='cake_item' %}" class="btn btn-primary">Add</a>
+                    </button>
                     <button style="margin: 10px;">
-                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'edit_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-info">Edit</a>
                     </button>
                     <button style="margin-top: 10px;">
                         <a href="{% url 'delete_menu' model='cake_item' pk=cakeitem.pk %}" class="btn btn-danger">Delete</a>

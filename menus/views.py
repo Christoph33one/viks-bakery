@@ -88,6 +88,27 @@ class CheeseCakeMenu(generic.ListView):
         return queryset
 
 
+def add_item(request, model):
+    if model == 'cake_item':
+        form = CakeItemForm(request.POST or None)
+        redirect_url = 'choc_cake'  # Redirect to the choc_cake menu
+    elif model == 'cream_cake':
+        form = CreamCakesForm(request.POST or None)
+        redirect_url = 'cream_cake'  # Redirect to the cream_cake menu
+    elif model == 'cheese_cake':
+        form = CheeseCakesForm(request.POST or None)
+        redirect_url = 'cheese_cake'  # Redirect to the cheese_cake menu
+    else:
+        raise Http404("Invalid model name")
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse(redirect_url))
+
+    return render(request, 'add_menu.html', {'form': form, 'model': model})
+
+
 def edit_item(request, model, pk):
     # Determine the model and form based on the 'model' parameter
     if model == 'cake_item':
