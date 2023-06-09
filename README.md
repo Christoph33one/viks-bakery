@@ -89,11 +89,16 @@ Project tasks
 
 # User stories
 
+Please view the <a href="https://github.com/Christoph33one/viks-bakery/issues">Kan ban</a> board for the user stories
 In the project plan (scrum board) you can view all three projects and the added templates called issues, these issues will hold the user stories.
+
 ![](assets/user%20stoiry%20scrum%20board.png)
 
 When opening a user story, you will be able to read more requirements and project tasks to be achieved.
+Click to view <a href="https://github.com/users/Christoph33one/projects/23">user stories</a>
+
 ![](assets/user%20stories%20info.png)
+
 
 This is another example of how you could read the user stories.
 ![](assets/user%20stories.png)
@@ -105,9 +110,7 @@ As I am the only one planning this project and not using a team, I will not be u
 Using agile's MOSCOW method, each user story has been highlighted with the importance of the projects acceptance criteria. I used labels to indicate the importance of each user story and it's involvment with the project.
 ![](assets/tags%20in%20user%20stories.png)
 
-If you would like to learn more on agile's MOSCOW method, please use this link
-https://en.wikipedia.org/wiki/MoSCoW_method
-
+If you would like to learn more on agile's MOSCOW method, please use this link <a href="https://en.wikipedia.org/wiki/MoSCoW_method">Wikipedia</a>
 
 ---
 
