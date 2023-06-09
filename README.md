@@ -540,7 +540,8 @@ Installing Coverage and generate a report.
 
 ### Cake menus
 Administration user:
-- Administration user can view all menu functions (add, edit & delete) when logged in and viewing each menu page
+- Administration user can view all menu functions (add, edit & delete) when logged in.
+- As a user logged in or logged out, I can not view any menu editing functions.
 
 Add item:
 - If a user adds and item, they can click the add item button located on all menu pages.
