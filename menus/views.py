@@ -10,11 +10,11 @@ from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
-# Render index.html
 def index(request):
-    """ Returns homepage """
+    """ To render & returns homepage """
     post_list = Post.objects.all()
     return render(
         request,
@@ -25,7 +25,6 @@ def index(request):
     )
 
 
-# Generic view to render chocolatecake.html
 class CakesMenu(generic.ListView):
     """
     To render the cake menus from the database
@@ -44,7 +43,6 @@ class CakesMenu(generic.ListView):
         return queryset
 
 
-# Generic view to render creamcake.html
 class CreamMenu(generic.ListView):
     """
     To render cream cake menu from the database
@@ -63,7 +61,6 @@ class CreamMenu(generic.ListView):
         return queryset
 
 
-# Generic view to render cheesecake.html
 class CheeseCakeMenu(generic.ListView):
     """
     To render cream cake menu from the database
@@ -83,11 +80,27 @@ class CheeseCakeMenu(generic.ListView):
 
 
 def admin_user_check(user):
+    """
+    Determines whether a user is an authenticated superuser or not. Here's a breakdown of the code:
+    """
     return user.is_authenticated and user.is_superuser
 
 
-@user_passes_test(admin_user_check, login_url="/accounts/login/")
+def redirect_non_admin_users(view_func):
+    """
+    To redirect users that are not a super user (admin)
+    """
+    decorated_view_func = user_passes_test(admin_user_check, login_url="/")(view_func)
+    return decorated_view_func
+
+
+@redirect_non_admin_users
 def add_item(request, model):
+    """
+    Add item view function handles the addition of items based on
+    the provided model, saves the form data,
+    and redirects to a specific URL.
+    """
     if model == 'cake_item':
         form = CakeItemForm(request.POST or None)
         redirect_url = 'choc_cake'
@@ -111,8 +124,13 @@ def add_item(request, model):
     return render(request, 'add_menu.html', {'form': form, 'model': model})
 
 
-@user_passes_test(admin_user_check, login_url="/accounts/login/")
+@redirect_non_admin_users
 def edit_item(request, model, pk):
+    """
+    Edit item function handles editing of items based on
+    the provided model and primary key (pk), retrieves the item instance,
+    saves the form data, and redirects to a specific URL.
+    """
     if model == 'cake_item':
         instance = get_object_or_404(CakeItem, pk=pk)
         form = CakeItemForm(request.POST or None, instance=instance)
@@ -139,8 +157,14 @@ def edit_item(request, model, pk):
     return render(request, 'edit_menu.html', {'form': form, 'model': model, 'pk': pk})
 
 
-@user_passes_test(admin_user_check, login_url="/accounts/login/")
+@redirect_non_admin_users
 def delete_item(request, model, pk):
+    """
+    Delete item function handles deletion of items based on the
+    provided model and primary key (pk). It retrieves the item instance,
+    deletes it upon receiving a POST request, and redirects to a specific
+    URL on deletion.
+    """
     if model == 'cake_item':
         instance = get_object_or_404(CakeItem, pk=pk)
     elif model == 'cream_cake':

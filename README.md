@@ -587,8 +587,9 @@ Administration user:
 Add item:
 - If a user adds and item, they can click the add item button located on all menu pages.
 - The administration is then redirected to a blank form to add new items to the cake menu. A drop down box is available to add the new item to Dairy and non-dairy items.
-- A on-menu option is given to the administrator to select to put the new item on the menu or not. Once selected to beon the menu, the item is upladed to the menu for all users to view. 
+- A on-menu option is given to the administrator to select to put the new item on the menu or not. Once selected to be on the menu, the item is updated to the menu for all users to view. 
 - A canel button is present if the administrator decides to cancel adding a new item and is returned to the menu page.
+- Only authenticted admin users can access this URL. All other users are redirected to the homepage to keep security measures in place for administration only.
 
 Edit item:
 - On submitting the requst, I am returned a message to confirm I have made changes to the menu. 
@@ -597,6 +598,7 @@ Edit item:
 - When submitting the edited information, I get redirected to the menu page to voew the updated menu item.
 - On submitting the requst, I am returned a message to confirm I have made changes to the menu. 
 - For cancelling when editing, I can view a cancel button and once clicked, I am redirected to the menu page with no changes in place.
+- Only authenticted admin users can access this URL. All other users are redirected to the homepage to keep security measures in place for administration only.
 
 Delete item:
 - As a site administrator I can view a delelte item button on all menu pages.
@@ -604,6 +606,7 @@ Delete item:
 - Once the item in deleted I am redirected to the menu page to view the menu item is removed for the menu.
 - If a choose to cancle the deletion of an item, I can voew a cancel button in the conformation page. Once selected to cancel, I am returned to the menu page with no changs made.
 - On submitting the requst, I am returned a message to confirm I have made changes to the menu. 
+- Only authenticted admin users can access this URL. All other users are redirected to the homepage to keep security measures in place for administration only.
 
 
 ### Contact form
