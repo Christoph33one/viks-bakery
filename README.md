@@ -339,15 +339,47 @@ When a user wants to edit a comment, they are sent to a seperate page in which t
 
 ### Menu page
 
-With the menu pages I decided to position the text in the center of the page for a better readable view on bigger screens. I used a couple of different font families and font sizes to break up the layout as the menu only consists of text. 
-
 I used three separate pages for the menus as I wanted to keep the three cake type separate and to give an easier structure for reading each menu. I have added a product title, description, dietary and allergies information clearly within the menu on each product.
+
+With the menu pages I decided to position the text in the center of the page for a better readable view on bigger screens. I used a couple of different font families and font sizes to break up the layout as the menu only consists of text. 
 
 ![](assets/menus%20-%20page.png)
 
 For screen sizes at 900 pixels and smaller, the menu uses a Bootstrap container to help keep text within a readable size and layout. For a mobile device, the text will be positioned to the left to give a better reader frendly experience.
 
 ![](assets/mobile%20menu%20page.png)
+
+### Menu create, read, update & delete
+
+For authenticated administration users, the options to add, edit or delete and individual item is available. 
+
+![](assets/menu%20CRUD%20functions.png)
+
+### Add an item
+To simple add an item to the menu, an administrator can click the add button posiioned at the top of all menu pages. Once selected the user is directed to a blank form with the options to add all the relevant information. If the user chooses to not add the item on the menu, then the item is stored in the database for future usage and is not displayed to anu viewers.
+
+If the administor decides to add the item, once the form is submitted the item is visable within the menu to view for all users.
+A feed back massege is displayed for a brief moment to confirm the changes have been applied.
+
+A cancel button is to be used if the administor chooses not to continue with adding a new item and is redirected back to the mrnu page with no changes visible.
+
+![](assets/menu%20add%20an%20item.png)
+
+### Edit an item
+For administors to edit a menu item, an edit button is visible on all menu items to give a clear option on each item. Once the user selects the edit button on an item, they are directed to a pre-populated form containing all the information from that item. The user can simply delete or add to the information displayed and once submitted the user is redirected back to the menu page to view all changes made. These changes are updated for all logined and and logged out users.
+A feed back massege is displayed for a brief moment to confirm the changes have been applied.
+
+To cancel editing an item, the user can sinpley click the cancel button and be redirected back to the menu page.
+
+
+![](assets/menu%20edit.png)
+
+### Delete an item
+For an administor to delete an item from the menu, a delete button is positioned under each menu item. This gives a clear understanding that individual items can be removed. Once an item is selected, the user is directed to a conformation page to confirm they want to delete this item. As this item will be removed from the menu and the database, I wanted to give clarity to the user and confirm deletion of the item.
+
+Once selected to delete the item, the user is redirected to the menu page to view the item is no longer visible for all users. A feed back massege is displayed for a brief moment to confirm the changes have been applied.
+
+![](assets/menu%20delete%20item.png)
 
 ---
 

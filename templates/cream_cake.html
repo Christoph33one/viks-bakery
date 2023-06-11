@@ -8,6 +8,10 @@
 </p>
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
+        {% if user.is_authenticated and user.is_staff %}
+        <p>Please add an item to the menu here!</p>
+        <a href="{% url 'add_menu' model='cream_cake' %}" class="btn btn-primary">Add</a>
+        {% endif %}
         <h4 class="mb-4 text-center cake-menu-header">"I can’t eat another slice of cake, said no one ever"</h4>
         <!-- Loop through list to display cream cake items -->
         {% if cream_cakes.white_items %}
@@ -17,7 +21,6 @@
                 <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
                 <p>Allergens | <strong>{{ creamcakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'add_menu' model='cream_cake' %}" class="btn btn-primary">Add</a>
                     <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-info">Edit</a>
                     <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
                     <hr>
@@ -41,7 +44,6 @@
                 <p>Dietary | <strong>{{ creamcakes.dietary }}</strong></p>
                 <p>Allergens | <strong> {{ creamcakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'add_menu' model='cream_cake' %}" class="btn btn-primary">Add</a>
                     <a href="{% url 'edit_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-info">Edit</a>
                     <a href="{% url 'delete_menu' model='cream_cake' pk=creamcakes.pk %}" class="btn btn-danger">Delete</a>
                     <hr>

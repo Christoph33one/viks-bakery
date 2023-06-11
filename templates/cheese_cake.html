@@ -8,6 +8,10 @@
 </p>
 <div class="row m-2 row d-flex justify-content-center">
     <div class="col-sm-8">
+        {% if user.is_authenticated and user.is_staff %}
+        <p>Please add an item to the menu here!</p>
+        <a href="{% url 'add_menu' model='cheese_cake' %}" class="btn btn-primary">Add</a>
+        {% endif %}
         <h4 class="mb-4 text-center cake-menu-header ">"Because every cake has a story to tell"</h4>
         <!-- Loop through list to display only cheese cake items -->
         {% if cheese_cakes.cheese_items %}
@@ -17,7 +21,6 @@
                 <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
                 <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'add_menu' model='cheese_cake' %}" class="btn btn-primary">Add</a>
                     <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-info">Edit</a>
                     <a href="{% url 'delete_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-danger">Delete</a>
                     <hr>
@@ -39,7 +42,6 @@
                 <p>Dietary | <strong>{{ cheesecakes.dietary }}</strong></p>
                 <p>Allergens | <strong>{{ cheesecakes.allergens }}</strong></p>
                 {% if user.is_authenticated and user.is_staff %}
-                    <a href="{% url 'add_menu' model='cheese_cake' %}" class="btn btn-primary">Add</a>
                     <a href="{% url 'edit_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-info">Edit</a>
                     <a href="{% url 'delete_menu' model='cheese_cake' pk=cheesecakes.pk %}" class="btn btn-danger">Delete</a>
                     <hr>
