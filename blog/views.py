@@ -97,12 +97,14 @@ def edit_comment(request, pk):
                 comment.approved = False
                 comment.save()
                 messages.add_message(
-                    request, messages.SUCCESS, "Your comemnt is waiting approval!"
+                    request, messages.SUCCESS,
+                    "Your comemnt is waiting approval!"
                 )
                 return redirect("index")
             else:
                 messages.add_message(
-                    request, messages.ERROR, "Whoops something is wrong!"
+                    request, messages.ERROR,
+                    "Whoops something is wrong!"
                 )
                 return HttpResponseRedirect(request.META.get("HTTP_REFERER"))
 
