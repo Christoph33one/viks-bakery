@@ -367,6 +367,8 @@ The blog page is one of the main interests I believe that a user would like to v
 ### Edit blog page
 When a user wants to edit a comment, they are sent to a seperate page in which they can add or delete their comment in a simple form. This form layout stays the same when reducing to a smaller screen size.
 
+Once a user edits a comment, they will be notified witha messaeg to indicate that the edited comment needs approval before it is displayed. This is to keep user content regulated and to protect all users from unwanted content.
+
 ![](assets/edit%20post%20html.png)
 
 ![](assets/mobile%20edit%20post%20html.png)
@@ -828,7 +830,9 @@ add the following:
 
  - A booking system for a user to order a cake.
 
-- A add new item form for administration to add a new item to the menus.
+- A add new item form for administration to add a new item to the menu. This feature is already implemented into the database and data of a new tiem will be saved. But not inforamtion about the item can be used until future work is added. 
+
+![](assets/new%20item.png)
 
  # Credits
 
