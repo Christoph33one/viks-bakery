@@ -8,7 +8,8 @@ The website idea is to give the user a look at the menu options and to sign up a
 
 Live application can be found here
 
-https://viks-bakes.herokuapp.com/
+<a href="https://viks-bakes.herokuapp.com/">Viktoria's bake house</a>
+
 
 ---
 

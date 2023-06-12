@@ -94,9 +94,10 @@ def edit_comment(request, pk):
             form = CommentForm(data=request.POST)
             if form.is_valid():
                 comment.body = form.cleaned_data["body"]
+                comment.approved = False
                 comment.save()
                 messages.add_message(
-                    request, messages.SUCCESS, "You have updated your comment!"
+                    request, messages.SUCCESS, "Your comemnt is waiting approval!"
                 )
                 return redirect("index")
             else:
