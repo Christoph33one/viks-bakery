@@ -31,9 +31,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Make sure to git push after setting to True or False!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['viks-bakes.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['viks-bakes.herokuapp.com', 'localhost', '8000-christoph33o-viksbakery-0kivohjc09k.ws-eu99.gitpod.io']
 
 
 # Application definition
