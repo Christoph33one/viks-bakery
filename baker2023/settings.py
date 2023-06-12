@@ -29,8 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# SECURITY WARNING: don't run with debug turned on (True) in production!
 # Make sure to git push after setting to True or False!
+# Set debug to Flase for deployment!
 DEBUG = False
 
 ALLOWED_HOSTS = ['viks-bakes.herokuapp.com', 'localhost', '8000-christoph33o-viksbakery-0kivohjc09k.ws-eu99.gitpod.io']

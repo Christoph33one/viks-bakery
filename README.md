@@ -70,18 +70,54 @@ For project requirements and project planning I followed the agile methodologies
 
 I created a list of project goals using agile user stories method. A user Story is a small, self-contained unit of development work designed to accomplish a specific goal within a product and articulate the value proposition for the work and drive the development work. I have broken down my user stoires into three categories for better organisation and readability.
 
-Admin user stoiries
-- A list of all functions and expectations for a site administrator
-
-Site user stores
-- All functionality's and expectations from a site users point of view
-- All functions for a user not registerd
-- All functions for a registered user
 
 Project tasks
-- The build process requirements to start the project
-- A list of files to be added to the project
-- Project requirements
+- Install django # 32
+- Create a repository in GitHub,  Creeat a workspace in Gitpod # 33
+- Install database # 34
+- Install cloudinary libary # 35
+- create a requirements txt file # 36
+- Migrate to database # 38
+- Set up with Heroku # 39
+- create a Procfile # 40
+- Deploy project with Heroku # 41
+- Create a base html page to follow throughout all website pages # 48
+- To create a website landing page with information about the restaurant and it's services # 49
+- To create three menu pages with an easy to read formate for better UX # 50
+- To create a cake posting page for the cake competition. Users to view all post and likes # 51
+- To create a contact form page, where users can fill in simple form with their contact name, email and a message for an enquiry. # 52
+- To create a user registration form, for a user to make an account so they can add a post or like a post # 53
+- To create a user login page for the user to login their account # 55
+- To create a user log out conformation page, before to the user commits to logging out they are sent to a reminder page to confirm they want to log out # 54 
+
+
+Admin user stoiries
+- As the site administrator I want to be able to read all posts on the website and in the admin panel. # 37
+- As the site administrator I want to have a private panel from the users and to create, read, update and delete items form the database # 1
+- As the site administrator I want to be able to view all users who register for an account and delete the users # 5
+- As the site administrator I want to be able to approve comments from a user # 25
+- As the site administrator I want to be able to create, read, update and delete items from the menu within the admin pannel # 9
+- As the site administrator I want to be able to full control over all three menus with front-end controls. # 59
+- As the site administrator I want to see a users request from the contact form. To view the users contact information ,personal details and their message. I want to be able to keep the users request, but be able to show it has been read or unread and to delete when I choose # 21
+- As the site administrator I want to be able to create a post about the cake competition # 23
+- As the site administrator I want to be able to create a draft post # 24
+
+Site user stores
+- As the site user when logged out I can see sign in and sign up options so that I can sign in/sign up. # 12
+- As the site user I can view a navbar from every page so that I can navigate easily between pages. # 2 
+- As the site user I want to view a main page with info about the restaurant and what it has to offer # 20
+- As the site user I would like to view all the products sold, the main ingredients, and any dietary and allergens information within the product itself # 10
+- As the site user I would like to see a contact form where I can add my full name, email address and an area to write a message. # 14
+- As the site user I can create a new account so that I can access all the features for signed up users # 6
+- As the site user I would be able to like and un like a post at anytime that I am logged in # 42
+- As the site user I would like to see likes logge out liked of a comment. # 27
+- As the site user I would like to **view a list posts added by the restaurant. # 26
+- As the site user I would like to open a post from the post list. # 29
+- As the site user I would like to view all comments about the cakes # 28
+- As the site user I want to be able to register or login to comment on a post. Then to read the comment I added # 30
+- As the site user I would like to be able to log in and update / edit a comment # 47
+- As the site user I would like to be able to delete my own comments # 56
+
 
 ![](assets/scrum%20projects%20board.png)
 
