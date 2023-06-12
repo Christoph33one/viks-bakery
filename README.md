@@ -783,13 +783,15 @@ add the following:
 
  # Future goals
 
- - Users can post their own cakes and the winner will get a reward
+ - Users can post their own cakes and the winner will be announced.
+.
+ - Users can create a bigger profile with a method to post their special recipes and pictures.
 
- - Users can create a bigger profile with a mehtod to post their special recipes and pictures
+ - A booking system for users to book a table.
 
- - A booking system for users to book a table 
+ - A booking system for a user to order a cake.
 
- - A booking system for a user to order a cake
+- A add new item form for administration to add a new item to the menus.
 
  # Credits
 
