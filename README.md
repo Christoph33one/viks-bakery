@@ -536,6 +536,15 @@ Menus
 - cheese cakes
 ![](assets/cheese%20cake%20html%20test.png)
 
+- Add menu item form
+![](assets/html%20validation%20add%20menu%20item.png)
+
+- Edit menu item form
+![](assets/html%20validation%20edit%20menu%20item.png)
+
+- Delete menu item form
+![](assets/html%20validation%20delete%20menu%20item.png)
+
 - Blog page
 ![](assets/blog%20page%20html%20test.png)
 
