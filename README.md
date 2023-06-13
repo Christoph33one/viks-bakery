@@ -616,6 +616,7 @@ Installing Coverage and generate a report.
 - Message handler gives a visible message to user after submitting.
 - Logout asks user for second confirmation of sign out.
 - Returns user to index url as excepted.
+- Within the signin form, a remeber me feature is added but does not work. As this feature is intergrated into the Django form I can not remove this feature. 
 
 ### Post detail page
 - Gives user nice visual layout of images and post a comment area.
@@ -678,7 +679,9 @@ Delete item:
 
 ### Bugs and testing
 
-![](assets/spread%20sheet%20for%20bugs%20and%20tests.png)
+![](assets/PP4%20bugs.png)
+
+
 
 --- 
 
